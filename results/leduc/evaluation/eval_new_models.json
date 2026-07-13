@@ -1,0 +1,5719 @@
+{
+ "in_distribution": [
+  {
+   "idx": 0,
+   "phase1_nit": 628,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 547,
+     "weighted_cost": 547.0,
+     "objective": -0.08185663265832398
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 387,
+     "weighted_cost": 1141.65,
+     "objective": -0.0818566326583276
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 296,
+     "weighted_cost": 547.6,
+     "objective": -0.08185663265832861
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 1118,
+     "weighted_cost": 1095.6399999999999,
+     "objective": -0.08185663265860547
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1252,
+     "weighted_cost": 1189.3999999999999,
+     "objective": -0.08185663265834542
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 547,
+     "weighted_cost": 547.0,
+     "objective": -0.08185663265832398,
+     "action_counts": {
+      "largest_coefficient": 547
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 387,
+     "weighted_cost": 1133.850000000008,
+     "objective": -0.08185663265832631,
+     "action_counts": {
+      "largest_increase": 383,
+      "largest_coefficient": 4
+     }
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "phase1_nit": 642,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 414,
+     "weighted_cost": 414.0,
+     "objective": -0.08688200158018185
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 531,
+     "weighted_cost": 1566.45,
+     "objective": -0.08688200158018027
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 300,
+     "weighted_cost": 555.0,
+     "objective": -0.08688200158017853
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -748739.3415958083
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1150,
+     "weighted_cost": 1092.5,
+     "objective": -0.08688200158018114
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 414,
+     "weighted_cost": 414.0,
+     "objective": -0.08688200158018185,
+     "action_counts": {
+      "largest_coefficient": 414
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 444,
+     "weighted_cost": 1298.1000000000106,
+     "objective": -0.08688200158023096,
+     "action_counts": {
+      "largest_increase": 438,
+      "largest_coefficient": 6
+     }
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "phase1_nit": 636,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 463,
+     "weighted_cost": 463.0,
+     "objective": -0.08219847864052027
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 337,
+     "weighted_cost": 994.1500000000001,
+     "objective": -0.08219847864052007
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 267,
+     "weighted_cost": 493.95000000000005,
+     "objective": -0.08219847864052059
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 888,
+     "weighted_cost": 870.24,
+     "objective": -0.08219847864051832
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -7714533.359003067
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 463,
+     "weighted_cost": 463.0,
+     "objective": -0.08219847864052027,
+     "action_counts": {
+      "largest_coefficient": 463
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 337,
+     "weighted_cost": 992.200000000006,
+     "objective": -0.08219847864052007,
+     "action_counts": {
+      "largest_increase": 336,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "phase1_nit": 650,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 491,
+     "weighted_cost": 491.0,
+     "objective": -0.09385577786686733
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 327,
+     "weighted_cost": 964.6500000000001,
+     "objective": -0.09385577786686673
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 294,
+     "weighted_cost": 543.9,
+     "objective": -0.09385577786686983
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -3735211533.4658527
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -34355471311.19207
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 491,
+     "weighted_cost": 491.0,
+     "objective": -0.09385577786686733,
+     "action_counts": {
+      "largest_coefficient": 491
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 327,
+     "weighted_cost": 960.7500000000055,
+     "objective": -0.09385577786686673,
+     "action_counts": {
+      "largest_increase": 325,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "phase1_nit": 688,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 328,
+     "weighted_cost": 328.0,
+     "objective": -0.07731248458825751
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 330,
+     "weighted_cost": 973.5000000000001,
+     "objective": -0.07731248458825467
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 191,
+     "weighted_cost": 353.35,
+     "objective": -0.07731248458825751
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 737,
+     "weighted_cost": 722.26,
+     "objective": -0.07731248458824905
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -699978060102577.5
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 328,
+     "weighted_cost": 328.0,
+     "objective": -0.07731248458825751,
+     "action_counts": {
+      "largest_coefficient": 328
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 355,
+     "weighted_cost": 1043.3500000000067,
+     "objective": -0.07731248458825725,
+     "action_counts": {
+      "largest_increase": 353,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "phase1_nit": 673,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 646,
+     "weighted_cost": 646.0,
+     "objective": -0.10074893689860698
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 383,
+     "weighted_cost": 1129.8500000000001,
+     "objective": -0.10074893689857625
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 299,
+     "weighted_cost": 553.15,
+     "objective": -0.10074893689858747
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -550884896.7557068
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -19266992.615163162
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 646,
+     "weighted_cost": 646.0,
+     "objective": -0.10074893689860698,
+     "action_counts": {
+      "largest_coefficient": 646
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 385,
+     "weighted_cost": 1131.850000000008,
+     "objective": -0.10074893689857624,
+     "action_counts": {
+      "largest_increase": 383,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "phase1_nit": 638,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 545,
+     "weighted_cost": 545.0,
+     "objective": -0.09151681036468257
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 434,
+     "weighted_cost": 1280.3000000000002,
+     "objective": -0.09151681036467822
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 337,
+     "weighted_cost": 623.45,
+     "objective": -0.09151681036467707
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -131755632268.67596
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1173,
+     "weighted_cost": 1114.35,
+     "objective": -0.09151681036455635
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 545,
+     "weighted_cost": 545.0,
+     "objective": -0.09151681036468257,
+     "action_counts": {
+      "largest_coefficient": 545
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 474,
+     "weighted_cost": 1396.3500000000122,
+     "objective": -0.09151681036467746,
+     "action_counts": {
+      "largest_increase": 473,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "phase1_nit": 644,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 534,
+     "weighted_cost": 534.0,
+     "objective": -0.08116912432347413
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 427,
+     "weighted_cost": 1259.65,
+     "objective": -0.08116912432347022
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 272,
+     "weighted_cost": 503.20000000000005,
+     "objective": -0.08116912432347999
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -738004932.4115552
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -812739794442.0125
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 534,
+     "weighted_cost": 534.0,
+     "objective": -0.08116912432347413,
+     "action_counts": {
+      "largest_coefficient": 534
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 405,
+     "weighted_cost": 1192.800000000009,
+     "objective": -0.08116912432347376,
+     "action_counts": {
+      "largest_increase": 404,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "phase1_nit": 610,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 517,
+     "weighted_cost": 517.0,
+     "objective": -0.08724141987437062
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 525,
+     "weighted_cost": 1548.75,
+     "objective": -0.08724141987435095
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 263,
+     "weighted_cost": 486.55,
+     "objective": -0.08724141987435041
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -113602.48978998204
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1168,
+     "weighted_cost": 1109.6,
+     "objective": -0.08724141987435832
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 517,
+     "weighted_cost": 517.0,
+     "objective": -0.08724141987437062,
+     "action_counts": {
+      "largest_coefficient": 517
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 427,
+     "weighted_cost": 1244.0500000000097,
+     "objective": -0.08724141987435184,
+     "action_counts": {
+      "largest_increase": 419,
+      "largest_coefficient": 8
+     }
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "phase1_nit": 553,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 619,
+     "weighted_cost": 619.0,
+     "objective": -0.07658561173513526
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 518,
+     "weighted_cost": 1528.1000000000001,
+     "objective": -0.07658561173513503
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 541,
+     "weighted_cost": 1000.85,
+     "objective": -0.07658561172330776
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -130606647213309.23
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -51996371.10884318
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 619,
+     "weighted_cost": 619.0,
+     "objective": -0.07658561173513526,
+     "action_counts": {
+      "largest_coefficient": 619
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 618,
+     "weighted_cost": 1811.4000000000185,
+     "objective": -0.07658561173512825,
+     "action_counts": {
+      "largest_increase": 612,
+      "largest_coefficient": 6
+     }
+    }
+   }
+  },
+  {
+   "idx": 10,
+   "phase1_nit": 630,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 496,
+     "weighted_cost": 496.0,
+     "objective": -0.09242352860781973
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 465,
+     "weighted_cost": 1371.75,
+     "objective": -0.09242352860782146
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 323,
+     "weighted_cost": 597.5500000000001,
+     "objective": -0.092423528607806
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 1354,
+     "weighted_cost": 1326.92,
+     "objective": -0.09242352860828552
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1595,
+     "weighted_cost": 1515.25,
+     "objective": -0.09242352860825373
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 496,
+     "weighted_cost": 496.0,
+     "objective": -0.09242352860781973,
+     "action_counts": {
+      "largest_coefficient": 496
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 465,
+     "weighted_cost": 1369.8000000000118,
+     "objective": -0.09242352860782146,
+     "action_counts": {
+      "largest_increase": 464,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 11,
+   "phase1_nit": 653,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 398,
+     "weighted_cost": 398.0,
+     "objective": -0.09387413964993316
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 436,
+     "weighted_cost": 1286.2,
+     "objective": -0.09387413964992529
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 228,
+     "weighted_cost": 421.8,
+     "objective": -0.0938741396499266
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 1033,
+     "weighted_cost": 1012.34,
+     "objective": -0.09387413964994029
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -1028475902851872.0
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 398,
+     "weighted_cost": 398.0,
+     "objective": -0.09387413964993316,
+     "action_counts": {
+      "largest_coefficient": 398
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 512,
+     "weighted_cost": 1506.5000000000139,
+     "objective": -0.09387413964993085,
+     "action_counts": {
+      "largest_increase": 510,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 12,
+   "phase1_nit": 688,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 346,
+     "weighted_cost": 346.0,
+     "objective": -0.08244329917056131
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 325,
+     "weighted_cost": 958.7500000000001,
+     "objective": -0.08244329917056062
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 234,
+     "weighted_cost": 432.90000000000003,
+     "objective": -0.08244329917061213
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -20018159623019.25
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -67587111772.163315
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 346,
+     "weighted_cost": 346.0,
+     "objective": -0.08244329917056131,
+     "action_counts": {
+      "largest_coefficient": 346
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 325,
+     "weighted_cost": 956.8000000000054,
+     "objective": -0.08244329917056062,
+     "action_counts": {
+      "largest_increase": 324,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 13,
+   "phase1_nit": 727,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 291,
+     "weighted_cost": 291.0,
+     "objective": -0.07619826617780544
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 362,
+     "weighted_cost": 1067.9,
+     "objective": -0.07619826617780215
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 172,
+     "weighted_cost": 318.2,
+     "objective": -0.07619826617780655
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -465858871.34476626
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 623,
+     "weighted_cost": 591.85,
+     "objective": -0.0761982661778089
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 291,
+     "weighted_cost": 291.85,
+     "objective": -0.07619826617780544,
+     "action_counts": {
+      "largest_coefficient": 290,
+      "steepest_edge": 1
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 362,
+     "weighted_cost": 1067.9000000000071,
+     "objective": -0.07619826617780215,
+     "action_counts": {
+      "largest_increase": 362
+     }
+    }
+   }
+  },
+  {
+   "idx": 14,
+   "phase1_nit": 667,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 419,
+     "weighted_cost": 419.0,
+     "objective": -0.09243528353128727
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 421,
+     "weighted_cost": 1241.95,
+     "objective": -0.09243528353127788
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 258,
+     "weighted_cost": 477.3,
+     "objective": -0.09243528353128708
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -182122477876.0511
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -10766101.993469108
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 419,
+     "weighted_cost": 419.0,
+     "objective": -0.09243528353128727,
+     "action_counts": {
+      "largest_coefficient": 419
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 487,
+     "weighted_cost": 1432.7500000000127,
+     "objective": -0.0924352835312795,
+     "action_counts": {
+      "largest_increase": 485,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 15,
+   "phase1_nit": 585,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 447,
+     "weighted_cost": 447.0,
+     "objective": -0.08408511961214439
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 407,
+     "weighted_cost": 1200.65,
+     "objective": -0.08408511961214556
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 297,
+     "weighted_cost": 549.45,
+     "objective": -0.08408511961228145
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -144241444714.51025
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1580,
+     "weighted_cost": 1501.0,
+     "objective": -0.08408511961159826
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 447,
+     "weighted_cost": 447.0,
+     "objective": -0.08408511961214439,
+     "action_counts": {
+      "largest_coefficient": 447
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 427,
+     "weighted_cost": 1238.2000000000096,
+     "objective": -0.08408511961214479,
+     "action_counts": {
+      "largest_increase": 416,
+      "largest_coefficient": 11
+     }
+    }
+   }
+  },
+  {
+   "idx": 16,
+   "phase1_nit": 708,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 282,
+     "weighted_cost": 282.0,
+     "objective": -0.08231981062828263
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 312,
+     "weighted_cost": 920.4000000000001,
+     "objective": -0.082319810628287
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 198,
+     "weighted_cost": 366.3,
+     "objective": -0.08231981062829757
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -140906440456860.44
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -108958052352.21338
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 282,
+     "weighted_cost": 282.0,
+     "objective": -0.08231981062828263,
+     "action_counts": {
+      "largest_coefficient": 282
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 312,
+     "weighted_cost": 916.5000000000048,
+     "objective": -0.082319810628287,
+     "action_counts": {
+      "largest_increase": 310,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 17,
+   "phase1_nit": 662,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 372,
+     "weighted_cost": 372.0,
+     "objective": -0.08541362063885992
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 449,
+     "weighted_cost": 1324.5500000000002,
+     "objective": -0.08541362063883635
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 235,
+     "weighted_cost": 434.75,
+     "objective": -0.08541362063884793
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 1176,
+     "weighted_cost": 1152.48,
+     "objective": -0.08541362063886819
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -941531098166568.0
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 372,
+     "weighted_cost": 372.0,
+     "objective": -0.08541362063885992,
+     "action_counts": {
+      "largest_coefficient": 372
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 349,
+     "weighted_cost": 1023.7000000000064,
+     "objective": -0.08541362063883624,
+     "action_counts": {
+      "largest_increase": 346,
+      "largest_coefficient": 3
+     }
+    }
+   }
+  },
+  {
+   "idx": 18,
+   "phase1_nit": 707,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 364,
+     "weighted_cost": 364.0,
+     "objective": -0.06592983645828086
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 250,
+     "weighted_cost": 737.5,
+     "objective": -0.06592983645828142
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 171,
+     "weighted_cost": 316.35,
+     "objective": -0.06592983645828333
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -97362794983.8768
+    },
+    "blands_rule": {
+     "status": "loop",
+     "nit": 8446,
+     "weighted_cost": 8023.7,
+     "objective": -1091905496.432414
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 364,
+     "weighted_cost": 364.0,
+     "objective": -0.06592983645828086,
+     "action_counts": {
+      "largest_coefficient": 364
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 232,
+     "weighted_cost": 678.5500000000011,
+     "objective": -0.06592983645828157,
+     "action_counts": {
+      "largest_increase": 229,
+      "largest_coefficient": 3
+     }
+    }
+   }
+  },
+  {
+   "idx": 19,
+   "phase1_nit": 639,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 474,
+     "weighted_cost": 474.0,
+     "objective": -0.0800215313566845
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 445,
+     "weighted_cost": 1312.75,
+     "objective": -0.08002153135664969
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 254,
+     "weighted_cost": 469.90000000000003,
+     "objective": -0.08002153135674418
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 1407,
+     "weighted_cost": 1378.86,
+     "objective": -0.08002153135690829
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -7706539.50688462
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 474,
+     "weighted_cost": 474.0,
+     "objective": -0.0800215313566845,
+     "action_counts": {
+      "largest_coefficient": 474
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 445,
+     "weighted_cost": 1308.8500000000108,
+     "objective": -0.08002153135664969,
+     "action_counts": {
+      "largest_increase": 443,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 20,
+   "phase1_nit": 653,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 663,
+     "weighted_cost": 663.0,
+     "objective": -0.10088700613233983
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 566,
+     "weighted_cost": 1669.7,
+     "objective": -0.10088700613238899
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 348,
+     "weighted_cost": 643.8000000000001,
+     "objective": -0.10088700613233734
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -8371028468.7388315
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -3110413148.3649406
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 663,
+     "weighted_cost": 663.0,
+     "objective": -0.10088700613233983,
+     "action_counts": {
+      "largest_coefficient": 663
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 566,
+     "weighted_cost": 1665.8000000000163,
+     "objective": -0.10088700613238899,
+     "action_counts": {
+      "largest_increase": 564,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 21,
+   "phase1_nit": 619,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 600,
+     "weighted_cost": 600.0,
+     "objective": -0.08052015496705368
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 401,
+     "weighted_cost": 1182.95,
+     "objective": -0.08052015496705206
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 318,
+     "weighted_cost": 588.3000000000001,
+     "objective": -0.08052015496705087
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -6635058740.295574
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 2032,
+     "weighted_cost": 1930.3999999999999,
+     "objective": -0.08052015496712953
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 600,
+     "weighted_cost": 600.0,
+     "objective": -0.08052015496705368,
+     "action_counts": {
+      "largest_coefficient": 600
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 404,
+     "weighted_cost": 1184.0000000000089,
+     "objective": -0.0805201549670513,
+     "action_counts": {
+      "largest_increase": 400,
+      "largest_coefficient": 4
+     }
+    }
+   }
+  },
+  {
+   "idx": 22,
+   "phase1_nit": 691,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 350,
+     "weighted_cost": 350.0,
+     "objective": -0.07657003312269275
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 393,
+     "weighted_cost": 1159.3500000000001,
+     "objective": -0.07657003312267786
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 195,
+     "weighted_cost": 360.75,
+     "objective": -0.07657003312269706
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -5841870348600.316
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -58358664112502.516
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 350,
+     "weighted_cost": 350.0,
+     "objective": -0.07657003312269275,
+     "action_counts": {
+      "largest_coefficient": 350
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 420,
+     "weighted_cost": 1227.3000000000095,
+     "objective": -0.07657003312267859,
+     "action_counts": {
+      "largest_increase": 414,
+      "largest_coefficient": 6
+     }
+    }
+   }
+  },
+  {
+   "idx": 23,
+   "phase1_nit": 700,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 399,
+     "weighted_cost": 399.0,
+     "objective": -0.06855613019724711
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 317,
+     "weighted_cost": 935.1500000000001,
+     "objective": -0.0685561301972879
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 209,
+     "weighted_cost": 386.65000000000003,
+     "objective": -0.06855613019728281
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -3821959006984.6846
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1764,
+     "weighted_cost": 1675.8,
+     "objective": -0.06855613019728632
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 399,
+     "weighted_cost": 399.0,
+     "objective": -0.06855613019724711,
+     "action_counts": {
+      "largest_coefficient": 399
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 317,
+     "weighted_cost": 935.1500000000051,
+     "objective": -0.0685561301972879,
+     "action_counts": {
+      "largest_increase": 317
+     }
+    }
+   }
+  },
+  {
+   "idx": 24,
+   "phase1_nit": 711,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 377,
+     "weighted_cost": 377.0,
+     "objective": -0.07207182205050106
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 457,
+     "weighted_cost": 1348.15,
+     "objective": -0.07207182205049865
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 235,
+     "weighted_cost": 434.75,
+     "objective": -0.07207182205050108
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -1556842189.0159771
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -57688885287.4823
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 377,
+     "weighted_cost": 377.0,
+     "objective": -0.07207182205050106,
+     "action_counts": {
+      "largest_coefficient": 377
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 457,
+     "weighted_cost": 1348.1500000000115,
+     "objective": -0.07207182205049865,
+     "action_counts": {
+      "largest_increase": 457
+     }
+    }
+   }
+  },
+  {
+   "idx": 25,
+   "phase1_nit": 651,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 648,
+     "weighted_cost": 648.0,
+     "objective": -0.09469082497885595
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 592,
+     "weighted_cost": 1746.4,
+     "objective": -0.09469082497889057
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 291,
+     "weighted_cost": 538.35,
+     "objective": -0.09469082497885228
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -152160299476730.2
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -303740893034237.3
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 648,
+     "weighted_cost": 648.0,
+     "objective": -0.09469082497885595,
+     "action_counts": {
+      "largest_coefficient": 648
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 612,
+     "weighted_cost": 1803.4500000000185,
+     "objective": -0.09469082497888967,
+     "action_counts": {
+      "largest_increase": 611,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 26,
+   "phase1_nit": 585,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 430,
+     "weighted_cost": 430.0,
+     "objective": -0.08406379351665214
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 467,
+     "weighted_cost": 1377.65,
+     "objective": -0.08406379351665216
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 349,
+     "weighted_cost": 645.65,
+     "objective": -0.08406379351665332
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -575661842.7402697
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -21650108.755051464
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 430,
+     "weighted_cost": 430.0,
+     "objective": -0.08406379351665214,
+     "action_counts": {
+      "largest_coefficient": 430
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 467,
+     "weighted_cost": 1367.9000000000117,
+     "objective": -0.08406379351665216,
+     "action_counts": {
+      "largest_increase": 462,
+      "largest_coefficient": 5
+     }
+    }
+   }
+  },
+  {
+   "idx": 27,
+   "phase1_nit": 641,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 467,
+     "weighted_cost": 467.0,
+     "objective": -0.045993836695946054
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 372,
+     "weighted_cost": 1097.4,
+     "objective": -0.045993836695948614
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 256,
+     "weighted_cost": 473.6,
+     "objective": -0.04599383669594351
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -489921295915.44525
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -346102746.0740102
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 462,
+     "weighted_cost": 463.70000000000005,
+     "objective": -0.04599383669594612,
+     "action_counts": {
+      "largest_coefficient": 460,
+      "steepest_edge": 2
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 309,
+     "weighted_cost": 895.9500000000045,
+     "objective": -0.045993836695949544,
+     "action_counts": {
+      "largest_increase": 301,
+      "largest_coefficient": 8
+     }
+    }
+   }
+  },
+  {
+   "idx": 28,
+   "phase1_nit": 671,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 416,
+     "weighted_cost": 416.0,
+     "objective": -0.09403160529630852
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 402,
+     "weighted_cost": 1185.9,
+     "objective": -0.09403160529630734
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 265,
+     "weighted_cost": 490.25,
+     "objective": -0.09403160529631077
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -264748077.70646
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1225,
+     "weighted_cost": 1163.75,
+     "objective": -0.09403160529630719
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 416,
+     "weighted_cost": 416.0,
+     "objective": -0.09403160529630852,
+     "action_counts": {
+      "largest_coefficient": 416
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 402,
+     "weighted_cost": 1183.950000000009,
+     "objective": -0.09403160529630734,
+     "action_counts": {
+      "largest_increase": 401,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 29,
+   "phase1_nit": 662,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 376,
+     "weighted_cost": 376.0,
+     "objective": -0.0923827546047927
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 483,
+     "weighted_cost": 1424.8500000000001,
+     "objective": -0.09238275460485887
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 346,
+     "weighted_cost": 640.1,
+     "objective": -0.09238275460449165
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -507987471477725.94
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -1633630402180.0732
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 376,
+     "weighted_cost": 376.0,
+     "objective": -0.0923827546047927,
+     "action_counts": {
+      "largest_coefficient": 376
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 389,
+     "weighted_cost": 1139.7500000000082,
+     "objective": -0.0923827546047986,
+     "action_counts": {
+      "largest_increase": 385,
+      "largest_coefficient": 4
+     }
+    }
+   }
+  },
+  {
+   "idx": 30,
+   "phase1_nit": 675,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 310,
+     "weighted_cost": 310.0,
+     "objective": -0.07194412523298083
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 279,
+     "weighted_cost": 823.0500000000001,
+     "objective": -0.07194412523298113
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 247,
+     "weighted_cost": 456.95000000000005,
+     "objective": -0.07194412523298119
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 722,
+     "weighted_cost": 707.56,
+     "objective": -0.07194412523298233
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1139,
+     "weighted_cost": 1082.05,
+     "objective": -0.07194412523297744
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 310,
+     "weighted_cost": 310.0,
+     "objective": -0.07194412523298083,
+     "action_counts": {
+      "largest_coefficient": 310
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 279,
+     "weighted_cost": 821.1000000000033,
+     "objective": -0.07194412523298113,
+     "action_counts": {
+      "largest_increase": 278,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 31,
+   "phase1_nit": 603,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 605,
+     "weighted_cost": 605.0,
+     "objective": -0.08771205280556373
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 533,
+     "weighted_cost": 1572.3500000000001,
+     "objective": -0.08771205280556228
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 249,
+     "weighted_cost": 460.65000000000003,
+     "objective": -0.0877120528055672
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -299882063.3393408
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1460,
+     "weighted_cost": 1387.0,
+     "objective": -0.0877120528055344
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 605,
+     "weighted_cost": 605.0,
+     "objective": -0.08771205280556373,
+     "action_counts": {
+      "largest_coefficient": 605
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 528,
+     "weighted_cost": 1543.9500000000144,
+     "objective": -0.08771205280556198,
+     "action_counts": {
+      "largest_increase": 521,
+      "largest_coefficient": 7
+     }
+    }
+   }
+  },
+  {
+   "idx": 32,
+   "phase1_nit": 602,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 523,
+     "weighted_cost": 523.0,
+     "objective": -0.09794397462691758
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 443,
+     "weighted_cost": 1306.8500000000001,
+     "objective": -0.09794397462691573
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 248,
+     "weighted_cost": 458.8,
+     "objective": -0.09794397462674018
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -2763628766290278.0
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1363,
+     "weighted_cost": 1294.85,
+     "objective": -0.0979439746269695
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 523,
+     "weighted_cost": 523.0,
+     "objective": -0.09794397462691758,
+     "action_counts": {
+      "largest_coefficient": 523
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 443,
+     "weighted_cost": 1304.9000000000108,
+     "objective": -0.09794397462691573,
+     "action_counts": {
+      "largest_increase": 442,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 33,
+   "phase1_nit": 732,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 497,
+     "weighted_cost": 497.0,
+     "objective": -0.09098364457906936
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 375,
+     "weighted_cost": 1106.25,
+     "objective": -0.09098364457905501
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 201,
+     "weighted_cost": 371.85,
+     "objective": -0.09098364457905558
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 857,
+     "weighted_cost": 839.86,
+     "objective": -0.0909836445790552
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -567268663.8641785
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 497,
+     "weighted_cost": 497.0,
+     "objective": -0.09098364457906936,
+     "action_counts": {
+      "largest_coefficient": 497
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 575,
+     "weighted_cost": 1688.4500000000166,
+     "objective": -0.09098364457906583,
+     "action_counts": {
+      "largest_increase": 571,
+      "largest_coefficient": 4
+     }
+    }
+   }
+  },
+  {
+   "idx": 34,
+   "phase1_nit": 638,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 415,
+     "weighted_cost": 415.0,
+     "objective": -0.09853819818112919
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 326,
+     "weighted_cost": 961.7,
+     "objective": -0.0985381981811213
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 213,
+     "weighted_cost": 394.05,
+     "objective": -0.0985381981813016
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -1097386318645.7241
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1149,
+     "weighted_cost": 1091.55,
+     "objective": -0.09853819818028417
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 415,
+     "weighted_cost": 415.0,
+     "objective": -0.09853819818112919,
+     "action_counts": {
+      "largest_coefficient": 415
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 331,
+     "weighted_cost": 972.5500000000056,
+     "objective": -0.09853819818112125,
+     "action_counts": {
+      "largest_increase": 329,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 35,
+   "phase1_nit": 707,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 375,
+     "weighted_cost": 375.0,
+     "objective": -0.0659397235377502
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 191,
+     "weighted_cost": 563.45,
+     "objective": -0.06593972353763035
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 157,
+     "weighted_cost": 290.45,
+     "objective": -0.06593972353778578
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -5300767365250.232
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -1823445057740570.5
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 375,
+     "weighted_cost": 375.0,
+     "objective": -0.0659397235377502,
+     "action_counts": {
+      "largest_coefficient": 375
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 194,
+     "weighted_cost": 570.3499999999995,
+     "objective": -0.06593972353763025,
+     "action_counts": {
+      "largest_increase": 193,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 36,
+   "phase1_nit": 668,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 683,
+     "weighted_cost": 683.0,
+     "objective": -0.09214736051396841
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 431,
+     "weighted_cost": 1271.45,
+     "objective": -0.0921473605139563
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 261,
+     "weighted_cost": 482.85,
+     "objective": -0.09214736051395726
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -30007698238.700897
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -77235817618.37393
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 683,
+     "weighted_cost": 683.0,
+     "objective": -0.09214736051396841,
+     "action_counts": {
+      "largest_coefficient": 683
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 511,
+     "weighted_cost": 1499.6500000000137,
+     "objective": -0.09214736051395178,
+     "action_counts": {
+      "largest_increase": 507,
+      "largest_coefficient": 4
+     }
+    }
+   }
+  },
+  {
+   "idx": 37,
+   "phase1_nit": 703,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 475,
+     "weighted_cost": 475.0,
+     "objective": -0.08622062714452867
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 376,
+     "weighted_cost": 1109.2,
+     "objective": -0.08622062714452904
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 263,
+     "weighted_cost": 486.55,
+     "objective": -0.08622062714453256
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -231650448140577.66
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -1877421107736.7727
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 475,
+     "weighted_cost": 475.0,
+     "objective": -0.08622062714452867,
+     "action_counts": {
+      "largest_coefficient": 475
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 309,
+     "weighted_cost": 905.7000000000047,
+     "objective": -0.08622062714452325,
+     "action_counts": {
+      "largest_increase": 306,
+      "largest_coefficient": 3
+     }
+    }
+   }
+  },
+  {
+   "idx": 38,
+   "phase1_nit": 611,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 417,
+     "weighted_cost": 417.0,
+     "objective": -0.05829160265698266
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 532,
+     "weighted_cost": 1569.4,
+     "objective": -0.05829160265699009
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 308,
+     "weighted_cost": 569.8000000000001,
+     "objective": -0.058291602656872187
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -999200053219.8728
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 2293,
+     "weighted_cost": 2178.35,
+     "objective": -0.05829160265594342
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 417,
+     "weighted_cost": 420.4000000000001,
+     "objective": -0.05829160265698266,
+     "action_counts": {
+      "largest_coefficient": 413,
+      "steepest_edge": 4
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 532,
+     "weighted_cost": 1565.5000000000148,
+     "objective": -0.05829160265699009,
+     "action_counts": {
+      "largest_increase": 530,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 39,
+   "phase1_nit": 634,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 407,
+     "weighted_cost": 407.0,
+     "objective": -0.06563520468319531
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 447,
+     "weighted_cost": 1318.65,
+     "objective": -0.06563520468319692
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 294,
+     "weighted_cost": 543.9,
+     "objective": -0.06563520468319359
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -953299414917.3359
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1238,
+     "weighted_cost": 1176.1,
+     "objective": -0.06563520468324696
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 407,
+     "weighted_cost": 407.0,
+     "objective": -0.06563520468319531,
+     "action_counts": {
+      "largest_coefficient": 407
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 375,
+     "weighted_cost": 1100.4000000000076,
+     "objective": -0.06563520468319586,
+     "action_counts": {
+      "largest_increase": 372,
+      "largest_coefficient": 3
+     }
+    }
+   }
+  },
+  {
+   "idx": 40,
+   "phase1_nit": 670,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 451,
+     "weighted_cost": 451.0,
+     "objective": -0.07494579362583247
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 454,
+     "weighted_cost": 1339.3000000000002,
+     "objective": -0.07494579362583008
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 381,
+     "weighted_cost": 704.85,
+     "objective": -0.0749457936253425
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -511610046.6222694
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -144289779.21718484
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 451,
+     "weighted_cost": 451.0,
+     "objective": -0.07494579362583247,
+     "action_counts": {
+      "largest_coefficient": 451
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 454,
+     "weighted_cost": 1337.3500000000113,
+     "objective": -0.07494579362583006,
+     "action_counts": {
+      "largest_increase": 453,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 41,
+   "phase1_nit": 638,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 791,
+     "weighted_cost": 791.0,
+     "objective": -0.09290662183177059
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 562,
+     "weighted_cost": 1657.9,
+     "objective": -0.09290662183155324
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 519,
+     "weighted_cost": 960.1500000000001,
+     "objective": -0.09290662183808529
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -1436527704145997.5
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -3676545125812.5977
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 791,
+     "weighted_cost": 791.85,
+     "objective": -0.09290662183177062,
+     "action_counts": {
+      "largest_coefficient": 790,
+      "steepest_edge": 1
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 499,
+     "weighted_cost": 1470.1000000000133,
+     "objective": -0.09290662183159902,
+     "action_counts": {
+      "largest_increase": 498,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 42,
+   "phase1_nit": 629,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 589,
+     "weighted_cost": 589.0,
+     "objective": -0.03124294789777456
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 291,
+     "weighted_cost": 858.45,
+     "objective": -0.03124294789777397
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 221,
+     "weighted_cost": 408.85,
+     "objective": -0.031242947897774775
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 1120,
+     "weighted_cost": 1097.6,
+     "objective": -0.031242947897773928
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1251,
+     "weighted_cost": 1188.45,
+     "objective": -0.031242947897776967
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 589,
+     "weighted_cost": 589.0,
+     "objective": -0.03124294789777456,
+     "action_counts": {
+      "largest_coefficient": 589
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 258,
+     "weighted_cost": 759.1500000000024,
+     "objective": -0.031242947897774494,
+     "action_counts": {
+      "largest_increase": 257,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 43,
+   "phase1_nit": 656,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 711,
+     "weighted_cost": 711.0,
+     "objective": -0.09739202014734126
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 380,
+     "weighted_cost": 1121.0,
+     "objective": -0.09739202014734234
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 626,
+     "weighted_cost": 1158.1000000000001,
+     "objective": -0.09739202014873545
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -99406678677502.92
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -1791323889153.8604
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 701,
+     "weighted_cost": 702.7,
+     "objective": -0.09739202014734125,
+     "action_counts": {
+      "largest_coefficient": 699,
+      "steepest_edge": 2
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 436,
+     "weighted_cost": 1280.3500000000104,
+     "objective": -0.09739202014733418,
+     "action_counts": {
+      "largest_increase": 433,
+      "largest_coefficient": 3
+     }
+    }
+   }
+  },
+  {
+   "idx": 44,
+   "phase1_nit": 675,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 367,
+     "weighted_cost": 367.0,
+     "objective": -0.08653678705645255
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 497,
+     "weighted_cost": 1466.15,
+     "objective": -0.08653678705645024
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 200,
+     "weighted_cost": 370.0,
+     "objective": -0.08653678705645355
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -2387907165.2427416
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -6270342863.618973
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 367,
+     "weighted_cost": 367.0,
+     "objective": -0.08653678705645255,
+     "action_counts": {
+      "largest_coefficient": 367
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 520,
+     "weighted_cost": 1530.1000000000142,
+     "objective": -0.08653678705645061,
+     "action_counts": {
+      "largest_increase": 518,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 45,
+   "phase1_nit": 610,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 513,
+     "weighted_cost": 513.0,
+     "objective": -0.08832230284253591
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 594,
+     "weighted_cost": 1752.3000000000002,
+     "objective": -0.08832230284253585
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 289,
+     "weighted_cost": 534.65,
+     "objective": -0.08832230284253524
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -123302557.32505134
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -1004327110622.1938
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 513,
+     "weighted_cost": 513.85,
+     "objective": -0.08832230284253591,
+     "action_counts": {
+      "largest_coefficient": 512,
+      "steepest_edge": 1
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 452,
+     "weighted_cost": 1317.8000000000109,
+     "objective": -0.08832230284253682,
+     "action_counts": {
+      "largest_increase": 444,
+      "largest_coefficient": 8
+     }
+    }
+   }
+  },
+  {
+   "idx": 46,
+   "phase1_nit": 573,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 652,
+     "weighted_cost": 652.0,
+     "objective": -0.08031049816281706
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 592,
+     "weighted_cost": 1746.4,
+     "objective": -0.08031049816282199
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 364,
+     "weighted_cost": 673.4,
+     "objective": -0.08031049816257754
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -19435678510544.234
+    },
+    "blands_rule": {
+     "status": "loop",
+     "nit": 10450,
+     "weighted_cost": 9927.5,
+     "objective": -95218932919.37013
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 664,
+     "weighted_cost": 664.85,
+     "objective": -0.08031049816281674,
+     "action_counts": {
+      "largest_coefficient": 663,
+      "steepest_edge": 1
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 591,
+     "weighted_cost": 1737.6000000000174,
+     "objective": -0.08031049816285246,
+     "action_counts": {
+      "largest_increase": 588,
+      "largest_coefficient": 3
+     }
+    }
+   }
+  },
+  {
+   "idx": 47,
+   "phase1_nit": 714,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 296,
+     "weighted_cost": 296.0,
+     "objective": -0.07641201388056554
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 259,
+     "weighted_cost": 764.0500000000001,
+     "objective": -0.07641201388056396
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 170,
+     "weighted_cost": 314.5,
+     "objective": -0.07641201388056557
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -2945191206490.719
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 588,
+     "weighted_cost": 558.6,
+     "objective": -0.07641201388056365
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 296,
+     "weighted_cost": 296.0,
+     "objective": -0.07641201388056554,
+     "action_counts": {
+      "largest_coefficient": 296
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 241,
+     "weighted_cost": 709.0000000000016,
+     "objective": -0.07641201388056404,
+     "action_counts": {
+      "largest_increase": 240,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 48,
+   "phase1_nit": 596,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 549,
+     "weighted_cost": 549.0,
+     "objective": -0.0818650021792129
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 464,
+     "weighted_cost": 1368.8000000000002,
+     "objective": -0.08186500217921451
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 278,
+     "weighted_cost": 514.3000000000001,
+     "objective": -0.08186500217921437
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 1675,
+     "weighted_cost": 1641.5,
+     "objective": -0.0818650021797628
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1260,
+     "weighted_cost": 1197.0,
+     "objective": -0.08186500217884211
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 549,
+     "weighted_cost": 549.0,
+     "objective": -0.0818650021792129,
+     "action_counts": {
+      "largest_coefficient": 549
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 396,
+     "weighted_cost": 1158.4500000000085,
+     "objective": -0.08186500217921942,
+     "action_counts": {
+      "largest_increase": 391,
+      "largest_coefficient": 5
+     }
+    }
+   }
+  },
+  {
+   "idx": 49,
+   "phase1_nit": 660,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 663,
+     "weighted_cost": 663.0,
+     "objective": -0.09039422388362012
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 498,
+     "weighted_cost": 1469.1000000000001,
+     "objective": -0.09039422388361966
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 426,
+     "weighted_cost": 788.1,
+     "objective": -0.09039422388354204
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -3088208740.2480106
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1451,
+     "weighted_cost": 1378.45,
+     "objective": -0.09039422388341199
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 663,
+     "weighted_cost": 663.0,
+     "objective": -0.09039422388362012,
+     "action_counts": {
+      "largest_coefficient": 663
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 441,
+     "weighted_cost": 1289.2500000000105,
+     "objective": -0.09039422388362038,
+     "action_counts": {
+      "largest_increase": 435,
+      "largest_coefficient": 6
+     }
+    }
+   }
+  }
+ ],
+ "out_of_distribution": [
+  {
+   "idx": 0,
+   "phase1_nit": 655,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 498,
+     "weighted_cost": 498.0,
+     "objective": -0.12246828188204843
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 418,
+     "weighted_cost": 1233.1000000000001,
+     "objective": -0.12246828188200745
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 357,
+     "weighted_cost": 660.45,
+     "objective": -0.1224682818809767
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -348357638.1496172
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -117986.02436242312
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 498,
+     "weighted_cost": 498.0,
+     "objective": -0.12246828188204843,
+     "action_counts": {
+      "largest_coefficient": 498
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 415,
+     "weighted_cost": 1222.3000000000095,
+     "objective": -0.12246828188200279,
+     "action_counts": {
+      "largest_increase": 414,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 1,
+   "phase1_nit": 602,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 137,
+     "weighted_cost": 137.0,
+     "objective": 0.05483471964699457
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 191,
+     "weighted_cost": 563.45,
+     "objective": 0.054834719646995086
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 125,
+     "weighted_cost": 231.25,
+     "objective": 0.05483471964699277
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 608,
+     "weighted_cost": 595.84,
+     "objective": 0.05483471964693194
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 814,
+     "weighted_cost": 773.3,
+     "objective": 0.05483471964695531
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 137,
+     "weighted_cost": 137.0,
+     "objective": 0.05483471964699457,
+     "action_counts": {
+      "largest_coefficient": 137
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 181,
+     "weighted_cost": 530.0499999999989,
+     "objective": 0.05483471964699515,
+     "action_counts": {
+      "largest_increase": 179,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 2,
+   "phase1_nit": 657,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 378,
+     "weighted_cost": 378.0,
+     "objective": -0.0927241910802915
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 454,
+     "weighted_cost": 1339.3000000000002,
+     "objective": -0.09272419108029138
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 275,
+     "weighted_cost": 508.75,
+     "objective": -0.09272419108029414
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -5619245205.225729
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1458,
+     "weighted_cost": 1385.1,
+     "objective": -0.09272419108037397
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 378,
+     "weighted_cost": 378.0,
+     "objective": -0.0927241910802915,
+     "action_counts": {
+      "largest_coefficient": 378
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 429,
+     "weighted_cost": 1261.65000000001,
+     "objective": -0.0927241910802932,
+     "action_counts": {
+      "largest_increase": 427,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 3,
+   "phase1_nit": 641,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 438,
+     "weighted_cost": 438.0,
+     "objective": -0.06934815490333597
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 460,
+     "weighted_cost": 1357.0,
+     "objective": -0.06934815490332573
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 277,
+     "weighted_cost": 512.45,
+     "objective": -0.06934815490339503
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -330736630.03329027
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -1511651497060321.8
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 438,
+     "weighted_cost": 438.0,
+     "objective": -0.06934815490333597,
+     "action_counts": {
+      "largest_coefficient": 438
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 404,
+     "weighted_cost": 1182.0500000000088,
+     "objective": -0.06934815490333064,
+     "action_counts": {
+      "largest_increase": 399,
+      "largest_coefficient": 5
+     }
+    }
+   }
+  },
+  {
+   "idx": 4,
+   "phase1_nit": 688,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 504,
+     "weighted_cost": 504.0,
+     "objective": -0.0495621708807085
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 383,
+     "weighted_cost": 1129.8500000000001,
+     "objective": -0.04956217088070844
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 199,
+     "weighted_cost": 368.15000000000003,
+     "objective": -0.04956217088070895
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -10128861482020.074
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1275,
+     "weighted_cost": 1211.25,
+     "objective": -0.0495621708807081
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 513,
+     "weighted_cost": 519.8000000000002,
+     "objective": -0.04956217088070849,
+     "action_counts": {
+      "largest_coefficient": 505,
+      "steepest_edge": 8
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 366,
+     "weighted_cost": 1068.000000000007,
+     "objective": -0.04956217088070562,
+     "action_counts": {
+      "largest_increase": 360,
+      "largest_coefficient": 6
+     }
+    }
+   }
+  },
+  {
+   "idx": 5,
+   "phase1_nit": 670,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 299,
+     "weighted_cost": 299.0,
+     "objective": -0.06163395267064292
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 338,
+     "weighted_cost": 997.1,
+     "objective": -0.06163395267064226
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 189,
+     "weighted_cost": 349.65000000000003,
+     "objective": -0.06163395267064275
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 932,
+     "weighted_cost": 913.36,
+     "objective": -0.0616339526706477
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -1480561167.333973
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 299,
+     "weighted_cost": 299.0,
+     "objective": -0.06163395267064292,
+     "action_counts": {
+      "largest_coefficient": 299
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 348,
+     "weighted_cost": 1007.1000000000062,
+     "objective": -0.06163395267064148,
+     "action_counts": {
+      "largest_increase": 338,
+      "largest_coefficient": 10
+     }
+    }
+   }
+  },
+  {
+   "idx": 6,
+   "phase1_nit": 665,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 520,
+     "weighted_cost": 520.0,
+     "objective": -0.09556007991901429
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 374,
+     "weighted_cost": 1103.3,
+     "objective": -0.09556007991901555
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 195,
+     "weighted_cost": 360.75,
+     "objective": -0.09556007991901529
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -15305396811.302711
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -160299576243592.94
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 520,
+     "weighted_cost": 520.0,
+     "objective": -0.09556007991901429,
+     "action_counts": {
+      "largest_coefficient": 520
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 497,
+     "weighted_cost": 1464.2000000000132,
+     "objective": -0.0955600799190092,
+     "action_counts": {
+      "largest_increase": 496,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 7,
+   "phase1_nit": 648,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 395,
+     "weighted_cost": 395.0,
+     "objective": -0.09163729262067395
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 428,
+     "weighted_cost": 1262.6000000000001,
+     "objective": -0.09163729262066171
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 386,
+     "weighted_cost": 714.1,
+     "objective": -0.09163729262059817
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -4771185.862876482
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1279,
+     "weighted_cost": 1215.05,
+     "objective": -0.0916372926206767
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 395,
+     "weighted_cost": 395.0,
+     "objective": -0.09163729262067395,
+     "action_counts": {
+      "largest_coefficient": 395
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 397,
+     "weighted_cost": 1163.3500000000085,
+     "objective": -0.09163729262067424,
+     "action_counts": {
+      "largest_increase": 393,
+      "largest_coefficient": 4
+     }
+    }
+   }
+  },
+  {
+   "idx": 8,
+   "phase1_nit": 627,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 741,
+     "weighted_cost": 741.0,
+     "objective": -0.0929822271253691
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 535,
+     "weighted_cost": 1578.25,
+     "objective": -0.09298222712539109
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 425,
+     "weighted_cost": 786.25,
+     "objective": -0.09298222712547008
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -2606856933218.603
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -3706386387733.1787
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 741,
+     "weighted_cost": 741.0,
+     "objective": -0.0929822271253691,
+     "action_counts": {
+      "largest_coefficient": 741
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 465,
+     "weighted_cost": 1346.4000000000115,
+     "objective": -0.09298222712539944,
+     "action_counts": {
+      "largest_increase": 452,
+      "largest_coefficient": 13
+     }
+    }
+   }
+  },
+  {
+   "idx": 9,
+   "phase1_nit": 661,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 156,
+     "weighted_cost": 156.0,
+     "objective": 0.027993689030713288
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 131,
+     "weighted_cost": 386.45000000000005,
+     "objective": 0.02799368903070835
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 134,
+     "weighted_cost": 247.9,
+     "objective": 0.027993689030715228
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 645,
+     "weighted_cost": 632.1,
+     "objective": 0.027993689030696253
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -215139439.86937708
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 155,
+     "weighted_cost": 155.85,
+     "objective": 0.027993689030713288,
+     "action_counts": {
+      "largest_coefficient": 154,
+      "steepest_edge": 1
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 124,
+     "weighted_cost": 357.9999999999992,
+     "objective": 0.027993689030709118,
+     "action_counts": {
+      "largest_increase": 120,
+      "largest_coefficient": 4
+     }
+    }
+   }
+  },
+  {
+   "idx": 10,
+   "phase1_nit": 677,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 513,
+     "weighted_cost": 513.0,
+     "objective": -0.08646247912253124
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 451,
+     "weighted_cost": 1330.45,
+     "objective": -0.08646247912252535
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 258,
+     "weighted_cost": 477.3,
+     "objective": -0.08646247912252764
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -204854004459151.25
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -1863002451949.73
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 513,
+     "weighted_cost": 513.0,
+     "objective": -0.08646247912253124,
+     "action_counts": {
+      "largest_coefficient": 513
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 451,
+     "weighted_cost": 1324.600000000011,
+     "objective": -0.08646247912252536,
+     "action_counts": {
+      "largest_increase": 448,
+      "largest_coefficient": 3
+     }
+    }
+   }
+  },
+  {
+   "idx": 11,
+   "phase1_nit": 703,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 460,
+     "weighted_cost": 460.0,
+     "objective": -0.09502704448517632
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 483,
+     "weighted_cost": 1424.8500000000001,
+     "objective": -0.09502704448521201
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 270,
+     "weighted_cost": 499.5,
+     "objective": -0.0950270444852206
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -5472835.405320714
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1570,
+     "weighted_cost": 1491.5,
+     "objective": -0.09502704448522174
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 460,
+     "weighted_cost": 460.0,
+     "objective": -0.09502704448517632,
+     "action_counts": {
+      "largest_coefficient": 460
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 488,
+     "weighted_cost": 1435.7000000000128,
+     "objective": -0.0950270444852135,
+     "action_counts": {
+      "largest_increase": 486,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 12,
+   "phase1_nit": 666,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 196,
+     "weighted_cost": 196.0,
+     "objective": 0.006135022458531458
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 150,
+     "weighted_cost": 442.5,
+     "objective": 0.006135022458533614
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 167,
+     "weighted_cost": 308.95,
+     "objective": 0.006135022458531007
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -2323845932.019272
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -35926493299230.75
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 196,
+     "weighted_cost": 196.0,
+     "objective": 0.006135022458531458,
+     "action_counts": {
+      "largest_coefficient": 196
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 136,
+     "weighted_cost": 395.34999999999906,
+     "objective": 0.0061350224585342795,
+     "action_counts": {
+      "largest_increase": 133,
+      "largest_coefficient": 3
+     }
+    }
+   }
+  },
+  {
+   "idx": 13,
+   "phase1_nit": 653,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 468,
+     "weighted_cost": 468.0,
+     "objective": -0.07198839862512448
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 548,
+     "weighted_cost": 1616.6000000000001,
+     "objective": -0.07198839862516228
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 351,
+     "weighted_cost": 649.35,
+     "objective": -0.07198839862507095
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -245916.17778266783
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -133881477470666.05
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 468,
+     "weighted_cost": 468.85,
+     "objective": -0.07198839862512448,
+     "action_counts": {
+      "largest_coefficient": 467,
+      "steepest_edge": 1
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 548,
+     "weighted_cost": 1612.7000000000155,
+     "objective": -0.07198839862516228,
+     "action_counts": {
+      "largest_increase": 546,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 14,
+   "phase1_nit": 590,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 680,
+     "weighted_cost": 680.0,
+     "objective": -0.08652676408812687
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 731,
+     "weighted_cost": 2156.4500000000003,
+     "objective": -0.08652676408813814
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 312,
+     "weighted_cost": 577.2,
+     "objective": -0.0865267640881422
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -27596430203310.68
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -352619.6285368649
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 680,
+     "weighted_cost": 680.0,
+     "objective": -0.08652676408812687,
+     "action_counts": {
+      "largest_coefficient": 680
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 730,
+     "weighted_cost": 2148.5000000000164,
+     "objective": -0.08652676408813814,
+     "action_counts": {
+      "largest_increase": 727,
+      "largest_coefficient": 2,
+      "steepest_edge": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 15,
+   "phase1_nit": 613,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 613,
+     "weighted_cost": 613.0,
+     "objective": -0.1198560823128804
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 465,
+     "weighted_cost": 1371.75,
+     "objective": -0.11985608231286564
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 354,
+     "weighted_cost": 654.9,
+     "objective": -0.11985608231286335
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -411621185292.7176
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -298615121991.8025
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 613,
+     "weighted_cost": 613.0,
+     "objective": -0.1198560823128804,
+     "action_counts": {
+      "largest_coefficient": 613
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 465,
+     "weighted_cost": 1371.7500000000118,
+     "objective": -0.11985608231286564,
+     "action_counts": {
+      "largest_increase": 465
+     }
+    }
+   }
+  },
+  {
+   "idx": 16,
+   "phase1_nit": 672,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 447,
+     "weighted_cost": 447.0,
+     "objective": -0.095445151040234
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 515,
+     "weighted_cost": 1519.25,
+     "objective": -0.0954451510403339
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 220,
+     "weighted_cost": 407.0,
+     "objective": -0.09544515104023314
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -4186190.8551789997
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -234839253386898.34
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 447,
+     "weighted_cost": 447.0,
+     "objective": -0.095445151040234,
+     "action_counts": {
+      "largest_coefficient": 447
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 370,
+     "weighted_cost": 1085.6500000000074,
+     "objective": -0.09544515104025121,
+     "action_counts": {
+      "largest_increase": 367,
+      "largest_coefficient": 3
+     }
+    }
+   }
+  },
+  {
+   "idx": 17,
+   "phase1_nit": 677,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 338,
+     "weighted_cost": 338.0,
+     "objective": -0.08319059506701827
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 511,
+     "weighted_cost": 1507.45,
+     "objective": -0.08319059506700863
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 235,
+     "weighted_cost": 434.75,
+     "objective": -0.08319059506701784
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -100383779163.60861
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -42791963638.85306
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 338,
+     "weighted_cost": 338.0,
+     "objective": -0.08319059506701827,
+     "action_counts": {
+      "largest_coefficient": 338
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 479,
+     "weighted_cost": 1409.1500000000124,
+     "objective": -0.08319059506701615,
+     "action_counts": {
+      "largest_increase": 477,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 18,
+   "phase1_nit": 675,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 481,
+     "weighted_cost": 481.0,
+     "objective": -0.09735027717034582
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 470,
+     "weighted_cost": 1386.5,
+     "objective": -0.09735027717032467
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 259,
+     "weighted_cost": 479.15000000000003,
+     "objective": -0.09735027717034427
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -239585437.63892612
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -2756768518.099945
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 481,
+     "weighted_cost": 481.0,
+     "objective": -0.09735027717034582,
+     "action_counts": {
+      "largest_coefficient": 481
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 470,
+     "weighted_cost": 1382.600000000012,
+     "objective": -0.09735027717032467,
+     "action_counts": {
+      "largest_increase": 468,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 19,
+   "phase1_nit": 602,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 593,
+     "weighted_cost": 593.0,
+     "objective": -0.12114603590224708
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 420,
+     "weighted_cost": 1239.0,
+     "objective": -0.1211460359022612
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 292,
+     "weighted_cost": 540.2,
+     "objective": -0.12114603590225487
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -10678380893.993752
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -172142359.01436
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 587,
+     "weighted_cost": 591.2500000000001,
+     "objective": -0.12114603590224707,
+     "action_counts": {
+      "largest_coefficient": 582,
+      "steepest_edge": 5
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 422,
+     "weighted_cost": 1237.1000000000097,
+     "objective": -0.12114603590226138,
+     "action_counts": {
+      "largest_increase": 418,
+      "largest_coefficient": 4
+     }
+    }
+   }
+  },
+  {
+   "idx": 20,
+   "phase1_nit": 656,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 543,
+     "weighted_cost": 543.0,
+     "objective": -0.09629603672109653
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 290,
+     "weighted_cost": 855.5,
+     "objective": -0.09629603672109642
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 221,
+     "weighted_cost": 408.85,
+     "objective": -0.09629603672109664
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 1124,
+     "weighted_cost": 1101.52,
+     "objective": -0.09629603672111428
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1078,
+     "weighted_cost": 1024.1,
+     "objective": -0.09629603672109889
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 427,
+     "weighted_cost": 427.85,
+     "objective": -0.09629603672109678,
+     "action_counts": {
+      "largest_coefficient": 426,
+      "steepest_edge": 1
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 290,
+     "weighted_cost": 853.5500000000038,
+     "objective": -0.09629603672109642,
+     "action_counts": {
+      "largest_increase": 289,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 21,
+   "phase1_nit": 741,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 535,
+     "weighted_cost": 535.0,
+     "objective": -0.05924185800483646
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 360,
+     "weighted_cost": 1062.0,
+     "objective": -0.05924185800485418
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 180,
+     "weighted_cost": 333.0,
+     "objective": -0.05924185800482802
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -2087356147280.6475
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -548274718.0900345
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 535,
+     "weighted_cost": 535.0,
+     "objective": -0.05924185800483646,
+     "action_counts": {
+      "largest_coefficient": 535
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 384,
+     "weighted_cost": 1121.1000000000079,
+     "objective": -0.05924185800488563,
+     "action_counts": {
+      "largest_increase": 378,
+      "largest_coefficient": 6
+     }
+    }
+   }
+  },
+  {
+   "idx": 22,
+   "phase1_nit": 676,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 631,
+     "weighted_cost": 631.0,
+     "objective": -0.093657230318438
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 415,
+     "weighted_cost": 1224.25,
+     "objective": -0.093657230318438
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 359,
+     "weighted_cost": 664.15,
+     "objective": -0.09365723031555502
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -125765674813.75269
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -2508291918201.4473
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 631,
+     "weighted_cost": 631.0,
+     "objective": -0.093657230318438,
+     "action_counts": {
+      "largest_coefficient": 631
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 429,
+     "weighted_cost": 1259.70000000001,
+     "objective": -0.09365723031844018,
+     "action_counts": {
+      "largest_increase": 426,
+      "largest_coefficient": 3
+     }
+    }
+   }
+  },
+  {
+   "idx": 23,
+   "phase1_nit": 711,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 316,
+     "weighted_cost": 316.0,
+     "objective": -0.07353663943732403
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 335,
+     "weighted_cost": 988.2500000000001,
+     "objective": -0.0735366394373532
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 231,
+     "weighted_cost": 427.35,
+     "objective": -0.07353663943735513
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -9058907971.564127
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -48205755912.75163
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 316,
+     "weighted_cost": 316.0,
+     "objective": -0.07353663943732403,
+     "action_counts": {
+      "largest_coefficient": 316
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 452,
+     "weighted_cost": 1327.550000000011,
+     "objective": -0.07353663943733472,
+     "action_counts": {
+      "largest_increase": 449,
+      "largest_coefficient": 3
+     }
+    }
+   }
+  },
+  {
+   "idx": 24,
+   "phase1_nit": 686,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 327,
+     "weighted_cost": 327.0,
+     "objective": -0.12253343803461958
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 328,
+     "weighted_cost": 967.6,
+     "objective": -0.12253343803461418
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 195,
+     "weighted_cost": 360.75,
+     "objective": -0.12253343803461275
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -117504669.57622805
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1031,
+     "weighted_cost": 979.4499999999999,
+     "objective": -0.12253343803456482
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 327,
+     "weighted_cost": 327.0,
+     "objective": -0.12253343803461958,
+     "action_counts": {
+      "largest_coefficient": 327
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 328,
+     "weighted_cost": 967.6000000000056,
+     "objective": -0.12253343803461418,
+     "action_counts": {
+      "largest_increase": 328
+     }
+    }
+   }
+  },
+  {
+   "idx": 25,
+   "phase1_nit": 660,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 402,
+     "weighted_cost": 402.0,
+     "objective": -0.06651333396261841
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 367,
+     "weighted_cost": 1082.65,
+     "objective": -0.06651333396262125
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 232,
+     "weighted_cost": 429.20000000000005,
+     "objective": -0.06651333396265154
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 1107,
+     "weighted_cost": 1084.86,
+     "objective": -0.06651333396421596
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1479,
+     "weighted_cost": 1405.05,
+     "objective": -0.06651333396242019
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 402,
+     "weighted_cost": 402.0,
+     "objective": -0.06651333396261841,
+     "action_counts": {
+      "largest_coefficient": 402
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 386,
+     "weighted_cost": 1132.850000000008,
+     "objective": -0.06651333396261716,
+     "action_counts": {
+      "largest_increase": 383,
+      "largest_coefficient": 3
+     }
+    }
+   }
+  },
+  {
+   "idx": 26,
+   "phase1_nit": 622,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 504,
+     "weighted_cost": 504.0,
+     "objective": -0.08445123576339986
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 437,
+     "weighted_cost": 1289.15,
+     "objective": -0.08445123576339038
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 459,
+     "weighted_cost": 849.1500000000001,
+     "objective": -0.08445123576321145
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -93373302351.30293
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -160358335437353.53
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 504,
+     "weighted_cost": 504.0,
+     "objective": -0.08445123576339986,
+     "action_counts": {
+      "largest_coefficient": 504
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 437,
+     "weighted_cost": 1281.3500000000104,
+     "objective": -0.08445123576339587,
+     "action_counts": {
+      "largest_increase": 433,
+      "largest_coefficient": 4
+     }
+    }
+   }
+  },
+  {
+   "idx": 27,
+   "phase1_nit": 624,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 372,
+     "weighted_cost": 372.0,
+     "objective": -0.12233750274734419
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 481,
+     "weighted_cost": 1418.95,
+     "objective": -0.12233750274734474
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 296,
+     "weighted_cost": 547.6,
+     "objective": -0.1223375027473457
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 1517,
+     "weighted_cost": 1486.66,
+     "objective": -0.122337502747582
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1466,
+     "weighted_cost": 1392.7,
+     "objective": -0.1223375027474156
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 372,
+     "weighted_cost": 372.0,
+     "objective": -0.12233750274734419,
+     "action_counts": {
+      "largest_coefficient": 372
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 426,
+     "weighted_cost": 1252.80000000001,
+     "objective": -0.12233750274734466,
+     "action_counts": {
+      "largest_increase": 424,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 28,
+   "phase1_nit": 688,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 580,
+     "weighted_cost": 580.0,
+     "objective": -0.08612873763347369
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 478,
+     "weighted_cost": 1410.1000000000001,
+     "objective": -0.08612873763348167
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 212,
+     "weighted_cost": 392.20000000000005,
+     "objective": -0.08612873763348358
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -221495334951.71582
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -181753865521639.75
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 580,
+     "weighted_cost": 580.0,
+     "objective": -0.08612873763347369,
+     "action_counts": {
+      "largest_coefficient": 580
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 368,
+     "weighted_cost": 1077.8000000000072,
+     "objective": -0.08612873763348018,
+     "action_counts": {
+      "largest_increase": 364,
+      "largest_coefficient": 4
+     }
+    }
+   }
+  },
+  {
+   "idx": 29,
+   "phase1_nit": 671,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 533,
+     "weighted_cost": 533.0,
+     "objective": -0.04870211412916551
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 466,
+     "weighted_cost": 1374.7,
+     "objective": -0.04870211412915297
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 378,
+     "weighted_cost": 699.3000000000001,
+     "objective": -0.04870211413513708
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -527268905.4974227
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1425,
+     "weighted_cost": 1353.75,
+     "objective": -0.04870211412920818
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 533,
+     "weighted_cost": 533.0,
+     "objective": -0.04870211412916551,
+     "action_counts": {
+      "largest_coefficient": 533
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 409,
+     "weighted_cost": 1200.7000000000091,
+     "objective": -0.0487021141291552,
+     "action_counts": {
+      "largest_increase": 406,
+      "largest_coefficient": 3
+     }
+    }
+   }
+  },
+  {
+   "idx": 30,
+   "phase1_nit": 691,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 380,
+     "weighted_cost": 380.0,
+     "objective": -0.09779430148130827
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 404,
+     "weighted_cost": 1191.8000000000002,
+     "objective": -0.09779430148131141
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 435,
+     "weighted_cost": 804.75,
+     "objective": -0.09779430148161006
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 1392,
+     "weighted_cost": 1364.16,
+     "objective": -0.09779430148122861
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1045,
+     "weighted_cost": 992.75,
+     "objective": -0.09779430148139594
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 380,
+     "weighted_cost": 380.0,
+     "objective": -0.09779430148130827,
+     "action_counts": {
+      "largest_coefficient": 380
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 404,
+     "weighted_cost": 1187.900000000009,
+     "objective": -0.09779430148131141,
+     "action_counts": {
+      "largest_increase": 402,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 31,
+   "phase1_nit": 677,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 334,
+     "weighted_cost": 334.0,
+     "objective": -0.1085639539692007
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 333,
+     "weighted_cost": 982.35,
+     "objective": -0.10856395396920039
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 197,
+     "weighted_cost": 364.45000000000005,
+     "objective": -0.10856395396920038
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 798,
+     "weighted_cost": 782.04,
+     "objective": -0.10856395396919828
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -28648427359324.625
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 334,
+     "weighted_cost": 334.0,
+     "objective": -0.1085639539692007,
+     "action_counts": {
+      "largest_coefficient": 334
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 490,
+     "weighted_cost": 1439.6500000000128,
+     "objective": -0.10856395396919932,
+     "action_counts": {
+      "largest_increase": 487,
+      "largest_coefficient": 3
+     }
+    }
+   }
+  },
+  {
+   "idx": 32,
+   "phase1_nit": 621,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 526,
+     "weighted_cost": 526.0,
+     "objective": -0.08978576670698755
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 483,
+     "weighted_cost": 1424.8500000000001,
+     "objective": -0.08978576670698785
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 274,
+     "weighted_cost": 506.90000000000003,
+     "objective": -0.08978576670697123
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 1282,
+     "weighted_cost": 1256.36,
+     "objective": -0.08978576670763797
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1243,
+     "weighted_cost": 1180.85,
+     "objective": -0.08978576670701649
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 526,
+     "weighted_cost": 526.0,
+     "objective": -0.08978576670698755,
+     "action_counts": {
+      "largest_coefficient": 526
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 574,
+     "weighted_cost": 1669.9000000000165,
+     "objective": -0.0897857667069876,
+     "action_counts": {
+      "largest_increase": 562,
+      "largest_coefficient": 12
+     }
+    }
+   }
+  },
+  {
+   "idx": 33,
+   "phase1_nit": 610,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 740,
+     "weighted_cost": 740.0,
+     "objective": -0.023634643837082577
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 493,
+     "weighted_cost": 1454.3500000000001,
+     "objective": -0.023634643837078546
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 259,
+     "weighted_cost": 479.15000000000003,
+     "objective": -0.023634643837084413
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -930521144670.9922
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1297,
+     "weighted_cost": 1232.1499999999999,
+     "objective": -0.02363464383675004
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 740,
+     "weighted_cost": 740.0,
+     "objective": -0.023634643837082577,
+     "action_counts": {
+      "largest_coefficient": 740
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 414,
+     "weighted_cost": 1211.5500000000093,
+     "objective": -0.023634643837083823,
+     "action_counts": {
+      "largest_increase": 409,
+      "largest_coefficient": 5
+     }
+    }
+   }
+  },
+  {
+   "idx": 34,
+   "phase1_nit": 677,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 495,
+     "weighted_cost": 495.0,
+     "objective": -0.08626151794816489
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 386,
+     "weighted_cost": 1138.7,
+     "objective": -0.08626151794814761
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 299,
+     "weighted_cost": 553.15,
+     "objective": -0.08626151794808593
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -778034365119.6497
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -112869658771.72754
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 495,
+     "weighted_cost": 495.0,
+     "objective": -0.08626151794816489,
+     "action_counts": {
+      "largest_coefficient": 495
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 351,
+     "weighted_cost": 1023.7500000000065,
+     "objective": -0.08626151794809565,
+     "action_counts": {
+      "largest_increase": 345,
+      "largest_coefficient": 6
+     }
+    }
+   }
+  },
+  {
+   "idx": 35,
+   "phase1_nit": 587,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 201,
+     "weighted_cost": 201.0,
+     "objective": 0.054138617811465076
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 216,
+     "weighted_cost": 637.2,
+     "objective": 0.05413861781143387
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 176,
+     "weighted_cost": 325.6,
+     "objective": 0.05413861781147474
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 779,
+     "weighted_cost": 763.42,
+     "objective": 0.05413861781128957
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 978,
+     "weighted_cost": 929.0999999999999,
+     "objective": 0.05413861781129983
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 201,
+     "weighted_cost": 201.0,
+     "objective": 0.054138617811465076,
+     "action_counts": {
+      "largest_coefficient": 201
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 221,
+     "weighted_cost": 648.0500000000006,
+     "objective": 0.054138617811462016,
+     "action_counts": {
+      "largest_increase": 219,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 36,
+   "phase1_nit": 588,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 579,
+     "weighted_cost": 579.0,
+     "objective": -0.11878811081396945
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 591,
+     "weighted_cost": 1743.45,
+     "objective": -0.11878811081397231
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 311,
+     "weighted_cost": 575.35,
+     "objective": -0.11878811081398535
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -9139738621.995937
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -2453445.7422942594
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 579,
+     "weighted_cost": 581.5500000000001,
+     "objective": -0.11878811081396945,
+     "action_counts": {
+      "largest_coefficient": 576,
+      "steepest_edge": 3
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 591,
+     "weighted_cost": 1741.5000000000175,
+     "objective": -0.11878811081397231,
+     "action_counts": {
+      "largest_increase": 590,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 37,
+   "phase1_nit": 633,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 379,
+     "weighted_cost": 379.0,
+     "objective": -0.06128934721756982
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 313,
+     "weighted_cost": 923.35,
+     "objective": -0.061289347217570685
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 218,
+     "weighted_cost": 403.3,
+     "objective": -0.06128934721757002
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 960,
+     "weighted_cost": 940.8,
+     "objective": -0.06128934721757753
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1194,
+     "weighted_cost": 1134.3,
+     "objective": -0.06128934721762309
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 379,
+     "weighted_cost": 379.0,
+     "objective": -0.06128934721756982,
+     "action_counts": {
+      "largest_coefficient": 379
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 313,
+     "weighted_cost": 917.5000000000048,
+     "objective": -0.061289347217570685,
+     "action_counts": {
+      "largest_increase": 310,
+      "largest_coefficient": 3
+     }
+    }
+   }
+  },
+  {
+   "idx": 38,
+   "phase1_nit": 602,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 496,
+     "weighted_cost": 496.0,
+     "objective": -0.12197203253281594
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 539,
+     "weighted_cost": 1590.0500000000002,
+     "objective": -0.12197203253281946
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 407,
+     "weighted_cost": 752.95,
+     "objective": -0.12197203253270675
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -353088669413.6856
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -6715275695411.838
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 496,
+     "weighted_cost": 496.0,
+     "objective": -0.12197203253281594,
+     "action_counts": {
+      "largest_coefficient": 496
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 555,
+     "weighted_cost": 1633.3500000000158,
+     "objective": -0.12197203253281926,
+     "action_counts": {
+      "largest_increase": 553,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 39,
+   "phase1_nit": 644,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 419,
+     "weighted_cost": 419.0,
+     "objective": -0.08439830147521962
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 333,
+     "weighted_cost": 982.35,
+     "objective": -0.08439830147521904
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 253,
+     "weighted_cost": 468.05,
+     "objective": -0.08439830147521937
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -6697882523065.57
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1349,
+     "weighted_cost": 1281.55,
+     "objective": -0.08439830147530217
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 419,
+     "weighted_cost": 419.0,
+     "objective": -0.08439830147521962,
+     "action_counts": {
+      "largest_coefficient": 419
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 341,
+     "weighted_cost": 996.2000000000061,
+     "objective": -0.08439830147521885,
+     "action_counts": {
+      "largest_increase": 336,
+      "largest_coefficient": 5
+     }
+    }
+   }
+  },
+  {
+   "idx": 40,
+   "phase1_nit": 610,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 536,
+     "weighted_cost": 536.0,
+     "objective": -0.08813241065121212
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 507,
+     "weighted_cost": 1495.65,
+     "objective": -0.08813241065121062
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 262,
+     "weighted_cost": 484.70000000000005,
+     "objective": -0.08813241065121039
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -65014412786.86194
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -5631644595.208777
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 534,
+     "weighted_cost": 534.85,
+     "objective": -0.08813241065121213,
+     "action_counts": {
+      "largest_coefficient": 533,
+      "steepest_edge": 1
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 476,
+     "weighted_cost": 1384.7000000000119,
+     "objective": -0.08813241065121168,
+     "action_counts": {
+      "largest_increase": 466,
+      "largest_coefficient": 10
+     }
+    }
+   }
+  },
+  {
+   "idx": 41,
+   "phase1_nit": 603,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 547,
+     "weighted_cost": 547.0,
+     "objective": -0.12107875576947671
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 444,
+     "weighted_cost": 1309.8000000000002,
+     "objective": -0.12107875576948623
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 295,
+     "weighted_cost": 545.75,
+     "objective": -0.1210787557694625
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -18727061.553387716
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1464,
+     "weighted_cost": 1390.8,
+     "objective": -0.12107875576818217
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 549,
+     "weighted_cost": 549.85,
+     "objective": -0.12107875576947671,
+     "action_counts": {
+      "largest_coefficient": 548,
+      "steepest_edge": 1
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 444,
+     "weighted_cost": 1307.8500000000108,
+     "objective": -0.12107875576948623,
+     "action_counts": {
+      "largest_increase": 443,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 42,
+   "phase1_nit": 674,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 451,
+     "weighted_cost": 451.0,
+     "objective": -0.09598626448934662
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 447,
+     "weighted_cost": 1318.65,
+     "objective": -0.09598626448934325
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 242,
+     "weighted_cost": 447.70000000000005,
+     "objective": -0.09598626448934608
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 810,
+     "weighted_cost": 793.8,
+     "objective": -0.09598626448935323
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -204427395258.2705
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 451,
+     "weighted_cost": 451.0,
+     "objective": -0.09598626448934662,
+     "action_counts": {
+      "largest_coefficient": 451
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 358,
+     "weighted_cost": 1054.150000000007,
+     "objective": -0.09598626448934616,
+     "action_counts": {
+      "largest_increase": 357,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 43,
+   "phase1_nit": 684,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 449,
+     "weighted_cost": 449.0,
+     "objective": -0.09330307470390477
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 333,
+     "weighted_cost": 982.35,
+     "objective": -0.09330307470390126
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 236,
+     "weighted_cost": 436.6,
+     "objective": -0.09330307470390437
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -81922112869.43246
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -16404609663.980534
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 449,
+     "weighted_cost": 449.0,
+     "objective": -0.09330307470390477,
+     "action_counts": {
+      "largest_coefficient": 449
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 316,
+     "weighted_cost": 930.250000000005,
+     "objective": -0.09330307470390026,
+     "action_counts": {
+      "largest_increase": 315,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  },
+  {
+   "idx": 44,
+   "phase1_nit": 639,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 697,
+     "weighted_cost": 697.0,
+     "objective": -0.09865256721372094
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 325,
+     "weighted_cost": 958.7500000000001,
+     "objective": -0.09865256721366858
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 289,
+     "weighted_cost": 534.65,
+     "objective": -0.09865256721370239
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -11453551783.25027
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1154,
+     "weighted_cost": 1096.3,
+     "objective": -0.09865256721350209
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 697,
+     "weighted_cost": 697.0,
+     "objective": -0.09865256721372094,
+     "action_counts": {
+      "largest_coefficient": 697
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 372,
+     "weighted_cost": 1089.6000000000074,
+     "objective": -0.09865256721366814,
+     "action_counts": {
+      "largest_increase": 368,
+      "largest_coefficient": 4
+     }
+    }
+   }
+  },
+  {
+   "idx": 45,
+   "phase1_nit": 646,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 559,
+     "weighted_cost": 559.0,
+     "objective": -0.07093691231125512
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 480,
+     "weighted_cost": 1416.0,
+     "objective": -0.07093691231125192
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 358,
+     "weighted_cost": 662.3000000000001,
+     "objective": -0.0709369123112653
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -196421935504.5236
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1554,
+     "weighted_cost": 1476.3,
+     "objective": -0.07093691231153491
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 559,
+     "weighted_cost": 559.0,
+     "objective": -0.07093691231125512,
+     "action_counts": {
+      "largest_coefficient": 559
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 519,
+     "weighted_cost": 1517.400000000014,
+     "objective": -0.07093691231125022,
+     "action_counts": {
+      "largest_increase": 512,
+      "largest_coefficient": 7
+     }
+    }
+   }
+  },
+  {
+   "idx": 46,
+   "phase1_nit": 661,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 558,
+     "weighted_cost": 558.0,
+     "objective": -0.1095233824576306
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 437,
+     "weighted_cost": 1289.15,
+     "objective": -0.10952338245750695
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 270,
+     "weighted_cost": 499.5,
+     "objective": -0.10952338245763532
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -3871578220.01915
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1255,
+     "weighted_cost": 1192.25,
+     "objective": -0.10952338245762268
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 558,
+     "weighted_cost": 558.0,
+     "objective": -0.1095233824576306,
+     "action_counts": {
+      "largest_coefficient": 558
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 390,
+     "weighted_cost": 1142.7000000000082,
+     "objective": -0.10952338245763252,
+     "action_counts": {
+      "largest_increase": 386,
+      "largest_coefficient": 4
+     }
+    }
+   }
+  },
+  {
+   "idx": 47,
+   "phase1_nit": 664,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 246,
+     "weighted_cost": 246.0,
+     "objective": -0.017102460788571888
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 233,
+     "weighted_cost": 687.35,
+     "objective": -0.017102460788579663
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 147,
+     "weighted_cost": 271.95,
+     "objective": -0.017102460788570775
+    },
+    "random_edge": {
+     "status": "optimal",
+     "nit": 1316,
+     "weighted_cost": 1289.68,
+     "objective": -0.01710246078870644
+    },
+    "blands_rule": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -175637274.94850767
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 246,
+     "weighted_cost": 246.0,
+     "objective": -0.017102460788571888,
+     "action_counts": {
+      "largest_coefficient": 246
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 207,
+     "weighted_cost": 604.8000000000001,
+     "objective": -0.017102460788575486,
+     "action_counts": {
+      "largest_increase": 204,
+      "largest_coefficient": 3
+     }
+    }
+   }
+  },
+  {
+   "idx": 48,
+   "phase1_nit": 610,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 567,
+     "weighted_cost": 567.0,
+     "objective": -0.12252825966666014
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 565,
+     "weighted_cost": 1666.75,
+     "objective": -0.12252825966666066
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 276,
+     "weighted_cost": 510.6,
+     "objective": -0.12252825966666848
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -6520505570.646173
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1690,
+     "weighted_cost": 1605.5,
+     "objective": -0.12252825966604101
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 567,
+     "weighted_cost": 567.85,
+     "objective": -0.12252825966666014,
+     "action_counts": {
+      "largest_coefficient": 566,
+      "steepest_edge": 1
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 565,
+     "weighted_cost": 1662.8500000000163,
+     "objective": -0.12252825966666066,
+     "action_counts": {
+      "largest_increase": 563,
+      "largest_coefficient": 2
+     }
+    }
+   }
+  },
+  {
+   "idx": 49,
+   "phase1_nit": 616,
+   "fixed": {
+    "largest_coefficient": {
+     "status": "optimal",
+     "nit": 496,
+     "weighted_cost": 496.0,
+     "objective": -0.12187988430758395
+    },
+    "largest_increase": {
+     "status": "optimal",
+     "nit": 416,
+     "weighted_cost": 1227.2,
+     "objective": -0.12187988430757707
+    },
+    "steepest_edge": {
+     "status": "optimal",
+     "nit": 313,
+     "weighted_cost": 579.0500000000001,
+     "objective": -0.12187988430766698
+    },
+    "random_edge": {
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19600.0,
+     "objective": -3023731400249.722
+    },
+    "blands_rule": {
+     "status": "optimal",
+     "nit": 1740,
+     "weighted_cost": 1653.0,
+     "objective": -0.12187988430702565
+    }
+   },
+   "rl": {
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip": {
+     "status": "optimal",
+     "nit": 496,
+     "weighted_cost": 496.85,
+     "objective": -0.12187988430758397,
+     "action_counts": {
+      "largest_coefficient": 495,
+      "steepest_edge": 1
+     }
+    },
+    "ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip": {
+     "status": "optimal",
+     "nit": 396,
+     "weighted_cost": 1166.2500000000086,
+     "objective": -0.12187988430757536,
+     "action_counts": {
+      "largest_increase": 395,
+      "largest_coefficient": 1
+     }
+    }
+   }
+  }
+ ]
+}

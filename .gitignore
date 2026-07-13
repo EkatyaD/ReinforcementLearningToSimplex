@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+
+# Transient training output (models are checkpointed here by train.py).
+# Root-anchored so it does NOT match the committed results/*/models/ dirs.
+/models/
+
+# Alternative-algorithm experiments (DQN/SAC) — kept locally, out of submission
+experimental/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db

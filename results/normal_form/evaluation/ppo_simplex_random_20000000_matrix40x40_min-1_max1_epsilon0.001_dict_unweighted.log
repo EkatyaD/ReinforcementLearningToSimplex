@@ -1,0 +1,211 @@
+Model: ppo_simplex_random_20000000_matrix40x40_min-1_max1_epsilon0.001_dict_unweighted
+USE_COMPACT_OBS = False
+N_MATRICES = 200, SEED = 42
+Tested strategies: ['largest_coefficient', 'largest_increase', 'steepest_edge', 'random_edge', 'blands_rule']
+Loading model: final_models/ppo_simplex_random_20000000_matrix40x40_min-1_max1_epsilon0.001_dict_unweighted
+
+============================================================
+  IN DISTRIBUTION (200 matrices)
+============================================================
+  Completed 50/200
+  Completed 100/200
+  Completed 150/200
+  Completed 200/200
+  Done: 200 matrices solved
+
+============================================================
+  OUT OF DISTRIBUTION (200 matrices)
+============================================================
+  Completed 50/200
+  Completed 100/200
+  Completed 150/200
+  Completed 200/200
+  Done: 200 matrices solved
+
+============================================================
+  RESULTS: IN DISTRIBUTION (200 matrices)
+============================================================
+
+  Convergence rates:
+    largest_coefficient      :  200/200 (100.0%)
+    largest_increase         :  200/200 (100.0%)
+    steepest_edge            :  200/200 (100.0%)
+    random_edge              :  200/200 (100.0%)
+    blands_rule              :  200/200 (100.0%)
+    RL Agent                 :  200/200 (100.0%)
+
+  --- Pivot count ---
+    Method                         Mean    Median      Min      Max     N
+    largest_coefficient           61.74     60.00    31.00    98.00   200
+    largest_increase              44.42     44.00    28.00    74.00   200
+    steepest_edge                 32.72     32.00    25.00    48.00   200
+    random_edge                  121.53    121.00    79.00   184.00   200
+    blands_rule                  143.26    145.00    89.00   204.00   200
+    RL Agent                      26.28     25.00    20.00    49.00   200
+
+    Head-to-head: RL Agent vs each heuristic (Pivot count)
+    Heuristic                  RL wins     Ties  RL loses   N/A
+    largest_coefficient            200        0         0     0
+      Wilcoxon p=0.000000 (RL better)
+    largest_increase               194        2         4     0
+      Wilcoxon p=0.000000 (RL better)
+    steepest_edge                  185        3        12     0
+      Wilcoxon p=0.000000 (RL better)
+    random_edge                    200        0         0     0
+      Wilcoxon p=0.000000 (RL better)
+    blands_rule                    200        0         0     0
+      Wilcoxon p=0.000000 (RL better)
+
+    Pivot count reduction: RL Agent vs each heuristic (paired both-converged)
+    Heuristic                   Mean %  Median %    Mean abs   P25 %   P75 %     N
+    largest_coefficient         +55.5%    +57.6%     +35.46  +48.9%  +64.9%   200
+    largest_increase            +38.8%    +42.4%     +18.14  +32.0%  +51.0%   200
+    steepest_edge               +19.0%    +20.0%      +6.43  +13.3%  +28.9%   200
+    random_edge                 +77.9%    +78.6%     +95.25  +75.5%  +81.6%   200
+    blands_rule                 +81.2%    +82.2%    +116.98  +79.4%  +84.5%   200
+
+    Pivot count reduction: RL Agent vs best heuristic per instance
+      Mean reduction:   +17.5%  (+5.77)
+      Median reduction: +18.6%  (+6.00)
+      P25 / P75:        +12.1% / +26.3%
+      Paired instances: 200
+
+    Win/Tie/Loss: RL Agent vs best heuristic per instance (Pivot count):
+      Wins:  183  Ties:    3  Losses:   14  N/A:    0
+      Win rate: 91.5%  Win+Tie rate: 93.0%
+
+  --- Weighted cost (sum of STEP_PENALTY_WEIGHTS) ---
+    Method                         Mean    Median      Min      Max     N
+    largest_coefficient           61.74     60.00    31.00    98.00   200
+    largest_increase             140.83    139.48    88.76   234.58   200
+    steepest_edge                 61.83     60.48    47.25    90.72   200
+    random_edge                  109.37    108.90    71.10   165.60   200
+    blands_rule                   94.55     95.70    58.74   134.64   200
+    RL Agent                      51.03     48.84    37.19    96.90   200
+
+    Head-to-head: RL Agent vs each heuristic (Weighted cost (sum of STEP_PENALTY_WEIGHTS))
+    Heuristic                  RL wins     Ties  RL loses   N/A
+    largest_coefficient            156        0        44     0
+      Wilcoxon p=0.000000 (RL better)
+    largest_increase               200        0         0     0
+      Wilcoxon p=0.000000 (RL better)
+    steepest_edge                  179        0        21     0
+      Wilcoxon p=0.000000 (RL better)
+    random_edge                    200        0         0     0
+      Wilcoxon p=0.000000 (RL better)
+    blands_rule                    198        0         2     0
+      Wilcoxon p=0.000000 (RL better)
+
+    Weighted cost (sum of STEP_PENALTY_WEIGHTS) reduction: RL Agent vs each heuristic (paired both-converged)
+    Heuristic                   Mean %  Median %    Mean abs   P25 %   P75 %     N
+    largest_coefficient         +13.6%    +17.8%     +10.71   +3.8%  +32.9%   200
+    largest_increase            +62.6%    +65.0%     +89.80  +58.3%  +69.4%   200
+    steepest_edge               +16.6%    +17.0%     +10.80   +7.9%  +28.6%   200
+    random_edge                 +52.3%    +53.9%     +58.34  +47.5%  +60.0%   200
+    blands_rule                 +44.6%    +48.1%     +43.52  +39.7%  +54.0%   200
+
+    Weighted cost (sum of STEP_PENALTY_WEIGHTS) reduction: RL Agent vs best heuristic per instance
+      Mean reduction:   +6.3%  (+4.40)
+      Median reduction: +10.9%  (+5.88)
+      P25 / P75:        -0.1% / +19.4%
+      Paired instances: 200
+
+    Win/Tie/Loss: RL Agent vs best heuristic per instance (Weighted cost (sum of STEP_PENALTY_WEIGHTS)):
+      Wins:  148  Ties:    0  Losses:   52  N/A:    0
+      Win rate: 74.0%  Win+Tie rate: 74.0%
+
+  Game value consistency: all methods agree within 1e-4
+
+============================================================
+  RESULTS: OUT OF DISTRIBUTION (200 matrices)
+============================================================
+
+  Convergence rates:
+    largest_coefficient      :  200/200 (100.0%)
+    largest_increase         :  200/200 (100.0%)
+    steepest_edge            :  200/200 (100.0%)
+    random_edge              :  200/200 (100.0%)
+    blands_rule              :  200/200 (100.0%)
+    RL Agent                 :  200/200 (100.0%)
+
+  --- Pivot count ---
+    Method                         Mean    Median      Min      Max     N
+    largest_coefficient           59.62     58.00    36.00    94.00   200
+    largest_increase              47.97     46.00    30.00   104.00   200
+    steepest_edge                 37.04     37.00    19.00    57.00   200
+    random_edge                  122.05    119.00    74.00   181.00   200
+    blands_rule                  165.55    163.00    89.00   285.00   200
+    RL Agent                      43.95     44.00    19.00    72.00   200
+
+    Head-to-head: RL Agent vs each heuristic (Pivot count)
+    Heuristic                  RL wins     Ties  RL loses   N/A
+    largest_coefficient            182        2        16     0
+      Wilcoxon p=0.000000 (RL better)
+    largest_increase               123        5        72     0
+      Wilcoxon p=0.000003 (RL better)
+    steepest_edge                   32        7       161     0
+      Wilcoxon p=0.000000 (Heuristic better)
+    random_edge                    200        0         0     0
+      Wilcoxon p=0.000000 (RL better)
+    blands_rule                    200        0         0     0
+      Wilcoxon p=0.000000 (RL better)
+
+    Pivot count reduction: RL Agent vs each heuristic (paired both-converged)
+    Heuristic                   Mean %  Median %    Mean abs   P25 %   P75 %     N
+    largest_coefficient         +24.4%    +26.0%     +15.67  +13.9%  +36.6%   200
+    largest_increase             +5.6%     +7.0%      +4.02   -9.0%  +21.1%   200
+    steepest_edge               -20.4%    -15.7%      -6.91  -32.4%   -3.1%   200
+    random_edge                 +63.1%    +64.0%     +78.10  +57.9%  +69.0%   200
+    blands_rule                 +72.4%    +72.6%    +121.61  +69.0%  +77.6%   200
+
+    Pivot count reduction: RL Agent vs best heuristic per instance
+      Mean reduction:   -21.9%  (-7.49)
+      Median reduction: -16.4%  (-6.00)
+      P25 / P75:        -33.6% / -5.4%
+      Paired instances: 200
+
+    Win/Tie/Loss: RL Agent vs best heuristic per instance (Pivot count):
+      Wins:   27  Ties:    6  Losses:  167  N/A:    0
+      Win rate: 13.5%  Win+Tie rate: 16.5%
+
+  --- Weighted cost (sum of STEP_PENALTY_WEIGHTS) ---
+    Method                         Mean    Median      Min      Max     N
+    largest_coefficient           59.62     58.00    36.00    94.00   200
+    largest_increase             152.05    145.82    95.10   329.68   200
+    steepest_edge                 70.01     69.93    35.91   107.73   200
+    random_edge                  109.84    107.10    66.60   162.90   200
+    blands_rule                  109.26    107.58    58.74   188.10   200
+    RL Agent                      86.23     86.34    39.75   135.73   200
+
+    Head-to-head: RL Agent vs each heuristic (Weighted cost (sum of STEP_PENALTY_WEIGHTS))
+    Heuristic                  RL wins     Ties  RL loses   N/A
+    largest_coefficient              7        0       193     0
+      Wilcoxon p=0.000000 (Heuristic better)
+    largest_increase               198        0         2     0
+      Wilcoxon p=0.000000 (RL better)
+    steepest_edge                   28        0       172     0
+      Wilcoxon p=0.000000 (Heuristic better)
+    random_edge                    169        0        31     0
+      Wilcoxon p=0.000000 (RL better)
+    blands_rule                    160        0        40     0
+      Wilcoxon p=0.000000 (RL better)
+
+    Weighted cost (sum of STEP_PENALTY_WEIGHTS) reduction: RL Agent vs each heuristic (paired both-converged)
+    Heuristic                   Mean %  Median %    Mean abs   P25 %   P75 %     N
+    largest_coefficient         -48.1%    -44.2%     -26.61  -70.8%  -20.9%   200
+    largest_increase            +41.5%    +42.7%     +65.82  +32.3%  +50.3%   200
+    steepest_edge               -25.0%    -20.1%     -16.22  -39.8%   -8.6%   200
+    random_edge                 +19.6%    +21.4%     +23.61   +7.6%  +33.6%   200
+    blands_rule                 +18.3%    +20.2%     +23.03   +7.0%  +34.2%   200
+
+    Weighted cost (sum of STEP_PENALTY_WEIGHTS) reduction: RL Agent vs best heuristic per instance
+      Mean reduction:   -52.5%  (-28.76)
+      Median reduction: -49.4%  (-28.07)
+      P25 / P75:        -74.0% / -28.7%
+      Paired instances: 200
+
+    Win/Tie/Loss: RL Agent vs best heuristic per instance (Weighted cost (sum of STEP_PENALTY_WEIGHTS)):
+      Wins:    3  Ties:    0  Losses:  197  N/A:    0
+      Win rate: 1.5%  Win+Tie rate: 1.5%
+
+  Game value consistency: all methods agree within 1e-4

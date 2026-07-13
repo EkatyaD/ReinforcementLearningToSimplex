@@ -1,0 +1,24 @@
+Building test sets (fixed strategies computed once)...
+  in-distribution alpha=100.0
+    built+fixed 10/50
+    built+fixed 20/50
+    built+fixed 30/50
+    built+fixed 40/50
+    built+fixed 50/50
+  out-of-distribution alpha=10.0
+    built+fixed 10/50
+    built+fixed 20/50
+    built+fixed 30/50
+    built+fixed 40/50
+    built+fixed 50/50
+
+Loading ppo_leduc_ckpt_30000000_alpha100.0_compact_weighted.zip
+  in_distribution: agent done (50 LPs)
+  out_of_distribution: agent done (50 LPs)
+
+Loading ppo_leduc_ckpt_30000000_alpha100.0_compact_unweighted.zip
+  in_distribution: agent done (50 LPs)
+  out_of_distribution: agent done (50 LPs)
+
+Wrote eval_new_models.json
+Wrote eval_new_models.md
