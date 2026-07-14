@@ -13,23 +13,23 @@ import numpy as np
 
 # Game mode: "matrix" or "leduc"
 GAME_MODE = "leduc"
-
-# Leduc poker settings (only used when GAME_MODE = "leduc")
-LEDUC_GAME = "leduc_poker(suit_isomorphism=true)"  # OpenSpiel game string
-LEDUC_ALPHA = 100.0      # Dirichlet concentration: high alpha -> small perturbation around uniform
-LEDUC_NUM_RANKS = 3     # Number of card ranks (J, Q, K)
-
-# Training parameters
-M = 40
-N = 40
-
-
 TIMESTEPS = 30_000_000
 
 # Checkpoint settings: save model every CHECKPOINT_FREQ steps after CHECKPOINT_START
 CHECKPOINT_START = 1_000_000
 CHECKPOINT_FREQ = 1_000_000
 LOAD_MODEL = False
+
+
+# Leduc poker settings (only used when GAME_MODE = "leduc")
+LEDUC_GAME = "leduc_poker(suit_isomorphism=true)"  # OpenSpiel game string
+LEDUC_ALPHA = 100.0      # Dirichlet concentration: high alpha -> small perturbation around uniform
+LEDUC_NUM_RANKS = 3     # Number of card ranks (J, Q, K)
+
+# Normal form games  settings (used when GAME_MODE = "matrix")
+# Training parameters
+M = 40
+N = 40
 
 # Matrix-mode settings (uniform random ints in [MIN_VAL, MAX_VAL])
 MIN_VAL = -1
@@ -86,10 +86,6 @@ if GAME_MODE == "leduc":
 # learn one fixed pivot rule. If this matches the compact-obs agent, the agent
 # wasn't using the tableau. Takes precedence over USE_COMPACT_OBS when True.
 USE_EMPTY_OBS = False
-USE_BASELINE_REWARD = False  # Shape reward by difference from baseline (steepest_edge) iter count
-BASELINE_REWARD_COEF = 2.0  # Multiplier for (baseline_nit - agent_nit) terminal bonus — amplified to push past "tie with steepest"
-BASELINE_REWARD_WINS_ONLY = False  # If True, only reward strict wins vs baseline (no penalty for losing) — removes the "imitate steepest to avoid losses" equilibrium
-USE_FULL_PIVOT = False  # Agent plays BOTH phases (True) or just phase 2 (False)
 ENT_COEF = 0.05  # PPO entropy coefficient (higher = more exploration / action diversity)
 # PPO discount factor. Effective horizon ~ 1/(1-GAMMA). Leduc phase-2 episodes
 # run ~280-480 pivots, so 0.999 (horizon ~1000) is used so the terminal success
@@ -143,13 +139,6 @@ STEP_PENALTY_WEIGHTS_LEDUC = {
 # don't need to know the mode.
 STEP_PENALTY_WEIGHTS = (STEP_PENALTY_WEIGHTS_LEDUC if GAME_MODE == "leduc"
                        else STEP_PENALTY_WEIGHTS_MATRIX)
-
-# Scale the per-step penalty linearly with tableau row count so the same
-# weights generalize across LP sizes. Reference is set to a 40x40 matrix-mode
-# phase-2 tableau (≈ 41 rows). Adjust if you train at a different size.
-SCALE_PENALTY_BY_SIZE = False
-REFERENCE_TABLEAU_ROWS = M + 1
-
 
 # Run tag derived from observation-space and step-penalty flags so each
 # training configuration writes to a unique model filename. Examples:

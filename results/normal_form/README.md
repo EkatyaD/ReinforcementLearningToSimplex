@@ -48,7 +48,6 @@ M = N              = 40
 MIN_VAL, MAX_VAL   = -1, 1
 EPSILON            = 0.001
 TIMESTEPS          = 20_000_000
-USE_FULL_PIVOT     = False        # agent plays phase 2 only
 USE_TWO_PHASE      = False
 ```
 

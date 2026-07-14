@@ -48,7 +48,6 @@ LEDUC_GAME      = "leduc_poker(suit_isomorphism=true)"
 LEDUC_ALPHA     = 100.0
 LEDUC_NUM_RANKS = 3
 TIMESTEPS       = 30_000_000
-USE_FULL_PIVOT  = False        # agent plays phase 2 only
 # USE_COMPACT_OBS is auto-forced True in leduc mode
 USE_WEIGHTED_STEP_PENALTY = True   # -> compact_weighted;  False -> compact_unweighted
 ```

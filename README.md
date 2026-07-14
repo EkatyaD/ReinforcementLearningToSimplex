@@ -47,7 +47,7 @@ pip install -r requirements-lock.txt
 config.py            central configuration (game mode, sizes, reward flags, model naming)
 train.py             PPO training pipeline (honors GAME_MODE)
 experiment.py        matrix-mode evaluation vs the 5 fixed heuristics
-leduc_experiment_runner.py / experiment_leduc_fullpivot.py   Leduc evaluation
+leduc_experiment_runner.py   Leduc evaluation
 envs.py wrappers.py callbacks.py   gym environments, obs/reward wrappers, training callbacks
 matrix.py base_matrix.py           payoff-matrix generation + the 40×40 base matrix
 simplex_solver.py _linprog_utils.py io_utils.py   two-phase simplex + LP helpers

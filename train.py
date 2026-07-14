@@ -25,14 +25,14 @@ th.set_num_threads(1)
 from stable_baselines3 import PPO
 from stable_baselines3.common.env_util import make_vec_env
 
-from envs import RandomMatrixEnv, LeducEnv, FullPivotEnv, LeducFullPivotEnv
+from envs import RandomMatrixEnv, LeducEnv
 from matrix import Matrix
 from config import M, N, MIN_VAL, MAX_VAL, EPSILON, TIMESTEPS, N_ENVS, MODEL_NAME_TEMPLATE, LOAD_MODEL, CHECKPOINT_START, CHECKPOINT_FREQ
-from config import USE_COMPACT_OBS, USE_EMPTY_OBS, USE_BASELINE_REWARD, BASELINE_REWARD_COEF, BASELINE_REWARD_WINS_ONLY, USE_FULL_PIVOT, ENT_COEF, GAMMA
+from config import USE_COMPACT_OBS, USE_EMPTY_OBS, ENT_COEF, GAMMA
 from config import GAME_MODE, LEDUC_GAME, LEDUC_ALPHA, LEDUC_NUM_RANKS
 from base_matrix import BASE_MATRIX
 
-from wrappers import CompactObsWrapper, EmptyObsWrapper, BaselineRewardWrapper
+from wrappers import CompactObsWrapper, EmptyObsWrapper
 from callbacks import EpisodeCounterCallback, CheckpointAfterCallback, SaveOnBestEpLenCallback
 from io_utils import update_base_matrix
 
@@ -48,7 +48,7 @@ def create_ppo_model(vec_env, verbose=1, n_envs=1, learning_rate=1e-4, n_steps=5
     policy_kwargs = dict(
         net_arch=dict(pi=[256, 256], vf=[256, 256])
     )
-    policy_cls = "MlpPolicy" if (USE_COMPACT_OBS or USE_EMPTY_OBS or USE_FULL_PIVOT) else "MultiInputPolicy"
+    policy_cls = "MlpPolicy" if (USE_COMPACT_OBS or USE_EMPTY_OBS) else "MultiInputPolicy"
     return PPO(
         policy_cls,
         vec_env,
@@ -93,14 +93,12 @@ def _ensure_base_matrix(matrix):
     return matrix
 
 
-def _apply_obs_reward_wrappers(base_env):
-    """Stack the baseline-reward and observation wrappers selected by config.
+def _apply_obs_wrappers(base_env):
+    """Stack the observation wrapper selected by config.
 
     Shared by every phase-2 env builder so the wrapper order is defined once.
     Does NOT apply the TimeLimit — callers add their own episode cap.
     """
-    if USE_BASELINE_REWARD:
-        base_env = BaselineRewardWrapper(base_env, baseline_strategy='steepest_edge', coef=BASELINE_REWARD_COEF, wins_only=BASELINE_REWARD_WINS_ONLY)
     if USE_EMPTY_OBS:
         base_env = EmptyObsWrapper(base_env)
     elif USE_COMPACT_OBS:
@@ -117,7 +115,7 @@ def train_single_config(matrix, learning_rate, n_steps, clip_range, run_id, tota
     print(f"{'='*80}\n")
 
     def make_env():
-        base_env = _apply_obs_reward_wrappers(RandomMatrixEnv(matrix))
+        base_env = _apply_obs_wrappers(RandomMatrixEnv(matrix))
         return TimeLimit(base_env, max_episode_steps=2000)
 
     vec_env = make_vec_env(make_env, n_envs=N_ENVS)
@@ -252,29 +250,13 @@ def _make_matrix_env():
     """Create a RandomMatrixEnv for the 'matrix' game mode."""
     matrix = _ensure_base_matrix(create_matrix())
 
-    if USE_FULL_PIVOT:
-        print("Using FullPivotEnv (agent plays BOTH phases)")
-        base_env = FullPivotEnv(
-            matrix, use_baseline=USE_BASELINE_REWARD,
-            baseline_coef=BASELINE_REWARD_COEF,
-        )
-        return TimeLimit(base_env, max_episode_steps=4000)
-
-    base_env = _apply_obs_reward_wrappers(RandomMatrixEnv(matrix))
+    base_env = _apply_obs_wrappers(RandomMatrixEnv(matrix))
     return TimeLimit(base_env, max_episode_steps=2000)
 
 
 def _make_leduc_env():
     """Create a LeducEnv for the 'leduc' game mode."""
-    if USE_FULL_PIVOT:
-        print("Using LeducFullPivotEnv (agent plays BOTH phases)")
-        base_env = LeducFullPivotEnv(
-            game_name=LEDUC_GAME, alpha=LEDUC_ALPHA, num_ranks=LEDUC_NUM_RANKS,
-            use_baseline=USE_BASELINE_REWARD, baseline_coef=BASELINE_REWARD_COEF,
-        )
-        return TimeLimit(base_env, max_episode_steps=20_000)
-
-    base_env = _apply_obs_reward_wrappers(LeducEnv(
+    base_env = _apply_obs_wrappers(LeducEnv(
         game_name=LEDUC_GAME,
         alpha=LEDUC_ALPHA,
         num_ranks=LEDUC_NUM_RANKS,
@@ -378,3 +360,4 @@ if __name__ == "__main__":
         grid_search()
     else:
         main()
+

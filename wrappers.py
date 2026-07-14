@@ -4,8 +4,6 @@
   size-independent feature vector (so one policy generalizes across LP sizes).
 - ``EmptyObsWrapper`` replaces the observation with a single constant feature,
   giving an information-free control baseline.
-- ``BaselineRewardWrapper`` shapes the terminal reward by the pivot-count
-  difference against a fixed baseline heuristic.
 
 NOTE: ``CompactObsWrapper``'s feature layout is load-bearing — the compact
 models encode these exact dimensions, so it must not change.
@@ -15,68 +13,6 @@ import gymnasium as gym
 import numpy as np
 from collections import deque
 from gymnasium import spaces
-
-from simplex_solver import _pivot_col_heuristics, _pivot_row, _apply_pivot
-
-
-class BaselineRewardWrapper(gym.Wrapper):
-    """Shape reward by a reference strategy's iteration count on the same instance.
-
-    On reset, runs `baseline_strategy` on a copy of the starting tableau and
-    records its iteration count. On optimal termination, adds
-    `coef * (baseline_nit - agent_nit)` (symmetric) or
-    `coef * max(0, baseline_nit - agent_nit)` (wins_only) to the final reward.
-
-    With `wins_only=False` (default), ties are neutral, wins positive, losses
-    negative — which can push the agent toward "imitate the baseline" to
-    avoid the negative tail. With `wins_only=True`, losses cost nothing
-    extra beyond the per-step penalty, so the agent can safely gamble on
-    non-baseline strategies in hopes of a win.
-    """
-
-    def __init__(self, env, baseline_strategy='steepest_edge', coef=5.0,
-                 wins_only=False):
-        super().__init__(env)
-        self.baseline_strategy = baseline_strategy
-        self.coef = float(coef)
-        self.wins_only = bool(wins_only)
-        self._baseline_nit = None
-
-    def _compute_baseline(self):
-        base = self.env.unwrapped
-        T = base.T.copy()
-        basis = base.basis.copy()
-        tol = base.tol
-        maxiter = getattr(base, "maxiter", 20000)
-        use_bland = (self.baseline_strategy == 'blands_rule')
-        nit = 0
-        while nit < maxiter:
-            ok, col = _pivot_col_heuristics(T, strategy=self.baseline_strategy, tol=tol)
-            if not ok:
-                return nit
-            ok, row = _pivot_row(T, basis, col, phase=2, tol=tol, bland=use_bland)
-            if not ok:
-                return nit
-            _apply_pivot(T, basis, row, col, tol=tol)
-            if not np.isfinite(T[-1, -1]) or np.any(~np.isfinite(T)):
-                return nit
-            nit += 1
-        return nit
-
-    def reset(self, **kwargs):
-        obs, info = self.env.reset(**kwargs)
-        self._baseline_nit = self._compute_baseline()
-        return obs, info
-
-    def step(self, action):
-        obs, reward, done, truncated, info = self.env.step(action)
-        if done and info.get("status") == "optimal" and self._baseline_nit is not None:
-            agent_nit = int(info.get("nit", 0))
-            diff = self._baseline_nit - agent_nit
-            if self.wins_only:
-                diff = max(0, diff)
-            reward += self.coef * diff
-        return obs, reward, done, truncated, info
 
 
 class CompactObsWrapper(gym.ObservationWrapper):
