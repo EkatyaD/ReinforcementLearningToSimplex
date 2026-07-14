@@ -15,6 +15,17 @@ Two problem families are supported via `GAME_MODE` in `config.py`:
 - **`leduc`** — sequence-form LPs from Leduc poker with Dirichlet-sampled deck weights
   (requires `open_spiel` / `pyspiel`).
 
+## Use of generative AI
+
+Generative AI (Anthropic's Claude) was used in the preparation of this repository:
+for code review, refactoring (dead-code removal, deduplication, naming), writing
+documentation (docstrings, READMEs, `SCIPY_CODE.md`), dependency and licensing
+clean-up, and for verifying reproducibility (AI-assisted changes were checked by
+re-running the evaluation pipeline and confirming the committed results are
+reproduced byte-for-byte). Commits with AI assistance are marked with a
+`Co-Authored-By` trailer in the git history. All changes were reviewed by the
+author, who takes full responsibility for the contents of this repository.
+
 ## Install
 
 > **Use Python 3.12 or 3.13.** The pinned dependency versions were frozen for
@@ -44,19 +55,93 @@ pip install -r requirements-lock.txt
 ## Layout
 
 ```
-config.py            central configuration (game mode, sizes, reward flags, model naming)
-train.py             PPO training pipeline (honors GAME_MODE)
-experiment.py        matrix-mode evaluation vs the 5 fixed heuristics
-leduc_experiment_runner.py   Leduc evaluation
-envs.py wrappers.py callbacks.py   gym environments, obs/reward wrappers, training callbacks
-matrix.py base_matrix.py           payoff-matrix generation + the 40×40 base matrix
-simplex_solver.py _linprog_utils.py io_utils.py   two-phase simplex + LP helpers
-                     (which parts are SciPy-derived and how they're used: see SCIPY_CODE.md)
-leduc_experiment.py  sequence-form LP construction for Leduc/Kuhn
-cluster/             PBS/Metacentrum job scripts (training + evaluation) — reproducibility reference
-calibration/         benchmarks that derive the per-rule STEP_PENALTY_WEIGHTS
-results/             trained models + evaluations (see below)
+config.py  simplex_solver.py  _linprog_utils.py            configuration + simplex core
+envs.py  wrappers.py  matrix.py  base_matrix.py             the RL problem (envs, obs, LP instances)
+train.py  callbacks.py  io_utils.py                         training
+experiment.py  leduc_experiment.py  leduc_experiment_runner.py  compare_strategies.py   evaluation
+calibration/  cluster/  results/                            supporting material + shipped results
 ```
+
+### Configuration and simplex core
+
+- **`config.py`** — every experiment knob, as module-level constants. `GAME_MODE`
+  switches between the two problem families. `PIVOT_MAP` is the agent's 3-rule
+  **training action space** (largest coefficient, largest increase, steepest edge);
+  `PIVOT_MAP_TEST` adds the two evaluation-only baselines (random edge, Bland's
+  rule). `STEP_PENALTY_WEIGHTS_{MATRIX,LEDUC}` are the empirically calibrated
+  per-rule wallclock weights behind the "weighted cost" metric (auto-selected by
+  game mode); `MODEL_RUN_TAG` encodes the observation/penalty configuration into
+  model filenames so runs don't overwrite each other.
+- **`simplex_solver.py`** — the simplex mathematics: the five pivot-column
+  heuristics (`_pivot_col_heuristics`), the Harris two-pass ratio test
+  (`_pivot_row`), pivot application (`_apply_pivot`), a fixed-rule Phase 1 solver
+  (`phase1solver` + `first_to_second`), and the zero-sum tableau constructions —
+  a direct Phase-2 route (`change_to_zero_sum_phase2_only`: positivity shift, a
+  provably feasible trivial basis, canonicalization) and a general two-phase
+  route with artificial variables (`change_to_zero_sum`).
+- **`_linprog_utils.py`** — vendored SciPy module (BSD-3, see `LICENSES/`):
+  LP validation and standard-form conversion (`_parse_linprog`, `_get_Abc`,
+  `_LPProblem`). Which parts of the codebase are SciPy-derived and exactly how
+  they are used is documented in [`SCIPY_CODE.md`](SCIPY_CODE.md).
+
+### The RL problem
+
+- **`envs.py`** — Gymnasium environments. `SecondPhasePivotingEnv` is the base:
+  the state is a Phase-2 tableau, an action picks one of the 3 pivot rules, a step
+  applies that pivot; reward is −cost per pivot plus a terminal success bonus, with
+  basis-repeat cycle detection. `RandomMatrixEnv` resamples a perturbed payoff
+  matrix each episode; `LeducEnv` resamples a Leduc sequence-form LP with
+  Dirichlet-weighted decks (Phase 1 solved internally by a fixed rule).
+- **`wrappers.py`** — observation wrappers. `CompactObsWrapper` replaces the
+  full-tableau Dict observation with 31 size-independent features (action/progress
+  history, reduced-cost and ratio-test statistics) so one policy works across LP
+  sizes — mandatory for Leduc, where the tableau is ~483×965. `EmptyObsWrapper`
+  feeds a constant observation: the information-free control baseline used to
+  detect whether an agent actually uses the state or has collapsed to a fixed rule.
+- **`matrix.py` / `base_matrix.py`** — `Matrix` holds a base payoff matrix and
+  generates per-episode ε-perturbations of it; `base_matrix.py` stores the fixed
+  40×40 base matrix the shipped agents were trained on (a copy is archived with
+  the results in `results/normal_form/`).
+
+### Training
+
+- **`train.py`** — the training entry point: builds the vectorized env for the
+  configured `GAME_MODE`, applies the observation wrapper, and trains PPO
+  (stable-baselines3) with periodic checkpoints and a save-on-best callback.
+  `python train.py` runs one configuration; `--grid-search` sweeps a small PPO
+  hyperparameter grid.
+- **`callbacks.py`** — the SB3 callbacks used above (checkpoint schedule,
+  save-on-best by rolling episode length, per-rollout episode counter).
+- **`io_utils.py`** — persists a freshly generated base matrix back into
+  `base_matrix.py` (only used when training starts without a valid base matrix).
+
+### Evaluation
+
+- **`experiment.py`** — the matrix-mode evaluation. Builds two test sets
+  (in-distribution: ε-perturbations of the training base matrix; out-of-
+  distribution: fresh uniform matrices), solves every instance with all five
+  fixed heuristics **and** the agent from identical starting tableaus, and
+  reports pivot counts, weighted cost, per-instance win/tie/loss (including vs
+  the best heuristic per instance) and Wilcoxon signed-rank tests. Also runnable
+  standalone: `python experiment.py --model <path>`.
+- **`leduc_experiment.py`** — constructs the sequence-form LP of Leduc/Kuhn poker
+  from the OpenSpiel game tree (Koller–Megiddo–von Stengel realization-plan
+  constraints), including the Dirichlet deck reweighting, plus a SciPy/HiGHS
+  reference solver used to cross-check game values.
+- **`leduc_experiment_runner.py`** — the Leduc analogue of `experiment.py`:
+  samples Leduc LPs, runs heuristics + agent, same analysis.
+- **`compare_strategies.py`** — a small manual harness: solves one perturbed
+  matrix with every rule and a shipped agent and prints pivot counts + recovered
+  game values (a quick sanity check, not part of the formal evaluation).
+
+### Supporting material
+
+- **`calibration/`** — the wallclock benchmarks used to derive the per-rule
+  `STEP_PENALTY_WEIGHTS` (one script per problem family).
+- **`cluster/`** — PBS/Metacentrum job scripts used for the actual training
+  runs; kept as a reproducibility reference.
+- **`results/`** — the shipped trained models and committed evaluations
+  (see below).
 
 ## Reproducing the results
 
