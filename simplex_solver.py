@@ -130,12 +130,8 @@ def _pivot_row(T, basis, pivcol, phase, tol=1e-9, bland=False):
     tol : float
         Positivity tolerance for the pivot column entries.
     bland : bool
-        If True, apply Bland's rule: among rows attaining the exact minimum
-        ratio, pick the one whose basic variable has the smallest index
-        (preserves the anti-cycling guarantee).
-        If False (default), choose the row with the largest pivot element
-        within the Harris eta-band of near-minimum ratios (numerical
-        stability).
+        If True, tie-break among near-minimum ratios using smallest basis index.
+        If False (default), choose the row with the largest pivot in the admissible set.
 
     Returns
     -------
@@ -173,13 +169,8 @@ def _pivot_row(T, basis, pivcol, phase, tol=1e-9, bland=False):
         rows = np.array([int(np.argmin(q))])
 
     if bland:
-        # True Bland's rule: among rows attaining the exact minimum ratio, pick
-        # the one whose basic variable has the smallest index. Using the exact
-        # minimizer set (not the Harris eta-band, which can select a row with a
-        # strictly larger ratio) preserves feasibility and Bland's anti-cycling
-        # guarantee.
-        min_rows = np.where(q == q_min)[0]
-        idx = min_rows[np.argmin(np.take(basis, min_rows))]
+        # Bland tie-break among admissible rows: smallest basis index
+        idx = rows[np.argmin(np.take(basis, rows))]
     else:
         # Choose numerically strongest pivot among admissible rows:
         # largest pivot element in the entering column

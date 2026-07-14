@@ -7947,9 +7947,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 130,
-        "weighted_cost": 85.8,
-        "objective": 1.0349836570889432
+        "nit": 128,
+        "weighted_cost": 84.48,
+        "objective": 1.034983657088944
       },
       "rl_agent": {
         "status": "optimal",
@@ -8064,9 +8064,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 161,
-        "weighted_cost": 106.26,
-        "objective": 1.0175731037395095
+        "nit": 158,
+        "weighted_cost": 104.28,
+        "objective": 1.01757310373951
       },
       "rl_agent": {
         "status": "optimal",
@@ -8142,9 +8142,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 241,
-        "weighted_cost": 159.06,
-        "objective": 1.0343121855643025
+        "nit": 186,
+        "weighted_cost": 122.76,
+        "objective": 1.0343121855643014
       },
       "rl_agent": {
         "status": "optimal",
@@ -8220,9 +8220,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 99,
-        "weighted_cost": 65.34,
-        "objective": 0.9918120366112504
+        "nit": 159,
+        "weighted_cost": 104.94000000000001,
+        "objective": 0.9918120366112514
       },
       "rl_agent": {
         "status": "optimal",
@@ -8259,9 +8259,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 154,
-        "weighted_cost": 101.64,
-        "objective": 0.9934174096043358
+        "nit": 151,
+        "weighted_cost": 99.66000000000001,
+        "objective": 0.9934174096043349
       },
       "rl_agent": {
         "status": "optimal",
@@ -8298,9 +8298,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 182,
-        "weighted_cost": 120.12,
-        "objective": 1.0545639084562795
+        "nit": 183,
+        "weighted_cost": 120.78,
+        "objective": 1.0545639084562801
       },
       "rl_agent": {
         "status": "optimal",
@@ -8339,7 +8339,7 @@
         "status": "optimal",
         "nit": 163,
         "weighted_cost": 107.58,
-        "objective": 0.966521526904573
+        "objective": 0.9665215269045729
       },
       "rl_agent": {
         "status": "optimal",
@@ -8532,9 +8532,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 173,
-        "weighted_cost": 114.18,
-        "objective": 1.0375571207830152
+        "nit": 175,
+        "weighted_cost": 115.5,
+        "objective": 1.0375571207830132
       },
       "rl_agent": {
         "status": "optimal",
@@ -8610,9 +8610,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 113,
-        "weighted_cost": 74.58,
-        "objective": 0.9344632766498515
+        "nit": 112,
+        "weighted_cost": 73.92,
+        "objective": 0.9344632766498514
       },
       "rl_agent": {
         "status": "optimal",
@@ -8688,9 +8688,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 144,
-        "weighted_cost": 95.04,
-        "objective": 0.99499146883261
+        "nit": 145,
+        "weighted_cost": 95.7,
+        "objective": 0.9949914688326096
       },
       "rl_agent": {
         "status": "optimal",
@@ -8727,9 +8727,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 199,
-        "weighted_cost": 131.34,
-        "objective": 1.0190515769209259
+        "nit": 198,
+        "weighted_cost": 130.68,
+        "objective": 1.0190515769209256
       },
       "rl_agent": {
         "status": "optimal",
@@ -8766,9 +8766,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 177,
-        "weighted_cost": 116.82000000000001,
-        "objective": 0.9696966911855603
+        "nit": 175,
+        "weighted_cost": 115.5,
+        "objective": 0.9696966911855611
       },
       "rl_agent": {
         "status": "optimal",
@@ -8883,9 +8883,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 145,
-        "weighted_cost": 95.7,
-        "objective": 1.0686595966021883
+        "nit": 144,
+        "weighted_cost": 95.04,
+        "objective": 1.0686595966021897
       },
       "rl_agent": {
         "status": "optimal",
@@ -8961,9 +8961,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 128,
-        "weighted_cost": 84.48,
-        "objective": 1.0045833492148082
+        "nit": 127,
+        "weighted_cost": 83.82000000000001,
+        "objective": 1.0045833492148077
       },
       "rl_agent": {
         "status": "optimal",
@@ -9195,9 +9195,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 165,
-        "weighted_cost": 108.9,
-        "objective": 0.9894914984082762
+        "nit": 164,
+        "weighted_cost": 108.24000000000001,
+        "objective": 0.9894914984082755
       },
       "rl_agent": {
         "status": "optimal",
@@ -9392,7 +9392,7 @@
         "status": "optimal",
         "nit": 171,
         "weighted_cost": 112.86,
-        "objective": 1.0139475830383482
+        "objective": 1.0139475830383484
       },
       "rl_agent": {
         "status": "optimal",
@@ -9431,7 +9431,7 @@
         "status": "optimal",
         "nit": 142,
         "weighted_cost": 93.72,
-        "objective": 1.045939233559242
+        "objective": 1.0459392335592432
       },
       "rl_agent": {
         "status": "optimal",
@@ -9663,8 +9663,8 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 132,
-        "weighted_cost": 87.12,
+        "nit": 134,
+        "weighted_cost": 88.44,
         "objective": 0.9726734938219044
       },
       "rl_agent": {
@@ -9743,7 +9743,7 @@
         "status": "optimal",
         "nit": 215,
         "weighted_cost": 141.9,
-        "objective": 0.965951003072946
+        "objective": 0.9659510030729455
       },
       "rl_agent": {
         "status": "optimal",
@@ -9936,9 +9936,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 159,
-        "weighted_cost": 104.94000000000001,
-        "objective": 1.0330993170803568
+        "nit": 160,
+        "weighted_cost": 105.60000000000001,
+        "objective": 1.0330993170803562
       },
       "rl_agent": {
         "status": "optimal",
@@ -10170,9 +10170,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 200,
-        "weighted_cost": 132.0,
-        "objective": 1.0269648029806975
+        "nit": 201,
+        "weighted_cost": 132.66,
+        "objective": 1.026964802980695
       },
       "rl_agent": {
         "status": "optimal",
@@ -10521,9 +10521,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 159,
-        "weighted_cost": 104.94000000000001,
-        "objective": 1.039617206934079
+        "nit": 161,
+        "weighted_cost": 106.26,
+        "objective": 1.0396172069340792
       },
       "rl_agent": {
         "status": "optimal",
@@ -10755,9 +10755,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 118,
-        "weighted_cost": 77.88000000000001,
-        "objective": 1.08286322300339
+        "nit": 117,
+        "weighted_cost": 77.22,
+        "objective": 1.0828632230033892
       },
       "rl_agent": {
         "status": "optimal",
@@ -10950,9 +10950,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 162,
-        "weighted_cost": 106.92,
-        "objective": 1.0358497574762036
+        "nit": 156,
+        "weighted_cost": 102.96000000000001,
+        "objective": 1.0358497574762027
       },
       "rl_agent": {
         "status": "optimal",
@@ -11223,8 +11223,8 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 166,
-        "weighted_cost": 109.56,
+        "nit": 158,
+        "weighted_cost": 104.28,
         "objective": 1.0315592182341524
       },
       "rl_agent": {
@@ -11498,7 +11498,7 @@
         "status": "optimal",
         "nit": 106,
         "weighted_cost": 69.96000000000001,
-        "objective": 0.9676691898279135
+        "objective": 0.9676691898279132
       },
       "rl_agent": {
         "status": "optimal",
@@ -11613,9 +11613,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 177,
-        "weighted_cost": 116.82000000000001,
-        "objective": 0.9942584498682664
+        "nit": 175,
+        "weighted_cost": 115.5,
+        "objective": 0.9942584498682654
       },
       "rl_agent": {
         "status": "optimal",
@@ -11886,9 +11886,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 130,
-        "weighted_cost": 85.8,
-        "objective": 1.0287486235950591
+        "nit": 131,
+        "weighted_cost": 86.46000000000001,
+        "objective": 1.0287486235950587
       },
       "rl_agent": {
         "status": "optimal",
@@ -11964,8 +11964,8 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 166,
-        "weighted_cost": 109.56,
+        "nit": 167,
+        "weighted_cost": 110.22,
         "objective": 1.009532002884781
       },
       "rl_agent": {
@@ -12083,7 +12083,7 @@
         "status": "optimal",
         "nit": 174,
         "weighted_cost": 114.84,
-        "objective": 0.9592880413415613
+        "objective": 0.959288041341561
       },
       "rl_agent": {
         "status": "optimal",
@@ -12237,9 +12237,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 121,
-        "weighted_cost": 79.86,
-        "objective": 0.9724582380784381
+        "nit": 122,
+        "weighted_cost": 80.52000000000001,
+        "objective": 0.9724582380784389
       },
       "rl_agent": {
         "status": "optimal",
@@ -12276,9 +12276,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 170,
-        "weighted_cost": 112.2,
-        "objective": 1.0297831927298395
+        "nit": 171,
+        "weighted_cost": 112.86,
+        "objective": 1.0297831927298386
       },
       "rl_agent": {
         "status": "optimal",
@@ -12354,9 +12354,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 138,
-        "weighted_cost": 91.08,
-        "objective": 1.0166440296867896
+        "nit": 139,
+        "weighted_cost": 91.74000000000001,
+        "objective": 1.0166440296867918
       },
       "rl_agent": {
         "status": "optimal",
@@ -12627,9 +12627,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 158,
-        "weighted_cost": 104.28,
-        "objective": 0.9827764065559439
+        "nit": 160,
+        "weighted_cost": 105.60000000000001,
+        "objective": 0.9827764065559438
       },
       "rl_agent": {
         "status": "optimal",
@@ -12900,9 +12900,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 156,
-        "weighted_cost": 102.96000000000001,
-        "objective": 0.9016570912792616
+        "nit": 158,
+        "weighted_cost": 104.28,
+        "objective": 0.901657091279262
       },
       "rl_agent": {
         "status": "optimal",
@@ -13095,9 +13095,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 112,
-        "weighted_cost": 73.92,
-        "objective": 1.0173122376966188
+        "nit": 116,
+        "weighted_cost": 76.56,
+        "objective": 1.0173122376966184
       },
       "rl_agent": {
         "status": "optimal",
@@ -13136,7 +13136,7 @@
         "status": "optimal",
         "nit": 140,
         "weighted_cost": 92.4,
-        "objective": 0.9962641395181816
+        "objective": 0.996264139518181
       },
       "rl_agent": {
         "status": "optimal",
@@ -13485,9 +13485,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 202,
-        "weighted_cost": 133.32,
-        "objective": 1.0320067400885489
+        "nit": 197,
+        "weighted_cost": 130.02,
+        "objective": 1.0320067400885506
       },
       "rl_agent": {
         "status": "optimal",
@@ -13875,9 +13875,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 130,
-        "weighted_cost": 85.8,
-        "objective": 1.0233842979966998
+        "nit": 106,
+        "weighted_cost": 69.96000000000001,
+        "objective": 1.0233842979967012
       },
       "rl_agent": {
         "status": "optimal",
@@ -13914,9 +13914,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 124,
-        "weighted_cost": 81.84,
-        "objective": 1.0103527247663824
+        "nit": 125,
+        "weighted_cost": 82.5,
+        "objective": 1.0103527247663828
       },
       "rl_agent": {
         "status": "optimal",
@@ -13953,9 +13953,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 137,
-        "weighted_cost": 90.42,
-        "objective": 0.9780070125755275
+        "nit": 142,
+        "weighted_cost": 93.72,
+        "objective": 0.9780070125755286
       },
       "rl_agent": {
         "status": "optimal",
@@ -14226,9 +14226,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 219,
-        "weighted_cost": 144.54000000000002,
-        "objective": 0.956332923452415
+        "nit": 217,
+        "weighted_cost": 143.22,
+        "objective": 0.9563329234524154
       },
       "rl_agent": {
         "status": "optimal",
@@ -14343,8 +14343,8 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 125,
-        "weighted_cost": 82.5,
+        "nit": 126,
+        "weighted_cost": 83.16000000000001,
         "objective": 1.0156608690164934
       },
       "rl_agent": {
@@ -14421,9 +14421,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 176,
-        "weighted_cost": 116.16000000000001,
-        "objective": 1.0490763767800375
+        "nit": 178,
+        "weighted_cost": 117.48,
+        "objective": 1.0490763767800357
       },
       "rl_agent": {
         "status": "optimal",
@@ -14616,9 +14616,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 235,
-        "weighted_cost": 155.1,
-        "objective": 1.0237515374830126
+        "nit": 236,
+        "weighted_cost": 155.76000000000002,
+        "objective": 1.0237515374830135
       },
       "rl_agent": {
         "status": "optimal",
@@ -14655,8 +14655,8 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 208,
-        "weighted_cost": 137.28,
+        "nit": 207,
+        "weighted_cost": 136.62,
         "objective": 1.0110609516381417
       },
       "rl_agent": {
@@ -14772,9 +14772,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 139,
-        "weighted_cost": 91.74000000000001,
-        "objective": 0.9804295116316756
+        "nit": 138,
+        "weighted_cost": 91.08,
+        "objective": 0.9804295116316752
       },
       "rl_agent": {
         "status": "optimal",
@@ -14889,9 +14889,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 164,
-        "weighted_cost": 108.24000000000001,
-        "objective": 1.0333700830579593
+        "nit": 165,
+        "weighted_cost": 108.9,
+        "objective": 1.033370083057958
       },
       "rl_agent": {
         "status": "optimal",
@@ -14967,8 +14967,8 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 252,
-        "weighted_cost": 166.32000000000002,
+        "nit": 250,
+        "weighted_cost": 165.0,
         "objective": 0.9895591615877657
       },
       "rl_agent": {
@@ -15357,9 +15357,9 @@
       },
       "blands_rule": {
         "status": "optimal",
-        "nit": 150,
-        "weighted_cost": 99.0,
-        "objective": 0.979626119026921
+        "nit": 173,
+        "weighted_cost": 114.18,
+        "objective": 0.9796261190269216
       },
       "rl_agent": {
         "status": "optimal",
@@ -15476,7 +15476,7 @@
         "status": "optimal",
         "nit": 173,
         "weighted_cost": 114.18,
-        "objective": 0.952511091494787
+        "objective": 0.9525110914947876
       },
       "rl_agent": {
         "status": "optimal",

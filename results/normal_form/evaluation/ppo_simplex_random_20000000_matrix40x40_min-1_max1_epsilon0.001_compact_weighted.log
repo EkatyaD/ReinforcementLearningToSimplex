@@ -2,7 +2,7 @@ Model: ppo_simplex_random_20000000_matrix40x40_min-1_max1_epsilon0.001_compact_w
 USE_COMPACT_OBS = True
 N_MATRICES = 200, SEED = 42
 Tested strategies: ['largest_coefficient', 'largest_increase', 'steepest_edge', 'random_edge', 'blands_rule']
-Loading model: /home/edanilina/skola/Simplex-thesis/results/normal_form/models/ppo_simplex_random_20000000_matrix40x40_min-1_max1_epsilon0.001_compact_weighted
+Loading model: final_models/ppo_simplex_random_20000000_matrix40x40_min-1_max1_epsilon0.001_compact_weighted
 
 ============================================================
   IN DISTRIBUTION (200 matrices)
@@ -134,7 +134,7 @@ Loading model: /home/edanilina/skola/Simplex-thesis/results/normal_form/models/p
     largest_increase              47.97     46.00    30.00   104.00   200
     steepest_edge                 37.04     37.00    19.00    57.00   200
     random_edge                  122.05    119.00    74.00   181.00   200
-    blands_rule                  165.57    163.00    89.00   285.00   200
+    blands_rule                  165.55    163.00    89.00   285.00   200
     RL Agent                      52.48     52.00    22.00    78.00   200
 
     Head-to-head: RL Agent vs each heuristic (Pivot count)
@@ -156,7 +156,7 @@ Loading model: /home/edanilina/skola/Simplex-thesis/results/normal_form/models/p
     largest_increase            -13.1%    -12.0%      -4.51  -30.2%   +6.9%   200
     steepest_edge               -44.1%    -40.0%     -15.44  -60.3%  -23.0%   200
     random_edge                 +56.2%    +56.6%     +69.57  +50.4%  +62.8%   200
-    blands_rule                 +67.3%    +67.4%    +113.10  +63.0%  +72.8%   200
+    blands_rule                 +67.3%    +67.4%    +113.08  +63.0%  +72.6%   200
 
     Pivot count reduction: RL Agent vs best heuristic per instance
       Mean reduction:   -45.9%  (-16.02)
@@ -174,7 +174,7 @@ Loading model: /home/edanilina/skola/Simplex-thesis/results/normal_form/models/p
     largest_increase             152.05    145.82    95.10   329.68   200
     steepest_edge                 70.01     69.93    35.91   107.73   200
     random_edge                  109.84    107.10    66.60   162.90   200
-    blands_rule                  109.28    107.58    58.74   188.10   200
+    blands_rule                  109.26    107.58    58.74   188.10   200
     RL Agent                      58.47     57.62    26.45    90.46   200
 
     Head-to-head: RL Agent vs each heuristic (Weighted cost (sum of STEP_PENALTY_WEIGHTS))
@@ -196,7 +196,7 @@ Loading model: /home/edanilina/skola/Simplex-thesis/results/normal_form/models/p
     largest_increase            +60.3%    +61.3%     +93.58  +53.5%  +68.1%   200
     steepest_edge               +15.0%    +17.7%     +11.53   +4.1%  +27.4%   200
     random_edge                 +45.8%    +46.1%     +51.37  +37.5%  +54.2%   200
-    blands_rule                 +44.9%    +44.8%     +50.81  +37.1%  +54.0%   200
+    blands_rule                 +44.9%    +44.7%     +50.79  +36.9%  +54.0%   200
 
     Weighted cost (sum of STEP_PENALTY_WEIGHTS) reduction: RL Agent vs best heuristic per instance
       Mean reduction:   -3.1%  (-1.00)
