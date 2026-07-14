@@ -6,7 +6,6 @@
   giving an information-free control baseline.
 - ``BaselineRewardWrapper`` shapes the terminal reward by the pivot-count
   difference against a fixed baseline heuristic.
-- ``EarlyStopWrapper`` cuts episodes that stall on degenerate pivots.
 
 NOTE: ``CompactObsWrapper``'s feature layout is load-bearing — the compact
 models encode these exact dimensions, so it must not change.
@@ -257,42 +256,4 @@ class EmptyObsWrapper(gym.ObservationWrapper):
 
     def observation(self, obs):
         return np.zeros(1, dtype=np.float32)
-
-
-# Currently not used
-class EarlyStopWrapper(gym.Wrapper):
-    def __init__(self, env, max_degenerate_streak=100, window=200, improve_tol=1e-12):
-        super().__init__(env)
-        self.max_degenerate_streak = int(max_degenerate_streak)
-        self.window = int(window)
-        self.improve_tol = float(improve_tol)
-        self._last_obj = None
-        self._no_improve_steps = 0
-
-    def reset(self, **kwargs):
-        self._last_obj = None
-        self._no_improve_steps = 0
-        return self.env.reset(**kwargs)
-
-    def step(self, action):
-        obs, rew, done, truncated, info = self.env.step(action)
-
-        obj = float(info.get("objective", self.env.T[-1, -1]))
-        if self._last_obj is None:
-            self._last_obj = obj
-        else:
-            delta = self._last_obj - obj
-            if delta > self.improve_tol:
-                self._no_improve_steps = 0
-            else:
-                self._no_improve_steps += 1
-            self._last_obj = obj
-
-        if info.get("degenerate_streak", 0) >= self.max_degenerate_streak:
-            truncated = True
-
-        if self._no_improve_steps >= self.window:
-            truncated = True
-
-        return obs, rew, done, truncated, info
 

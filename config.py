@@ -52,7 +52,9 @@ N_ENVS = 4
 # USE_WEIGHTED_STEP_PENALTY are set, so it can include obs/penalty tags
 # automatically.)
 
-# Action to pivot name map
+# Action -> pivot-rule map for TRAINING: the agent's action space is exactly
+# these 3 rules. PIVOT_MAP_TEST below adds random_edge and blands_rule, which
+# are evaluation-only baselines the agent cannot select.
 PIVOT_MAP = {
     0: 'largest_coefficient',
     1: 'largest_increase',
@@ -89,10 +91,10 @@ BASELINE_REWARD_COEF = 2.0  # Multiplier for (baseline_nit - agent_nit) terminal
 BASELINE_REWARD_WINS_ONLY = False  # If True, only reward strict wins vs baseline (no penalty for losing) — removes the "imitate steepest to avoid losses" equilibrium
 USE_FULL_PIVOT = False  # Agent plays BOTH phases (True) or just phase 2 (False)
 ENT_COEF = 0.05  # PPO entropy coefficient (higher = more exploration / action diversity)
-# PPO discount factor. Effective horizon ~ 1/(1-GAMMA). Note Leduc phase-2
-# episodes run ~280-480 pivots, so the default 0.995 (horizon ~200) is SHORTER
-# than the episode — raise toward 0.999 (horizon ~1000) if you need the terminal
-# success bonus / total-pivot-count signal to actually propagate.
+# PPO discount factor. Effective horizon ~ 1/(1-GAMMA). Leduc phase-2 episodes
+# run ~280-480 pivots, so 0.999 (horizon ~1000) is used so the terminal success
+# bonus / total-pivot-count signal propagates across the whole episode (an
+# earlier 0.995 setting had horizon ~200, shorter than the episode).
 GAMMA = 0.999
 
 # Two-phase simplex: when True, build Phase 1 tableau and solve it (Bland's rule),

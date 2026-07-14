@@ -3,31 +3,21 @@ application, a Phase 1 solver, and the tableau-construction routines that turn
 a zero-sum game matrix into a Phase 2 tableau.
 
 This module holds the thesis' own simplex logic. The five pivot-column
-heuristics the RL agent chooses among (``largest_coefficient``,
+heuristics compared in the experiments (``largest_coefficient``,
 ``largest_increase``, ``steepest_edge``, ``random_edge``, ``blands_rule``) are
-implemented here (see ``_pivot_col_heuristics``). LP standard-form plumbing is
-imported from ``_linprog_utils`` (vendored from SciPy — see that file's header).
+implemented here (see ``_pivot_col_heuristics``); the RL agent's training
+action space is the 3-rule subset in ``config.PIVOT_MAP``, the remaining two
+serve as evaluation-only baselines. LP standard-form plumbing is imported from
+``_linprog_utils`` (vendored from SciPy — see that file's header). The gym
+environments that drive these primitives live in ``envs.py``.
 """
 
-import gymnasium as gym
 import numpy as np
 from warnings import warn
-import scipy.sparse as sps
-from collections import namedtuple
-
-from gymnasium import spaces
-from stable_baselines3.common.type_aliases import GymEnv
 
 # The following helpers are vendored from SciPy (BSD-3, see _linprog_utils.py):
-# LP parsing/presolve/standard-form conversion, not original to this thesis.
-from _linprog_utils import (
-    _parse_linprog, _presolve, _get_Abc, _LPProblem, _autoscale,
-    _postsolve, _check_result, _display_summary)
-
-from config import PIVOT_MAP, NUM_PIVOT_STRATEGIES
-
-## NOTE: Environments moved to envs.py (SecondPhasePivotingEnv, FirstPhasePivotingEnv)
-
+# LP parsing/standard-form conversion, not original to this thesis.
+from _linprog_utils import _parse_linprog, _get_Abc, _LPProblem
 
 
 def potential_increase(T, col_index, cost_j, tol=1e-9):
@@ -123,32 +113,6 @@ def _pivot_col_heuristics(T, strategy, tol=1e-9):
             return False, np.nan
         return True, best_col
 
-def _pivot_col(T, tol=1e-9, bland=False):
-
-    ma = np.ma.masked_where(T[-1, :-1] >= -tol, T[-1, :-1], copy=False)
-    if ma.count() == 0:
-        return False, np.nan
-    if bland:
-        # ma.mask is sometimes 0d
-        return True, np.nonzero(np.logical_not(np.atleast_1d(ma.mask)))[0][0]
-    return True, np.ma.nonzero(ma == ma.min())[0][0]
-
-
-# def _pivot_row(T, basis, pivcol, phase, tol=1e-9, bland=False):
-
-#     if phase == 1:
-#         k = 2
-#     else:
-#         k = 1
-#     ma = np.ma.masked_where(T[:-k, pivcol] <= tol, T[:-k, pivcol], copy=False)
-#     if ma.count() == 0:
-#         return False, np.nan
-#     mb = np.ma.masked_where(T[:-k, pivcol] <= tol, T[:-k, -1], copy=False)
-#     q = mb / ma
-#     min_rows = np.ma.nonzero(q == q.min())[0]
-#     if bland:
-#         return True, min_rows[np.argmin(np.take(basis, min_rows))]
-#     return True, min_rows[0]
 def _pivot_row(T, basis, pivcol, phase, tol=1e-9, bland=False):
     """
     Harris two-pass ratio test for selecting the leaving row.
@@ -166,8 +130,12 @@ def _pivot_row(T, basis, pivcol, phase, tol=1e-9, bland=False):
     tol : float
         Positivity tolerance for the pivot column entries.
     bland : bool
-        If True, tie-break among near-minimum ratios using smallest basis index.
-        If False (default), choose the row with the largest pivot in the admissible set.
+        If True, apply Bland's rule: among rows attaining the exact minimum
+        ratio, pick the one whose basic variable has the smallest index
+        (preserves the anti-cycling guarantee).
+        If False (default), choose the row with the largest pivot element
+        within the Harris eta-band of near-minimum ratios (numerical
+        stability).
 
     Returns
     -------
@@ -205,8 +173,13 @@ def _pivot_row(T, basis, pivcol, phase, tol=1e-9, bland=False):
         rows = np.array([int(np.argmin(q))])
 
     if bland:
-        # Bland tie-break among admissible rows: smallest basis index
-        idx = rows[np.argmin(np.take(basis, rows))]
+        # True Bland's rule: among rows attaining the exact minimum ratio, pick
+        # the one whose basic variable has the smallest index. Using the exact
+        # minimizer set (not the Harris eta-band, which can select a row with a
+        # strictly larger ratio) preserves feasibility and Bland's anti-cycling
+        # guarantee.
+        min_rows = np.where(q == q_min)[0]
+        idx = min_rows[np.argmin(np.take(basis, min_rows))]
     else:
         # Choose numerically strongest pivot among admissible rows:
         # largest pivot element in the entering column
@@ -227,50 +200,6 @@ def _apply_pivot(T, basis, pivrow, pivcol, tol=1e-9):
 
     # The selected pivot should never lead to a pivot value less than the tol.
     if np.isclose(pivval, tol, atol=0, rtol=1e4):
-        # print("\n" + "="*80)
-        # print("WARNING: NUMERICAL STABILITY ISSUE DETECTED")
-        # print("="*80)
-        
-        # print(f"\nPIVOT OPERATION DETAILS:")
-        # print(f"  • Pivot value: {pivval:.6e}")
-        # print(f"  • Tolerance: {tol:.6e}")
-        # print(f"  • Ratio (pivot/tolerance): {pivval/tol:.2f}")
-        # print(f"  • Pivot row: {pivrow}")
-        # print(f"  • Pivot column: {pivcol}")
-        
-        # print(f"\nTABLEAU INFORMATION:")
-        # print(f"  • Tableau shape: {T.shape}")
-        # print(f"  • Number of rows: {T.shape[0]}")
-        # print(f"  • Number of columns: {T.shape[1]}")
-        
-        # print(f"\nBASIS INFORMATION:")
-        # print(f"  • Current basis: {basis}")
-        # print(f"  • Basis size: {len(basis)}")
-        
-        # print(f"\nPIVOT ELEMENT CONTEXT:")
-        # print(f"  • Pivot element value: {pivval:.6e}")
-        # print(f"  • Pivot row before normalization:")
-        # pivot_row_before = T[pivrow] * pivval  # Reconstruct original row
-        # print(f"    {pivot_row_before}")
-        
-        # print(f"\nNEARBY ELEMENTS (same row):")
-        # for col in range(T.shape[1]):
-        #     if col != pivcol:
-        #         val = T[pivrow, col] * pivval  # Reconstruct original value
-        #         if abs(val) > tol/10:  # Show elements close to tolerance
-        #             print(f"    Column {col}: {val:.6e}")
-        
-        # print(f"\nNEARBY ELEMENTS (same column):")
-        # for row in range(T.shape[0]):
-        #     if row != pivrow:
-        #         val = T[row, pivcol]
-        #         if abs(val) > tol/10:  # Show elements close to tolerance
-        #             print(f"    Row {row}: {val:.6e}")
-        
-        # print("="*80)
-        # print("END OF WARNING")
-        # print("="*80 + "\n")
-        
         message = (
             f"The pivot operation produces a pivot value of:{pivval: .1e}, "
             "which is only slightly greater than the specified "
@@ -406,107 +335,6 @@ def first_to_second(T, basis, av):
         print(f"[solve_zero_sum] Pseudo-objective: {T[-1, -1]:.2e} vs adaptive_tol {adaptive_tol:.1e}, status={status}")
         return None
 
-def phase1_via_highs(A_std, b_std, c_std, c0=0.0, tol=1e-7):
-    """Solve phase 1 via scipy HiGHS, return phase-2 tableau in project format.
-
-    Uses linprog(c=0) to find a feasible vertex, extracts a basis of m LI columns
-    preferring positive-x columns, and materializes T = [B^{-1}A | B^{-1}b;
-    reduced_costs | c0 - c_B^T B^{-1} b] via sparse LU.
-    """
-    from scipy.optimize import linprog
-    from scipy.linalg import qr as sp_qr
-    from scipy.sparse import csc_matrix
-    from scipy.sparse.linalg import splu
-
-    n_rows, n_cols = A_std.shape
-
-    sol = linprog(
-        c=np.zeros(n_cols), A_eq=A_std, b_eq=b_std,
-        bounds=[(0, None)] * n_cols, method='highs',
-    )
-    if sol.status != 0:
-        raise RuntimeError(f"HiGHS phase 1 failed: status={sol.status} ({sol.message})")
-
-    x = np.maximum(sol.x, 0.0)
-    pos_idx = np.where(x > tol)[0]
-    zero_idx = np.where(x <= tol)[0]
-    if pos_idx.size > n_rows:
-        raise RuntimeError(f"HiGHS returned non-vertex: {pos_idx.size} > {n_rows}")
-
-    needed = n_rows - pos_idx.size
-    if needed > 0:
-        if pos_idx.size > 0:
-            Q_pos, _ = sp_qr(A_std[:, pos_idx], mode='economic')
-            Mz = A_std[:, zero_idx]
-            R = Mz - Q_pos @ (Q_pos.T @ Mz)
-        else:
-            R = A_std[:, zero_idx]
-        _, _, piv = sp_qr(R, pivoting=True, mode='economic')
-        basis = np.concatenate([pos_idx, zero_idx[piv[:needed]]]).astype(int)
-    else:
-        basis = pos_idx.astype(int)
-
-    B_sparse = csc_matrix(A_std[:, basis])
-    rhs = np.column_stack([A_std, b_std[:, None]])
-    lu = splu(B_sparse)
-    Binv_rhs = lu.solve(rhs)
-
-    c_B = c_std[basis]
-    reduced = c_std - c_B @ Binv_rhs[:, :-1]
-    obj_slot = c0 - c_B @ Binv_rhs[:, -1]
-
-    T = np.empty((n_rows + 1, n_cols + 1), dtype=np.float64)
-    T[:n_rows, :] = Binv_rhs
-    T[-1, :-1] = reduced
-    T[-1, -1] = obj_slot
-
-    return T, basis, int(sol.nit)
-
-
-def change_to_zero_sum_direct_phase2(GameMatrix):
-    """
-    Convert a zero-sum game matrix directly to a canonical Phase 2 tableau
-    without Phase 1 by constructing a trivial feasible BFS and then
-    canonicalizing the tableau.
-    Returns (T, basis, None).
-    """
-    m, n = GameMatrix.shape
-
-    # Shift so B >= 0
-    min_element = np.min(GameMatrix)
-    K = max(0.0, -min_element + 1e-6)
-    B = GameMatrix + K
-
-    # Build standard-form A, b, c for:
-    #  -B^T x + v + s = 0  (n rows)
-    #   1^T x        = 1  (1 row)
-    slack_matrix = np.eye(n)
-    A_constraints = np.hstack([-B.T, np.ones((n, 1)), slack_matrix])     # n x (m+1+n)
-    A_sum         = np.hstack([np.ones(m), np.zeros(1), np.zeros(n)])     # 1 x (m+1+n)
-    A = np.vstack([A_constraints, A_sum])                                 # (n+1) x (m+1+n)
-
-    b = np.zeros(n + 1)
-    b[-1] = 1.0
-
-    c = np.zeros(m + 1 + n)
-    c[m] = -1.0   # minimize -v
-
-    # Choose a provably feasible, nonsingular basis:
-    #  - First n rows: take all slacks s_j basic (columns m+1 ... m+n)
-    #  - Last row (sum): take x_0 basic (column 0)
-    # This yields B = [[I_n, -B^T[:,0]]; [0,...,0, 1]], invertible,
-    # and basic values x0=1, s = B^T[:,0] >= 0 (since B>=0).
-    basis = np.empty(n + 1, dtype=int)
-    basis[:n] = m + 1 + np.arange(n)  # all slacks
-    basis[-1] = 0                     # x[0]
-
-    # Canonicalize
-    T, basis = build_phase2_tableau_canonical(A, b, c, basis)
-
-    # No artificial variables in this path
-    return T, basis, None
-
-
 def build_phase2_tableau_canonical(A, b, c, basis, tol=1e-12):
     """
     Given equality-form constraints A x = b (with x >= 0), an objective c^T x,
@@ -590,41 +418,6 @@ def build_phase2_tableau_canonical(A, b, c, basis, tol=1e-12):
     # -zeros for numerical neatness
     T[np.abs(T) < tol] = 0.0
     return T, basis
-
-def build_trivial_bfs_zero_sum_game(GameMatrix):
-    """
-    Build a canonical Phase 2 tableau for the zero-sum game using the
-    trivial pure strategy x = e_0 as a feasible BFS.
-    Returns (T, basis).
-    """
-    m, n = GameMatrix.shape
-
-    # Shift so B >= 0
-    min_element = np.min(GameMatrix)
-    K = max(0.0, -min_element + 1e-6)
-    B = GameMatrix + K
-
-    # Standard-form A, b, c as above
-    slack_matrix = np.eye(n)
-    A_constraints = np.hstack([-B.T, np.ones((n, 1)), slack_matrix])
-    A_sum         = np.hstack([np.ones(m), np.zeros(1), np.zeros(n)])
-    A = np.vstack([A_constraints, A_sum])
-
-    b = np.zeros(n + 1)
-    b[-1] = 1.0
-
-    c = np.zeros(m + 1 + n)
-    c[m] = -1.0
-
-    # Same feasible, nonsingular basis: all slacks + x0
-    basis = np.empty(n + 1, dtype=int)
-    basis[:n] = m + 1 + np.arange(n)
-    basis[-1] = 0
-
-    # Canonicalize
-    T, basis = build_phase2_tableau_canonical(A, b, c, basis)
-    return T, basis
-
 
 def change_to_zero_sum_phase2_only(GameMatrix):
     """

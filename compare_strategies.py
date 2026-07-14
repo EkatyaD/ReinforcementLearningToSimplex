@@ -17,8 +17,8 @@ from envs import RandomMatrixEnv
 
 # Import constants
 from config import (
-    M, N, MIN_VAL, MAX_VAL, EPSILON, TIMESTEPS,
-    MODEL_NAME_TEMPLATE, PIVOT_MAP, PIVOT_MAP_TEST, NUM_PIVOT_STRATEGIES, NUM_PIVOT_STRATEGIES_TEST
+    M, N, MIN_VAL, MAX_VAL, EPSILON,
+    PIVOT_MAP, PIVOT_MAP_TEST, NUM_PIVOT_STRATEGIES_TEST,
 )
 from base_matrix import BASE_MATRIX
 
@@ -190,15 +190,9 @@ def test_rl(matrix: Matrix):
     # print(pd.DataFrame(matrix.base_P).to_string(index=False, header=False))
     # print(matrix.base_P.tolist())
 
-    # model_path = MODEL_NAME_TEMPLATE.format(
-    #     steps=TIMESTEPS,
-    #     m=M,
-    #     n=N,
-    #     min=MIN_VAL,
-    #     max=MAX_VAL,
-    #     eps=EPSILON
-    # )
-    model_path = "40x40results/ppo_simplex_random_20000000_matrix40x40_min-1_max1_epsilon0.001.zip"
+    # One of the shipped final models (see results/normal_form/models/).
+    model_path = ("results/normal_form/models/"
+                  "ppo_simplex_random_20000000_matrix40x40_min-1_max1_epsilon0.001_dict_weighted.zip")
 
     env = RandomMatrixEnv(matrix)
     model = PPO.load(model_path)

@@ -6,7 +6,7 @@ The four models vary along two axes encoded in their filename:
              difference; evaluation reports BOTH nit and weighted_cost regardless)
 
 The obs axis is the one that matters for *loading/running*: a compact model
-expects the 29-feature flat observation, a dict model expects the Dict obs.
+expects the 31-feature flat observation, a dict model expects the Dict obs.
 So we flip experiment.USE_COMPACT_OBS per model before running.
 """
 import os

@@ -1,10 +1,13 @@
 # RL-guided simplex solver for zero-sum games
 
 A reinforcement-learning agent (PPO) that learns to **dynamically select the pivot rule** at
-each step of the two-phase simplex method, instead of committing to a single fixed heuristic.
-At every pivot the agent chooses among **Bland's rule, largest coefficient, largest increase,
-steepest edge, and random edge**, aiming to solve each linear program in fewer (or cheaper)
-pivots than any one fixed rule.
+each simplex pivot, instead of committing to a single fixed heuristic. At every phase-2 pivot
+the agent chooses among **largest coefficient, largest increase, and steepest edge**
+(`PIVOT_MAP` in `config.py`), aiming to solve each linear program in fewer (or cheaper) pivots
+than any one fixed rule. Evaluation compares it against **five** fixed heuristics — those three
+plus the eval-only baselines **random edge** and **Bland's rule**. In all shipped results the
+agent acts in phase 2 of the two-phase simplex method; phase 1 (when needed) is solved with a
+fixed steepest-edge-style rule.
 
 Two problem families are supported via `GAME_MODE` in `config.py`:
 

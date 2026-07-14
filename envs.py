@@ -23,7 +23,7 @@ from config import (
 )
 from simplex_solver import (
     change_to_zero_sum_phase2_only,
-    change_to_zero_sum, phase1solver, first_to_second, phase1_via_highs,
+    change_to_zero_sum, phase1solver, first_to_second,
     _pivot_col_heuristics, _pivot_row, _apply_pivot,
 )
 from _linprog_utils import _parse_linprog, _get_Abc, _LPProblem
@@ -116,12 +116,6 @@ class SecondPhasePivotingEnv(gym.Env):
                 vec[c] = 1.0
         return vec
 
-    def _last_action_onehot(self):
-        v = np.zeros(int(NUM_PIVOT_STRATEGIES), dtype=np.float32)
-        if 0 <= self._last_action < NUM_PIVOT_STRATEGIES:
-            v[self._last_action] = 1.0
-        return v
-
     def _nit_norm(self):
         return np.array([min(1.0, float(self.nit) / float(self.maxiter))], dtype=np.float32)
 
@@ -151,10 +145,6 @@ class SecondPhasePivotingEnv(gym.Env):
             "objective": np.array([obj], dtype=np.float64),
             "delta_objective": np.array([delta], dtype=np.float64),
             "nit_norm": self._nit_norm(),
-            # "degenerate_streak": np.array([float(self._degenerate_streak)], dtype=np.float32),
-            # "loop_flag": np.array([1.0 if self._basis_key() in self._seen_bases else 0.0], dtype=np.float32),
-            # "last_action_onehot": self._last_action_onehot(),
-            # "shift_K": np.array([float(getattr(self, "K", 0.0) or 0.0)], dtype=np.float64),
         }
         return obs
 
@@ -234,7 +224,6 @@ class SecondPhasePivotingEnv(gym.Env):
 
         key = self._basis_key()
         if key in self._seen_bases:
-            print("LOOP DETECTED")
             reward -= self._loop_penalty
             truncated = True
         else:
@@ -264,63 +253,6 @@ class SecondPhasePivotingEnv(gym.Env):
         print(self.T)
         print("Current Basis:", self.basis)
         print("Iterations:", self.nit)
-
-    def close(self):
-        pass
-
-
-class FirstPhasePivotingEnv(gym.Env):
-
-    def __init__(self, T, basis, nit0 = 0):
-        self.basis = basis
-        self.T = T
-        self.tol = 1e-9
-        self.maxiter = 5000
-        self.nit0 = nit0
-        self.nit = 0
-        self.action_space = spaces.Discrete(NUM_PIVOT_STRATEGIES)
-        self.observation_space = spaces.Box(
-            low=-np.inf, high=np.inf,
-            shape=self.T.shape, dtype=np.float64
-        )
-        self.complete = False
-
-    def _get_obs(self):
-        return self.T.copy()
-
-    def reset(self, seed=None, **kwargs):
-        self.nit = 0
-        self.status = None
-        return self._get_obs(), {}
-
-    def step(self, action):
-        strategy = PIVOT_MAP[int(action)]
-        reward = -1
-        done = False
-
-        pivcol_found, pivcol = _pivot_col_heuristics(self.T, strategy=strategy, tol=self.tol)
-        if not pivcol_found:
-            done = True
-            return self._get_obs(), reward, done, False, {}
-
-        pivrow_found, pivrow = _pivot_row(self.T, self.basis, pivcol, phase=1, tol=self.tol)
-        if not pivrow_found:
-            done = True
-            return self._get_obs(), reward, done, False, {}
-
-        _apply_pivot(self.T, self.basis, pivrow, pivcol, tol=self.tol)
-        self.nit += 1
-
-        if self.nit >= self.maxiter:
-            done = True
-
-        return self._get_obs(), reward, done, False, {}
-
-    def render(self, mode='human'):
-        print("Current Tableau:")
-        print(self.T)
-        print("Current Basis:", self.basis)
-        print("Iteration:", self.nit)
 
     def close(self):
         pass

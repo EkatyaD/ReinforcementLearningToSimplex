@@ -35,8 +35,8 @@ for both training-time shaping (for the `weighted` models) and evaluation.
 
 | Model | Observation | Step penalty | Policy | Size |
 |---|---|---|---|---:|
-| `compact_unweighted` | compact (Box, 29 feat) | flat −1/pivot | MlpPolicy | 1.8 MB |
-| `compact_weighted`   | compact (Box, 29 feat) | per-rule weighted | MlpPolicy | 1.8 MB |
+| `compact_unweighted` | compact (Box, 31 feat) | flat −1/pivot | MlpPolicy | 1.8 MB |
+| `compact_weighted`   | compact (Box, 31 feat) | per-rule weighted | MlpPolicy | 1.8 MB |
 | `dict_unweighted`    | dict (full tableau) | flat −1/pivot | MultiInputPolicy | 24 MB |
 | `dict_weighted`      | dict (full tableau) | per-rule weighted | MultiInputPolicy | 24 MB |
 
@@ -46,6 +46,13 @@ comparison below is purely about efficiency. `Mean Δ` is the mean per-instance
 reduction `heuristic − RL` (positive ⇒ RL fewer pivots / lower cost). `p` is the
 Wilcoxon signed-rank p on nonzero paired diffs; `(heur)` marks the cases where
 the heuristic wins the majority.
+
+> **Note (Bland's-rule correction).** The `blands_rule` baseline was re-run after
+> fixing its leaving-row selection to use the exact minimum-ratio set (the earlier
+> implementation tie-broke within a Harris η-band, which forfeits the anti-cycling
+> guarantee). In-distribution results are unchanged; out-of-distribution
+> `blands_rule` figures shifted marginally (mean 165.55 → 165.57 pivots). No other
+> method is affected.
 
 ---
 
@@ -83,7 +90,7 @@ the heuristic wins the majority.
 | largest_increase | 47.97 | 46 | 30 | 104 |
 | **steepest_edge** | **37.04** | 37 | 19 | 57 |
 | random_edge | 122.05 | 119 | 74 | 181 |
-| blands_rule | 165.55 | 163 | 89 | 285 |
+| blands_rule | 165.57 | 163 | 89 | 285 |
 
 ### Out-of-distribution — weighted cost
 
@@ -91,7 +98,7 @@ the heuristic wins the majority.
 |---|---:|---:|---:|---:|
 | **largest_coefficient** | **59.62** | 58.0 | 36.0 | 94.0 |
 | **steepest_edge** | **70.01** | 69.9 | 35.9 | 107.7 |
-| blands_rule | 109.26 | 107.6 | 58.7 | 188.1 |
+| blands_rule | 109.28 | 107.6 | 58.7 | 188.1 |
 | random_edge | 109.84 | 107.1 | 66.6 | 162.9 |
 | largest_increase | 152.05 | 145.8 | 95.1 | 329.7 |
 
@@ -133,7 +140,7 @@ vs best-per-instance: **36.0%** win (72/0/128), mean reduction −13.3%.
 | largest_increase | 164 | 5 | 31 | +8.93 | <1e-6 |
 | steepest_edge | 58 | 16 | 126 | −2.00 | <1e-6 (heur) |
 | random_edge | 200 | 0 | 0 | +83.00 | <1e-6 |
-| blands_rule | 200 | 0 | 0 | +126.51 | <1e-6 |
+| blands_rule | 200 | 0 | 0 | +126.53 | <1e-6 |
 
 vs best-per-instance: **34.5%** win+tie (52/17/131), mean reduction −7.4%.
 
@@ -145,7 +152,7 @@ vs best-per-instance: **34.5%** win+tie (52/17/131), mean reduction −7.4%.
 | largest_increase | 198 | 0 | 2 | +63.33 | <1e-6 |
 | steepest_edge | 16 | 0 | 184 | −18.71 | <1e-6 (heur) |
 | random_edge | 158 | 0 | 42 | +21.12 | <1e-6 |
-| blands_rule | 151 | 0 | 49 | +20.54 | <1e-6 |
+| blands_rule | 150 | 0 | 50 | +20.56 | <1e-6 |
 
 vs best-per-instance: **2.0%** win (4/0/196), mean reduction −56.6%.
 
@@ -185,7 +192,7 @@ vs best-per-instance: **71.5%** win (143/0/57), mean reduction +9.6%.
 | largest_increase | 61 | 5 | 134 | −4.51 | <1e-6 (heur) |
 | steepest_edge | 8 | 5 | 187 | −15.44 | <1e-6 (heur) |
 | random_edge | 200 | 0 | 0 | +69.57 | <1e-6 |
-| blands_rule | 200 | 0 | 0 | +113.08 | <1e-6 |
+| blands_rule | 200 | 0 | 0 | +113.10 | <1e-6 |
 
 vs best-per-instance: **4.5%** win+tie (5/4/191), mean reduction −45.9%.
 
@@ -197,7 +204,7 @@ vs best-per-instance: **4.5%** win+tie (5/4/191), mean reduction −45.9%.
 | largest_increase | 200 | 0 | 0 | +93.58 | <1e-6 |
 | steepest_edge | 161 | 0 | 39 | +11.53 | <1e-6 |
 | random_edge | 200 | 0 | 0 | +51.37 | <1e-6 |
-| blands_rule | 199 | 0 | 1 | +50.79 | <1e-6 |
+| blands_rule | 199 | 0 | 1 | +50.81 | <1e-6 |
 
 vs best-per-instance: **49.0%** win (98/0/102), mean reduction −3.1%.
 
@@ -237,7 +244,7 @@ vs best-per-instance: **74.0%** win (148/0/52), mean reduction +6.3%.
 | largest_increase | 123 | 5 | 72 | +4.02 | 3e-6 |
 | steepest_edge | 32 | 7 | 161 | −6.91 | <1e-6 (heur) |
 | random_edge | 200 | 0 | 0 | +78.10 | <1e-6 |
-| blands_rule | 200 | 0 | 0 | +121.61 | <1e-6 |
+| blands_rule | 200 | 0 | 0 | +121.63 | <1e-6 |
 
 vs best-per-instance: **16.5%** win+tie (27/6/167), mean reduction −21.9%.
 
@@ -249,7 +256,7 @@ vs best-per-instance: **16.5%** win+tie (27/6/167), mean reduction −21.9%.
 | largest_increase | 198 | 0 | 2 | +65.82 | <1e-6 |
 | steepest_edge | 28 | 0 | 172 | −16.22 | <1e-6 (heur) |
 | random_edge | 169 | 0 | 31 | +23.61 | <1e-6 |
-| blands_rule | 160 | 0 | 40 | +23.03 | <1e-6 |
+| blands_rule | 159 | 0 | 41 | +23.05 | <1e-6 |
 
 vs best-per-instance: **1.5%** win (3/0/197), mean reduction −52.5%.
 
@@ -289,7 +296,7 @@ vs best-per-instance: **91.5%** win (183/0/17), mean reduction +26.4%.
 | largest_increase | 128 | 15 | 57 | +5.53 | <1e-6 |
 | steepest_edge | 38 | 10 | 152 | −5.39 | <1e-6 (heur) |
 | random_edge | 200 | 0 | 0 | +79.61 | <1e-6 |
-| blands_rule | 200 | 0 | 0 | +123.11 | <1e-6 |
+| blands_rule | 200 | 0 | 0 | +123.14 | <1e-6 |
 
 vs best-per-instance: **21.5%** win+tie (32/11/157), mean reduction −17.1%.
 
@@ -301,7 +308,7 @@ vs best-per-instance: **21.5%** win+tie (32/11/157), mean reduction −17.1%.
 | largest_increase | 200 | 0 | 0 | +84.13 | <1e-6 |
 | steepest_edge | 115 | 0 | 85 | +2.08 | 0.002 |
 | random_edge | 197 | 0 | 3 | +41.92 | <1e-6 |
-| blands_rule | 194 | 0 | 6 | +41.34 | <1e-6 |
+| blands_rule | 193 | 0 | 7 | +41.36 | <1e-6 |
 
 vs best-per-instance: **22.0%** win (44/0/156), mean reduction −20.3%.
 

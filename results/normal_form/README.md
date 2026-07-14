@@ -23,7 +23,7 @@ step-penalty shaping; each is compared against the five fixed pivot heuristics.
 | `…_dict_unweighted`    | `False` | `False` | MultiInputPolicy |
 | `…_dict_weighted`      | `False` | `True`  | MultiInputPolicy |
 
-`compact` = size-independent 29-feature observation; `dict` = full-tableau observation
+`compact` = size-independent 31-feature observation; `dict` = full-tableau observation
 (24 MB models, policy locked to the 40×40 shape). `weighted` scales the per-pivot penalty by
 each rule's empirical wallclock cost (`STEP_PENALTY_WEIGHTS_MATRIX`); `unweighted` charges a
 flat −1/pivot. See `evaluation/eval_final_models.md` for the full analysis and recommendation.
