@@ -1,3 +1,13 @@
+"""Manual, interactive comparison harness — NOT an automated test suite.
+
+Despite the ``test_*`` function names, this file contains no assertions and is
+not run by pytest. It is a scratch script for eyeballing, on a single perturbed
+matrix, the pivot count and recovered game value of each fixed heuristic
+(``test_fixed_strategies``) versus a loaded PPO agent (``test_rl``). Run it
+directly (``python compare_strategies.py``); nothing imports it. The formal,
+reproducible evaluation lives in ``experiment.py`` and ``results/``.
+"""
+
 import numpy as np
 import pandas as pd
 from stable_baselines3 import PPO
@@ -217,7 +227,7 @@ def test_rl(matrix: Matrix):
 
 if __name__ == "__main__":
     print(M,N)
-    matrix = Matrix(m=M, n=N, min=MIN_VAL, max=MAX_VAL, epsilon=EPSILON, base_P=BASE_MATRIX)
+    matrix = Matrix(m=M, n=N, low=MIN_VAL, high=MAX_VAL, epsilon=EPSILON, base_P=BASE_MATRIX)
     # print("Base matrix:")
     print(pd.DataFrame(matrix.base_P).to_string(index=False, header=False))
 

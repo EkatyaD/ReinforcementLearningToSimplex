@@ -1,3 +1,16 @@
+"""Matrix-mode evaluation: RL agent vs the five fixed pivot heuristics.
+
+Generates in-distribution and out-of-distribution 40x40 test matrices, solves
+each phase-2 tableau with every fixed heuristic and with the trained agent,
+and reports per-method pivot counts / weighted costs plus Wilcoxon tests.
+
+Reproduction note: the ``results/`` eval drivers import this module and
+monkeypatch its module-level globals (``USE_COMPACT_OBS``,
+``STEP_PENALTY_WEIGHTS``, ``TEST_EPSILON``) before calling ``run_experiment`` /
+``run_fixed_strategy`` / ``run_rl_agent``. Those names and signatures are a
+stable interface — keep them module-level.
+"""
+
 import argparse
 import importlib.util
 import numpy as np
@@ -22,6 +35,15 @@ from config import (
     STEP_PENALTY_WEIGHTS,
 )
 from base_matrix import BASE_MATRIX
+
+# Default model for the standalone `python experiment.py` smoke run. The
+# canonical 4-model evaluation is results/normal_form/eval_normal_form.py;
+# this just points main() at one shipped model. Override on the command line
+# with `--model <path>`.
+DEFAULT_MODEL_PATH = (
+    "results/normal_form/models/"
+    "ppo_simplex_random_20000000_matrix40x40_min-1_max1_epsilon0.001_dict_weighted.zip"
+)
 
 
 def load_base_matrix_from_file(path):
@@ -167,7 +189,7 @@ def generate_test_matrices(n_matrices, mode="in_distribution", base_matrix=None)
         # equals EPSILON (the default), the test set matches the training
         # distribution; when it differs, this probes generalization to a
         # different perturbation magnitude than the agent was trained on.
-        base = Matrix(m=M, n=N, min=MIN_VAL, max=MAX_VAL,
+        base = Matrix(m=M, n=N, low=MIN_VAL, high=MAX_VAL,
                       epsilon=TEST_EPSILON, base_P=base_matrix)
         for _ in range(n_matrices):
             perturbed = base.generate_perturbed_matrix()
@@ -175,8 +197,8 @@ def generate_test_matrices(n_matrices, mode="in_distribution", base_matrix=None)
 
     elif mode == "out_of_distribution":
         for _ in range(n_matrices):
-            mat = Matrix(m=M, n=N, min=MIN_VAL, max=MAX_VAL, epsilon=0.0)
-            mat.generateMatrix(mode="uniform")
+            mat = Matrix(m=M, n=N, low=MIN_VAL, high=MAX_VAL, epsilon=0.0)
+            mat.generate_matrix(mode="uniform")
             matrices.append(mat.base_P)
 
     return matrices
@@ -451,15 +473,25 @@ def analyze_results(results, all_methods):
 # ---------------------------------------------------------------------------
 
 def main():
+    parser = argparse.ArgumentParser(
+        description="Standalone matrix-mode evaluation of one model vs the fixed heuristics."
+    )
+    parser.add_argument("--model", default=DEFAULT_MODEL_PATH,
+                        help="Path to the PPO model .zip (default: shipped dict_weighted model).")
+    parser.add_argument("--n-matrices", type=int, default=200,
+                        help="Number of test matrices per test set.")
+    parser.add_argument("--seed", type=int, default=42, help="Random seed.")
+    parser.add_argument("--save", default=None,
+                        help="Optional path to write raw results JSON.")
+    parser.add_argument("--base-matrix", default=None,
+                        help="Optional path to a base_matrix.py; defaults to the current one.")
+    args = parser.parse_args()
 
-    n_matrices = 200  # Number of test matrices per test set
-    seed = 42  # Random seed for reproducibility
-    save = None  # Path to save raw results (e.g., "results.json")
-    base_matrix = None  # Path to base_matrix.py, or None to use current base_matrix.py
-    model = MODEL_NAME_TEMPLATE.format(steps=TIMESTEPS, m=M, n=N, min=MIN_VAL, max=MAX_VAL, eps=EPSILON)
-    # Standalone smoke entry only. The canonical 4-model evaluation is
-    # results/normal_form/eval_normal_form.py; this points at one shipped model.
-    model = "results/normal_form/models/ppo_simplex_random_20000000_matrix40x40_min-1_max1_epsilon0.001_dict_weighted.zip"
+    n_matrices = args.n_matrices
+    seed = args.seed
+    save = args.save
+    base_matrix = args.base_matrix
+    model = args.model
 
     # Load custom base matrix if specified
     # base_matrix = None

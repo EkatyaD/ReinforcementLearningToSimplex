@@ -1,3 +1,13 @@
+"""PPO training entry point.
+
+Builds the vectorized gym environment for the configured ``GAME_MODE``
+(matrix or Leduc), stacks the observation/reward wrappers selected by the
+``config`` feature flags, constructs a Stable-Baselines3 PPO model, and trains
+it with checkpoint / save-on-best callbacks. ``python train.py`` runs a single
+configuration; ``python train.py --grid-search`` sweeps a small PPO
+hyperparameter grid instead.
+"""
+
 import os
 import numpy as np
 import gymnasium as gym
@@ -18,7 +28,7 @@ from stable_baselines3.common.env_util import make_vec_env
 from envs import RandomMatrixEnv, LeducEnv, FullPivotEnv, LeducFullPivotEnv
 from matrix import Matrix
 from config import M, N, MIN_VAL, MAX_VAL, EPSILON, TIMESTEPS, N_ENVS, MODEL_NAME_TEMPLATE, LOAD_MODEL, CHECKPOINT_START, CHECKPOINT_FREQ
-from config import USE_TWO_PHASE, USE_COMPACT_OBS, USE_EMPTY_OBS, USE_BASELINE_REWARD, BASELINE_REWARD_COEF, BASELINE_REWARD_WINS_ONLY, USE_FULL_PIVOT, ENT_COEF, GAMMA
+from config import USE_COMPACT_OBS, USE_EMPTY_OBS, USE_BASELINE_REWARD, BASELINE_REWARD_COEF, BASELINE_REWARD_WINS_ONLY, USE_FULL_PIVOT, ENT_COEF, GAMMA
 from config import GAME_MODE, LEDUC_GAME, LEDUC_ALPHA, LEDUC_NUM_RANKS
 from base_matrix import BASE_MATRIX
 
@@ -29,7 +39,7 @@ from io_utils import update_base_matrix
 
 def create_matrix():
     """Create a matrix instance based on config settings"""
-    matrix = Matrix(m=M, n=N, min=MIN_VAL, max=MAX_VAL, epsilon=EPSILON, base_P=BASE_MATRIX)
+    matrix = Matrix(m=M, n=N, low=MIN_VAL, high=MAX_VAL, epsilon=EPSILON, base_P=BASE_MATRIX)
     print("Using standard Matrix")
     return matrix
 
@@ -53,6 +63,51 @@ def create_ppo_model(vec_env, verbose=1, n_envs=1, learning_rate=1e-4, n_steps=5
     )
 
 
+def _ensure_base_matrix(matrix):
+    """Ensure `matrix` has a valid MxN base matrix.
+
+    If it doesn't (missing or wrong shape), generate a fresh one, persist it to
+    base_matrix.py and reload it — matching the historical training workflow.
+    Returns the same matrix instance.
+    """
+    need_new_matrix = (
+        matrix.base_P is None or
+        matrix.base_P.shape != (M, N)
+    )
+
+    if need_new_matrix:
+        print(f"Generating new {M}x{N} matrix...")
+        matrix.generate_matrix(mode="uniform")
+
+        update_base_matrix(matrix.base_P)
+        print("Updated base_matrix.py with new BASE_MATRIX")
+
+        import importlib
+        import base_matrix
+        importlib.reload(base_matrix)
+        from base_matrix import BASE_MATRIX as RELOADED_BASE
+        matrix.base_P = RELOADED_BASE
+        print("Reloaded base matrix configuration")
+    else:
+        print(f"Using existing {M}x{N} matrix from config")
+    return matrix
+
+
+def _apply_obs_reward_wrappers(base_env):
+    """Stack the baseline-reward and observation wrappers selected by config.
+
+    Shared by every phase-2 env builder so the wrapper order is defined once.
+    Does NOT apply the TimeLimit — callers add their own episode cap.
+    """
+    if USE_BASELINE_REWARD:
+        base_env = BaselineRewardWrapper(base_env, baseline_strategy='steepest_edge', coef=BASELINE_REWARD_COEF, wins_only=BASELINE_REWARD_WINS_ONLY)
+    if USE_EMPTY_OBS:
+        base_env = EmptyObsWrapper(base_env)
+    elif USE_COMPACT_OBS:
+        base_env = CompactObsWrapper(base_env)
+    return base_env
+
+
 def train_single_config(matrix, learning_rate, n_steps, clip_range, run_id, total_runs):
     """Trains a model with given hyperparameters"""
     start_time = time.time()
@@ -62,13 +117,7 @@ def train_single_config(matrix, learning_rate, n_steps, clip_range, run_id, tota
     print(f"{'='*80}\n")
 
     def make_env():
-        base_env = RandomMatrixEnv(matrix)
-        if USE_BASELINE_REWARD:
-            base_env = BaselineRewardWrapper(base_env, baseline_strategy='steepest_edge', coef=BASELINE_REWARD_COEF, wins_only=BASELINE_REWARD_WINS_ONLY)
-        if USE_EMPTY_OBS:
-            base_env = EmptyObsWrapper(base_env)
-        elif USE_COMPACT_OBS:
-            base_env = CompactObsWrapper(base_env)
+        base_env = _apply_obs_reward_wrappers(RandomMatrixEnv(matrix))
         return TimeLimit(base_env, max_episode_steps=2000)
 
     vec_env = make_vec_env(make_env, n_envs=N_ENVS)
@@ -138,28 +187,7 @@ def grid_search():
 
     # Initialize matrix (same logic as in main)
     print(f"Matrix dimensions: {M}x{N}")
-    matrix = create_matrix()
-
-    need_new_matrix = (
-        matrix.base_P is None or
-        matrix.base_P.shape != (M, N)
-    )
-
-    if need_new_matrix:
-        print(f"Generating new {M}x{N} matrix...")
-        matrix.generateMatrix(mode="uniform")
-
-        update_base_matrix(matrix.base_P)
-        print("Updated base_matrix.py with new BASE_MATRIX")
-
-        import importlib
-        import base_matrix
-        importlib.reload(base_matrix)
-        from base_matrix import BASE_MATRIX as RELOADED_BASE
-        matrix.base_P = RELOADED_BASE
-        print("Reloaded base matrix configuration")
-    else:
-        print(f"Using existing {M}x{N} matrix from config")
+    matrix = _ensure_base_matrix(create_matrix())
 
     # Create directory for results
     os.makedirs('models', exist_ok=True)
@@ -222,28 +250,7 @@ def grid_search():
 
 def _make_matrix_env():
     """Create a RandomMatrixEnv for the 'matrix' game mode."""
-    matrix = create_matrix()
-
-    need_new_matrix = (
-        matrix.base_P is None or
-        matrix.base_P.shape != (M, N)
-    )
-
-    if need_new_matrix:
-        print(f"Generating new {M}x{N} matrix...")
-        matrix.generateMatrix(mode="uniform")
-
-        update_base_matrix(matrix.base_P)
-        print("Updated base_matrix.py with new BASE_MATRIX")
-
-        import importlib
-        import base_matrix
-        importlib.reload(base_matrix)
-        from base_matrix import BASE_MATRIX as RELOADED_BASE
-        matrix.base_P = RELOADED_BASE
-        print("Reloaded base matrix configuration")
-    else:
-        print(f"Using existing {M}x{N} matrix from config")
+    matrix = _ensure_base_matrix(create_matrix())
 
     if USE_FULL_PIVOT:
         print("Using FullPivotEnv (agent plays BOTH phases)")
@@ -253,13 +260,7 @@ def _make_matrix_env():
         )
         return TimeLimit(base_env, max_episode_steps=4000)
 
-    base_env = RandomMatrixEnv(matrix)
-    if USE_BASELINE_REWARD:
-        base_env = BaselineRewardWrapper(base_env, baseline_strategy='steepest_edge', coef=BASELINE_REWARD_COEF, wins_only=BASELINE_REWARD_WINS_ONLY)
-    if USE_EMPTY_OBS:
-        base_env = EmptyObsWrapper(base_env)
-    elif USE_COMPACT_OBS:
-        base_env = CompactObsWrapper(base_env)
+    base_env = _apply_obs_reward_wrappers(RandomMatrixEnv(matrix))
     return TimeLimit(base_env, max_episode_steps=2000)
 
 
@@ -273,17 +274,11 @@ def _make_leduc_env():
         )
         return TimeLimit(base_env, max_episode_steps=20_000)
 
-    base_env = LeducEnv(
+    base_env = _apply_obs_reward_wrappers(LeducEnv(
         game_name=LEDUC_GAME,
         alpha=LEDUC_ALPHA,
         num_ranks=LEDUC_NUM_RANKS,
-    )
-    if USE_BASELINE_REWARD:
-        base_env = BaselineRewardWrapper(base_env, baseline_strategy='steepest_edge', coef=BASELINE_REWARD_COEF, wins_only=BASELINE_REWARD_WINS_ONLY)
-    if USE_EMPTY_OBS:
-        base_env = EmptyObsWrapper(base_env)
-    elif USE_COMPACT_OBS:
-        base_env = CompactObsWrapper(base_env)
+    ))
     return TimeLimit(base_env, max_episode_steps=2000)
 
 

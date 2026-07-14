@@ -1,3 +1,12 @@
+"""Stable-Baselines3 training callbacks.
+
+- ``EpisodeCounterCallback`` tracks episode counts / lengths for logging.
+- ``CheckpointAfterCallback`` saves the model every ``freq`` steps once
+  ``start`` steps have elapsed.
+- ``SaveOnBestEpLenCallback`` saves whenever the rolling mean episode length
+  (i.e. pivot count) reaches a new minimum.
+"""
+
 import os
 import numpy as np
 from stable_baselines3.common.callbacks import BaseCallback

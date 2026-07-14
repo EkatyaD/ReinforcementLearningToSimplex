@@ -82,7 +82,7 @@ def make_base(m, n, seed):
 
 def run_size(m, n, num_matrices, snaps_per_matrix, repeats, seed):
     base = make_base(m, n, seed)
-    matrix = Matrix(m=m, n=n, min=MIN_VAL, max=MAX_VAL, epsilon=EPSILON, base_P=base)
+    matrix = Matrix(m=m, n=n, low=MIN_VAL, high=MAX_VAL, epsilon=EPSILON, base_P=base)
 
     snapshots = []
     for k in range(num_matrices):

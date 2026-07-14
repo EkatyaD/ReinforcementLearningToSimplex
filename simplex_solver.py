@@ -1,3 +1,14 @@
+"""Two-phase simplex core: pivot-column heuristics, the ratio test, pivot
+application, a Phase 1 solver, and the tableau-construction routines that turn
+a zero-sum game matrix into a Phase 2 tableau.
+
+This module holds the thesis' own simplex logic. The five pivot-column
+heuristics the RL agent chooses among (``largest_coefficient``,
+``largest_increase``, ``steepest_edge``, ``random_edge``, ``blands_rule``) are
+implemented here (see ``_pivot_col_heuristics``). LP standard-form plumbing is
+imported from ``_linprog_utils`` (vendored from SciPy — see that file's header).
+"""
+
 import gymnasium as gym
 import numpy as np
 from warnings import warn
@@ -7,6 +18,8 @@ from collections import namedtuple
 from gymnasium import spaces
 from stable_baselines3.common.type_aliases import GymEnv
 
+# The following helpers are vendored from SciPy (BSD-3, see _linprog_utils.py):
+# LP parsing/presolve/standard-form conversion, not original to this thesis.
 from _linprog_utils import (
     _parse_linprog, _presolve, _get_Abc, _LPProblem, _autoscale,
     _postsolve, _check_result, _display_summary)

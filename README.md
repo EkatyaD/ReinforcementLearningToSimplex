@@ -16,7 +16,17 @@ Two problem families are supported via `GAME_MODE` in `config.py`:
 
 ```bash
 python -m venv venv && source venv/bin/activate
-pip install -r requirements.txt          # add open_spiel for the Leduc experiments
+pip install -r requirements.txt          # curated direct dependencies
+# For the Leduc experiments, also install OpenSpiel (not on PyPI as a wheel
+# everywhere — see requirements.txt):
+#   pip install open_spiel   # then verify: python -c "import pyspiel"
+```
+
+To reproduce the exact frozen environment the thesis results were produced with
+(all transitive dependencies, CUDA wheels, etc.), install the lock file instead:
+
+```bash
+pip install -r requirements-lock.txt
 ```
 
 ## Layout

@@ -1,3 +1,14 @@
+"""Central configuration for the RL-guided simplex solver.
+
+Every knob for a training/evaluation run lives here as a module-level constant
+(game mode, LP size, PPO hyperparameters, the observation/reward feature flags,
+the pivot-rule action maps, and the per-rule step-penalty weight tables). Other
+modules read these directly via ``from config import ...``, so changing a run's
+configuration means editing this file. A few values are derived at import time
+(e.g. ``USE_COMPACT_OBS`` is forced True in Leduc mode, and
+``STEP_PENALTY_WEIGHTS`` / ``MODEL_RUN_TAG`` are computed from the flags above).
+"""
+
 import numpy as np
 
 # Game mode: "matrix" or "leduc"

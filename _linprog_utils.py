@@ -1,5 +1,19 @@
 """
-Method agnostic utility functions for linear programming
+Method agnostic utility functions for linear programming.
+
+THIRD-PARTY CODE — NOT ORIGINAL TO THIS THESIS.
+================================================
+This module is a vendored copy of SciPy's ``scipy/optimize/_linprog_util.py``
+(LP problem parsing, presolve, standard-form conversion, autoscaling,
+postsolve and result checking). It is redistributed here so the project is
+self-contained; the LP-to-tableau plumbing it provides is standard SciPy
+machinery, not a contribution of this work.
+
+  Copyright (c) 2001-2002 Enthought, Inc. 2003, SciPy Developers.
+  Licensed under the BSD 3-Clause License. Full license text:
+  ``LICENSES/SCIPY-BSD-3.txt``.
+
+The thesis' own simplex logic lives in ``simplex_solver.py`` and ``envs.py``.
 """
 
 import numpy as np

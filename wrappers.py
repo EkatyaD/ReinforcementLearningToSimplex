@@ -1,3 +1,17 @@
+"""Gymnasium observation and reward wrappers for the simplex environments.
+
+- ``CompactObsWrapper`` replaces the full-tableau Dict observation with a small
+  size-independent feature vector (so one policy generalizes across LP sizes).
+- ``EmptyObsWrapper`` replaces the observation with a single constant feature,
+  giving an information-free control baseline.
+- ``BaselineRewardWrapper`` shapes the terminal reward by the pivot-count
+  difference against a fixed baseline heuristic.
+- ``EarlyStopWrapper`` cuts episodes that stall on degenerate pivots.
+
+NOTE: ``CompactObsWrapper``'s feature layout is load-bearing — the compact
+models encode these exact dimensions, so it must not change.
+"""
+
 import gymnasium as gym
 import numpy as np
 from collections import deque

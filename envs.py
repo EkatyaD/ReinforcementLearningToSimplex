@@ -1,3 +1,17 @@
+"""Gymnasium environments exposing simplex pivoting as an RL problem.
+
+Each environment wraps a simplex tableau: the observation encodes tableau /
+progress features, an action selects one of the pivot-column heuristics from
+``config.PIVOT_MAP``, and ``step`` applies that pivot and returns a shaped
+reward (per-step cost, improvement bonus, degeneracy/loop penalties, terminal
+success bonus). ``SecondPhasePivotingEnv`` is the base phase-2 environment;
+``RandomMatrixEnv`` / ``LeducEnv`` build phase-2 tableaus for the two game
+families, and the ``*FullPivotEnv`` variants let the agent play both phases.
+
+NOTE: observation layout and the action map are load-bearing — the trained
+models encode these exact dimensions, so they must not change.
+"""
+
 import numpy as np
 import gymnasium as gym
 from gymnasium import spaces
