@@ -42,6 +42,7 @@ leduc_experiment_runner.py / experiment_leduc_fullpivot.py   Leduc evaluation
 envs.py wrappers.py callbacks.py   gym environments, obs/reward wrappers, training callbacks
 matrix.py base_matrix.py           payoff-matrix generation + the 40×40 base matrix
 simplex_solver.py _linprog_utils.py io_utils.py   two-phase simplex + LP helpers
+                     (which parts are SciPy-derived and how they're used: see SCIPY_CODE.md)
 leduc_experiment.py  sequence-form LP construction for Leduc/Kuhn
 cluster/             PBS/Metacentrum job scripts (training + evaluation) — reproducibility reference
 calibration/         benchmarks that derive the per-rule STEP_PENALTY_WEIGHTS

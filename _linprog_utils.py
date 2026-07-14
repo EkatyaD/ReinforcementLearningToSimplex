@@ -14,6 +14,8 @@ machinery, not a contribution of this work.
   ``LICENSES/SCIPY-BSD-3.txt``.
 
 The thesis' own simplex logic lives in ``simplex_solver.py`` and ``envs.py``.
+A walkthrough of what this module provides and how the project uses it is in
+``SCIPY_CODE.md`` at the repository root.
 """
 
 import numpy as np
