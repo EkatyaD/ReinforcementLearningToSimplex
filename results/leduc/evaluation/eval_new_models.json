@@ -29,10 +29,10 @@
      "objective": -0.08185663265860547
     },
     "blands_rule": {
-     "status": "maxiter",
-     "nit": 20000,
-     "weighted_cost": 19000.0,
-     "objective": -3559164211.453453
+     "status": "optimal",
+     "nit": 1252,
+     "weighted_cost": 1189.3999999999999,
+     "objective": -0.08185663265834542
     }
    },
    "rl": {
@@ -86,10 +86,10 @@
      "objective": -748739.3415958083
     },
     "blands_rule": {
-     "status": "maxiter",
-     "nit": 20000,
-     "weighted_cost": 19000.0,
-     "objective": -12782061644320.89
+     "status": "optimal",
+     "nit": 1150,
+     "weighted_cost": 1092.5,
+     "objective": -0.08688200158018114
     }
    },
    "rl": {
@@ -146,7 +146,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -283332046.7701129
+     "objective": -7714533.359003067
     }
    },
    "rl": {
@@ -203,7 +203,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -1166754379131571.2
+     "objective": -34355471311.19207
     }
    },
    "rl": {
@@ -260,7 +260,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -279617720.45433223
+     "objective": -699978060102577.5
     }
    },
    "rl": {
@@ -317,7 +317,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -9803925554150.812
+     "objective": -19266992.615163162
     }
    },
    "rl": {
@@ -372,9 +372,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1257,
-     "weighted_cost": 1194.1499999999999,
-     "objective": -0.09151681036475694
+     "nit": 1173,
+     "weighted_cost": 1114.35,
+     "objective": -0.09151681036455635
     }
    },
    "rl": {
@@ -428,10 +428,10 @@
      "objective": -738004932.4115552
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 1285,
-     "weighted_cost": 1220.75,
-     "objective": -0.08116912432373259
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -812739794442.0125
     }
    },
    "rl": {
@@ -485,10 +485,10 @@
      "objective": -113602.48978998204
     },
     "blands_rule": {
-     "status": "maxiter",
-     "nit": 20000,
-     "weighted_cost": 19000.0,
-     "objective": -130923674748.3969
+     "status": "optimal",
+     "nit": 1168,
+     "weighted_cost": 1109.6,
+     "objective": -0.08724141987435832
     }
    },
    "rl": {
@@ -545,7 +545,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -700751912050.5015
+     "objective": -51996371.10884318
     }
    },
    "rl": {
@@ -599,10 +599,10 @@
      "objective": -0.09242352860828552
     },
     "blands_rule": {
-     "status": "maxiter",
-     "nit": 20000,
-     "weighted_cost": 19000.0,
-     "objective": -4690470857566.175
+     "status": "optimal",
+     "nit": 1595,
+     "weighted_cost": 1515.25,
+     "objective": -0.09242352860825373
     }
    },
    "rl": {
@@ -659,7 +659,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -181450437293486.7
+     "objective": -1028475902851872.0
     }
    },
    "rl": {
@@ -716,7 +716,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -888519209641.0815
+     "objective": -67587111772.163315
     }
    },
    "rl": {
@@ -771,9 +771,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 682,
-     "weighted_cost": 647.9,
-     "objective": -0.0761982661778078
+     "nit": 623,
+     "weighted_cost": 591.85,
+     "objective": -0.0761982661778089
     }
    },
    "rl": {
@@ -827,10 +827,10 @@
      "objective": -182122477876.0511
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 1373,
-     "weighted_cost": 1304.35,
-     "objective": -0.09243528353142835
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -10766101.993469108
     }
    },
    "rl": {
@@ -885,9 +885,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1390,
-     "weighted_cost": 1320.5,
-     "objective": -0.08408511961215648
+     "nit": 1580,
+     "weighted_cost": 1501.0,
+     "objective": -0.08408511961159826
     }
    },
    "rl": {
@@ -944,7 +944,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -414722446773.66693
+     "objective": -108958052352.21338
     }
    },
    "rl": {
@@ -998,10 +998,10 @@
      "objective": -0.08541362063886819
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 1058,
-     "weighted_cost": 1005.0999999999999,
-     "objective": -0.08541362063884265
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -941531098166568.0
     }
    },
    "rl": {
@@ -1055,10 +1055,10 @@
      "objective": -97362794983.8768
     },
     "blands_rule": {
-     "status": "maxiter",
-     "nit": 20000,
-     "weighted_cost": 19000.0,
-     "objective": -90243536823.43347
+     "status": "loop",
+     "nit": 8446,
+     "weighted_cost": 8023.7,
+     "objective": -1091905496.432414
     }
    },
    "rl": {
@@ -1112,10 +1112,10 @@
      "objective": -0.08002153135690829
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 1359,
-     "weighted_cost": 1291.05,
-     "objective": -0.08002153135679077
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -7706539.50688462
     }
    },
    "rl": {
@@ -1169,10 +1169,10 @@
      "objective": -8371028468.7388315
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 1481,
-     "weighted_cost": 1406.95,
-     "objective": -0.10088700613216241
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -3110413148.3649406
     }
    },
    "rl": {
@@ -1227,9 +1227,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1438,
-     "weighted_cost": 1366.1,
-     "objective": -0.08052015496711057
+     "nit": 2032,
+     "weighted_cost": 1930.3999999999999,
+     "objective": -0.08052015496712953
     }
    },
    "rl": {
@@ -1283,10 +1283,10 @@
      "objective": -5841870348600.316
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 1189,
-     "weighted_cost": 1129.55,
-     "objective": -0.07657003312270104
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -58358664112502.516
     }
    },
    "rl": {
@@ -1340,10 +1340,10 @@
      "objective": -3821959006984.6846
     },
     "blands_rule": {
-     "status": "maxiter",
-     "nit": 20000,
-     "weighted_cost": 19000.0,
-     "objective": -221310601850.00525
+     "status": "optimal",
+     "nit": 1764,
+     "weighted_cost": 1675.8,
+     "objective": -0.06855613019728632
     }
    },
    "rl": {
@@ -1399,7 +1399,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -19000476902.599903
+     "objective": -57688885287.4823
     }
    },
    "rl": {
@@ -1455,7 +1455,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -5731384318563.441
+     "objective": -303740893034237.3
     }
    },
    "rl": {
@@ -1512,7 +1512,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -132059924585.25186
+     "objective": -21650108.755051464
     }
    },
    "rl": {
@@ -1569,7 +1569,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -74995945432.24701
+     "objective": -346102746.0740102
     }
    },
    "rl": {
@@ -1624,10 +1624,10 @@
      "objective": -264748077.70646
     },
     "blands_rule": {
-     "status": "loop",
-     "nit": 16163,
-     "weighted_cost": 15354.849999999999,
-     "objective": -283768286073.48047
+     "status": "optimal",
+     "nit": 1225,
+     "weighted_cost": 1163.75,
+     "objective": -0.09403160529630719
     }
    },
    "rl": {
@@ -1681,10 +1681,10 @@
      "objective": -507987471477725.94
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 1568,
-     "weighted_cost": 1489.6,
-     "objective": -0.09238275460473294
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -1633630402180.0732
     }
    },
    "rl": {
@@ -1739,9 +1739,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1031,
-     "weighted_cost": 979.4499999999999,
-     "objective": -0.07194412523297915
+     "nit": 1139,
+     "weighted_cost": 1082.05,
+     "objective": -0.07194412523297744
     }
    },
    "rl": {
@@ -1795,10 +1795,10 @@
      "objective": -299882063.3393408
     },
     "blands_rule": {
-     "status": "maxiter",
-     "nit": 20000,
-     "weighted_cost": 19000.0,
-     "objective": -1942519829.5216413
+     "status": "optimal",
+     "nit": 1460,
+     "weighted_cost": 1387.0,
+     "objective": -0.0877120528055344
     }
    },
    "rl": {
@@ -1853,9 +1853,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1279,
-     "weighted_cost": 1215.05,
-     "objective": -0.097943974626882
+     "nit": 1363,
+     "weighted_cost": 1294.85,
+     "objective": -0.0979439746269695
     }
    },
    "rl": {
@@ -1912,7 +1912,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -22209.086117658793
+     "objective": -567268663.8641785
     }
    },
    "rl": {
@@ -1966,10 +1966,10 @@
      "objective": -1097386318645.7241
     },
     "blands_rule": {
-     "status": "maxiter",
-     "nit": 20000,
-     "weighted_cost": 19000.0,
-     "objective": -24083994316.73669
+     "status": "optimal",
+     "nit": 1149,
+     "weighted_cost": 1091.55,
+     "objective": -0.09853819818028417
     }
    },
    "rl": {
@@ -2023,10 +2023,10 @@
      "objective": -5300767365250.232
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 896,
-     "weighted_cost": 851.1999999999999,
-     "objective": -0.06593972353763403
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -1823445057740570.5
     }
    },
    "rl": {
@@ -2083,7 +2083,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -194733345378703.75
+     "objective": -77235817618.37393
     }
    },
    "rl": {
@@ -2140,7 +2140,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -708576457870435.4
+     "objective": -1877421107736.7727
     }
    },
    "rl": {
@@ -2194,10 +2194,10 @@
      "objective": -999200053219.8728
     },
     "blands_rule": {
-     "status": "maxiter",
-     "nit": 20000,
-     "weighted_cost": 19000.0,
-     "objective": -86163455190346.48
+     "status": "optimal",
+     "nit": 2293,
+     "weighted_cost": 2178.35,
+     "objective": -0.05829160265594342
     }
    },
    "rl": {
@@ -2253,9 +2253,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1277,
-     "weighted_cost": 1213.1499999999999,
-     "objective": -0.0656352046832196
+     "nit": 1238,
+     "weighted_cost": 1176.1,
+     "objective": -0.06563520468324696
     }
    },
    "rl": {
@@ -2309,10 +2309,10 @@
      "objective": -511610046.6222694
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 1077,
-     "weighted_cost": 1023.15,
-     "objective": -0.07494579362739036
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -144289779.21718484
     }
    },
    "rl": {
@@ -2369,7 +2369,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -1407735042306.9436
+     "objective": -3676545125812.5977
     }
    },
    "rl": {
@@ -2425,9 +2425,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1339,
-     "weighted_cost": 1272.05,
-     "objective": -0.03124294789778121
+     "nit": 1251,
+     "weighted_cost": 1188.45,
+     "objective": -0.031242947897776967
     }
    },
    "rl": {
@@ -2484,7 +2484,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -11152.557159217366
+     "objective": -1791323889153.8604
     }
    },
    "rl": {
@@ -2539,10 +2539,10 @@
      "objective": -2387907165.2427416
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 1030,
-     "weighted_cost": 978.5,
-     "objective": -0.08653678705647064
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -6270342863.618973
     }
    },
    "rl": {
@@ -2599,7 +2599,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -67246826718192.05
+     "objective": -1004327110622.1938
     }
    },
    "rl": {
@@ -2654,10 +2654,10 @@
      "objective": -19435678510544.234
     },
     "blands_rule": {
-     "status": "maxiter",
-     "nit": 20000,
-     "weighted_cost": 19000.0,
-     "objective": -4.706848569723406e+16
+     "status": "loop",
+     "nit": 10450,
+     "weighted_cost": 9927.5,
+     "objective": -95218932919.37013
     }
    },
    "rl": {
@@ -2713,9 +2713,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 711,
-     "weighted_cost": 675.4499999999999,
-     "objective": -0.07641201388056326
+     "nit": 588,
+     "weighted_cost": 558.6,
+     "objective": -0.07641201388056365
     }
    },
    "rl": {
@@ -2769,10 +2769,10 @@
      "objective": -0.0818650021797628
     },
     "blands_rule": {
-     "status": "maxiter",
-     "nit": 20000,
-     "weighted_cost": 19000.0,
-     "objective": -201898419598.57803
+     "status": "optimal",
+     "nit": 1260,
+     "weighted_cost": 1197.0,
+     "objective": -0.08186500217884211
     }
    },
    "rl": {
@@ -2826,10 +2826,10 @@
      "objective": -3088208740.2480106
     },
     "blands_rule": {
-     "status": "maxiter",
-     "nit": 20000,
-     "weighted_cost": 19000.0,
-     "objective": -621805607.7567291
+     "status": "optimal",
+     "nit": 1451,
+     "weighted_cost": 1378.45,
+     "objective": -0.09039422388341199
     }
    },
    "rl": {
@@ -2888,7 +2888,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -1625287250266120.2
+     "objective": -117986.02436242312
     }
    },
    "rl": {
@@ -2943,9 +2943,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 828,
-     "weighted_cost": 786.5999999999999,
-     "objective": 0.05483471964684188
+     "nit": 814,
+     "weighted_cost": 773.3,
+     "objective": 0.05483471964695531
     }
    },
    "rl": {
@@ -2999,10 +2999,10 @@
      "objective": -5619245205.225729
     },
     "blands_rule": {
-     "status": "maxiter",
-     "nit": 20000,
-     "weighted_cost": 19000.0,
-     "objective": -21323369836.06984
+     "status": "optimal",
+     "nit": 1458,
+     "weighted_cost": 1385.1,
+     "objective": -0.09272419108037397
     }
    },
    "rl": {
@@ -3059,7 +3059,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -27796053858652.125
+     "objective": -1511651497060321.8
     }
    },
    "rl": {
@@ -3114,9 +3114,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1523,
-     "weighted_cost": 1446.85,
-     "objective": -0.04956217088070793
+     "nit": 1275,
+     "weighted_cost": 1211.25,
+     "objective": -0.0495621708807081
     }
    },
    "rl": {
@@ -3174,7 +3174,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -210617941.16314256
+     "objective": -1480561167.333973
     }
    },
    "rl": {
@@ -3231,7 +3231,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -187932820020943.94
+     "objective": -160299576243592.94
     }
    },
    "rl": {
@@ -3286,9 +3286,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1168,
-     "weighted_cost": 1109.6,
-     "objective": -0.09163729262095602
+     "nit": 1279,
+     "weighted_cost": 1215.05,
+     "objective": -0.0916372926206767
     }
    },
    "rl": {
@@ -3345,7 +3345,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -71555179408.0792
+     "objective": -3706386387733.1787
     }
    },
    "rl": {
@@ -3399,10 +3399,10 @@
      "objective": 0.027993689030696253
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 903,
-     "weighted_cost": 857.8499999999999,
-     "objective": 0.027993689030704056
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -215139439.86937708
     }
    },
    "rl": {
@@ -3457,10 +3457,10 @@
      "objective": -204854004459151.25
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 1101,
-     "weighted_cost": 1045.95,
-     "objective": -0.0864624791225397
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -1863002451949.73
     }
    },
    "rl": {
@@ -3515,9 +3515,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1738,
-     "weighted_cost": 1651.1,
-     "objective": -0.09502704448520913
+     "nit": 1570,
+     "weighted_cost": 1491.5,
+     "objective": -0.09502704448522174
     }
    },
    "rl": {
@@ -3574,7 +3574,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -93794154461627.98
+     "objective": -35926493299230.75
     }
    },
    "rl": {
@@ -3631,7 +3631,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -2134494827.8681417
+     "objective": -133881477470666.05
     }
    },
    "rl": {
@@ -3689,7 +3689,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -641139992.8331623
+     "objective": -352619.6285368649
     }
    },
    "rl": {
@@ -3747,7 +3747,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -665994330910.388
+     "objective": -298615121991.8025
     }
    },
    "rl": {
@@ -3803,7 +3803,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -239458537842.13538
+     "objective": -234839253386898.34
     }
    },
    "rl": {
@@ -3860,7 +3860,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -56439843.81470418
+     "objective": -42791963638.85306
     }
    },
    "rl": {
@@ -3917,7 +3917,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -15899334645.759125
+     "objective": -2756768518.099945
     }
    },
    "rl": {
@@ -3971,10 +3971,10 @@
      "objective": -10678380893.993752
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 1515,
-     "weighted_cost": 1439.25,
-     "objective": -0.12114603590201671
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -172142359.01436
     }
    },
    "rl": {
@@ -4030,9 +4030,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1147,
-     "weighted_cost": 1089.6499999999999,
-     "objective": -0.09629603672110881
+     "nit": 1078,
+     "weighted_cost": 1024.1,
+     "objective": -0.09629603672109889
     }
    },
    "rl": {
@@ -4090,7 +4090,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -6985475302544.121
+     "objective": -548274718.0900345
     }
    },
    "rl": {
@@ -4144,10 +4144,10 @@
      "objective": -125765674813.75269
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 1411,
-     "weighted_cost": 1340.45,
-     "objective": -0.09365723031846349
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -2508291918201.4473
     }
    },
    "rl": {
@@ -4204,7 +4204,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -255872599492.83014
+     "objective": -48205755912.75163
     }
    },
    "rl": {
@@ -4258,10 +4258,10 @@
      "objective": -117504669.57622805
     },
     "blands_rule": {
-     "status": "maxiter",
-     "nit": 20000,
-     "weighted_cost": 19000.0,
-     "objective": -183703260679.4594
+     "status": "optimal",
+     "nit": 1031,
+     "weighted_cost": 979.4499999999999,
+     "objective": -0.12253343803456482
     }
    },
    "rl": {
@@ -4315,9 +4315,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1500,
-     "weighted_cost": 1425.0,
-     "objective": -0.06651333396273663
+     "nit": 1479,
+     "weighted_cost": 1405.05,
+     "objective": -0.06651333396242019
     }
    },
    "rl": {
@@ -4374,7 +4374,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -1518444311.4784808
+     "objective": -160358335437353.53
     }
    },
    "rl": {
@@ -4429,9 +4429,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1381,
-     "weighted_cost": 1311.95,
-     "objective": -0.12233750274958512
+     "nit": 1466,
+     "weighted_cost": 1392.7,
+     "objective": -0.1223375027474156
     }
    },
    "rl": {
@@ -4488,7 +4488,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -3783.927203297392
+     "objective": -181753865521639.75
     }
    },
    "rl": {
@@ -4543,9 +4543,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1882,
-     "weighted_cost": 1787.8999999999999,
-     "objective": -0.04870211412917515
+     "nit": 1425,
+     "weighted_cost": 1353.75,
+     "objective": -0.04870211412920818
     }
    },
    "rl": {
@@ -4600,9 +4600,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1311,
-     "weighted_cost": 1245.45,
-     "objective": -0.09779430148172107
+     "nit": 1045,
+     "weighted_cost": 992.75,
+     "objective": -0.09779430148139594
     }
    },
    "rl": {
@@ -4659,7 +4659,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -14511386504997.47
+     "objective": -28648427359324.625
     }
    },
    "rl": {
@@ -4714,9 +4714,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1579,
-     "weighted_cost": 1500.05,
-     "objective": -0.08978576670802305
+     "nit": 1243,
+     "weighted_cost": 1180.85,
+     "objective": -0.08978576670701649
     }
    },
    "rl": {
@@ -4771,9 +4771,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1565,
-     "weighted_cost": 1486.75,
-     "objective": -0.02363464383756643
+     "nit": 1297,
+     "weighted_cost": 1232.1499999999999,
+     "objective": -0.02363464383675004
     }
    },
    "rl": {
@@ -4827,10 +4827,10 @@
      "objective": -778034365119.6497
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 1627,
-     "weighted_cost": 1545.6499999999999,
-     "objective": -0.08626151794808716
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -112869658771.72754
     }
    },
    "rl": {
@@ -4885,9 +4885,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 808,
-     "weighted_cost": 767.5999999999999,
-     "objective": 0.05413861781089589
+     "nit": 978,
+     "weighted_cost": 929.0999999999999,
+     "objective": 0.05413861781129983
     }
    },
    "rl": {
@@ -4944,7 +4944,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -71125303211062.38
+     "objective": -2453445.7422942594
     }
    },
    "rl": {
@@ -5000,9 +5000,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 996,
-     "weighted_cost": 946.1999999999999,
-     "objective": -0.06128934721770877
+     "nit": 1194,
+     "weighted_cost": 1134.3,
+     "objective": -0.06128934721762309
     }
    },
    "rl": {
@@ -5056,10 +5056,10 @@
      "objective": -353088669413.6856
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 1910,
-     "weighted_cost": 1814.5,
-     "objective": -0.12197203253291676
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -6715275695411.838
     }
    },
    "rl": {
@@ -5114,9 +5114,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1153,
-     "weighted_cost": 1095.35,
-     "objective": -0.08439830147581913
+     "nit": 1349,
+     "weighted_cost": 1281.55,
+     "objective": -0.08439830147530217
     }
    },
    "rl": {
@@ -5173,7 +5173,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -529196973089.64355
+     "objective": -5631644595.208777
     }
    },
    "rl": {
@@ -5231,7 +5231,7 @@
      "status": "optimal",
      "nit": 1464,
      "weighted_cost": 1390.8,
-     "objective": -0.12107875577048496
+     "objective": -0.12107875576818217
     }
    },
    "rl": {
@@ -5286,10 +5286,10 @@
      "objective": -0.09598626448935323
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 1294,
-     "weighted_cost": 1229.3,
-     "objective": -0.09598626448934576
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -204427395258.2705
     }
    },
    "rl": {
@@ -5346,7 +5346,7 @@
      "status": "maxiter",
      "nit": 20000,
      "weighted_cost": 19000.0,
-     "objective": -1017782705.7804236
+     "objective": -16404609663.980534
     }
    },
    "rl": {
@@ -5401,9 +5401,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1022,
-     "weighted_cost": 970.9,
-     "objective": -0.09865256721361368
+     "nit": 1154,
+     "weighted_cost": 1096.3,
+     "objective": -0.09865256721350209
     }
    },
    "rl": {
@@ -5458,9 +5458,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1390,
-     "weighted_cost": 1320.5,
-     "objective": -0.07093691230976504
+     "nit": 1554,
+     "weighted_cost": 1476.3,
+     "objective": -0.07093691231153491
     }
    },
    "rl": {
@@ -5515,9 +5515,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1332,
-     "weighted_cost": 1265.3999999999999,
-     "objective": -0.10952338245758694
+     "nit": 1255,
+     "weighted_cost": 1192.25,
+     "objective": -0.10952338245762268
     }
    },
    "rl": {
@@ -5571,10 +5571,10 @@
      "objective": -0.01710246078870644
     },
     "blands_rule": {
-     "status": "optimal",
-     "nit": 970,
-     "weighted_cost": 921.5,
-     "objective": -0.01710246078857599
+     "status": "maxiter",
+     "nit": 20000,
+     "weighted_cost": 19000.0,
+     "objective": -175637274.94850767
     }
    },
    "rl": {
@@ -5629,9 +5629,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1592,
-     "weighted_cost": 1512.3999999999999,
-     "objective": -0.12252825966667724
+     "nit": 1690,
+     "weighted_cost": 1605.5,
+     "objective": -0.12252825966604101
     }
    },
    "rl": {
@@ -5687,9 +5687,9 @@
     },
     "blands_rule": {
      "status": "optimal",
-     "nit": 1775,
-     "weighted_cost": 1686.25,
-     "objective": -0.12187988430761383
+     "nit": 1740,
+     "weighted_cost": 1653.0,
+     "objective": -0.12187988430702565
     }
    },
    "rl": {
