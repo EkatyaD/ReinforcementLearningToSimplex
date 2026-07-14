@@ -17,8 +17,16 @@ Two problem families are supported via `GAME_MODE` in `config.py`:
 
 ## Install
 
+> **Use Python 3.12 or 3.13.** The pinned dependency versions were frozen for
+> this range and ship prebuilt wheels for it. On Python 3.14 (or newer) several
+> pins have no wheel yet and pip tries to compile them from source — e.g.
+> `pygame` fails without SDL dev headers. If you must stay on 3.14, install the
+> curated deps *unpinned* (`pip install numpy scipy torch stable_baselines3
+> gymnasium pandas matplotlib tensorboard tqdm rich`) to pull 3.14-compatible
+> versions; note this is not the exact environment the results were produced in.
+
 ```bash
-python -m venv venv && source venv/bin/activate
+python3.12 -m venv venv && source venv/bin/activate   # or python3.13
 pip install -r requirements.txt          # curated direct dependencies
 # For the Leduc experiments, also install OpenSpiel (not on PyPI as a wheel
 # everywhere — see requirements.txt):
@@ -26,7 +34,8 @@ pip install -r requirements.txt          # curated direct dependencies
 ```
 
 To reproduce the exact frozen environment the thesis results were produced with
-(all transitive dependencies, CUDA wheels, etc.), install the lock file instead:
+(all transitive dependencies, CUDA wheels, etc.), install the lock file instead
+(also on Python 3.12/3.13):
 
 ```bash
 pip install -r requirements-lock.txt
