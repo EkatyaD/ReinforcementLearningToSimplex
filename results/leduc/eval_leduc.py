@@ -32,7 +32,7 @@ from leduc_experiment_runner import sample_leduc_tableaus, run_fixed_strategy
 from envs import SecondPhasePivotingEnv
 from wrappers import CompactObsWrapper
 from config import (
-    LEDUC_GAME, LEDUC_ALPHA, LEDUC_NUM_RANKS,
+    LEDUC_GAME, LEDUC_ALPHA,
     PIVOT_MAP, PIVOT_MAP_TEST, STEP_PENALTY_WEIGHTS_LEDUC,
 )
 
@@ -88,6 +88,7 @@ def run_rl_traced(T, basis, model, use_compact):
 # ---------------------------------------------------------------------------
 
 def build_testset(game, n, alpha, rng, strategies):
+    """Sample n Leduc LPs and solve each with every fixed strategy (shared across models)."""
     tabs = sample_leduc_tableaus(game, n, alpha, rng, uniform=False)
     rows = []
     for i, tab in enumerate(tabs):
@@ -112,6 +113,7 @@ def metric_tables(rows, model_key, strategies, metric, label):
     """Return markdown for one metric (pivot count or weighted cost)."""
     methods = strategies + ['rl']
     def val(row, m):
+        """Result dict for method m in this row (fixed strategy or the RL agent)."""
         d = row['fixed'][m] if m in strategies else row['rl'][model_key]
         return d
     out = [f"### {label}\n"]
@@ -192,6 +194,7 @@ def metric_tables(rows, model_key, strategies, metric, label):
 
 
 def convergence_table(rows, model_key, strategies):
+    """Markdown table of how many LPs each method solved to optimality."""
     methods = strategies + ['rl']
     conv = {}
     for m in methods:
@@ -209,6 +212,7 @@ def convergence_table(rows, model_key, strategies):
 
 
 def action_summary(rows, model_key):
+    """One-line summary of the agent's pivot-rule usage (detects rule collapse)."""
     total = defaultdict(int)
     for r in rows:
         for k, v in r['rl'][model_key].get('action_counts', {}).items():
@@ -227,6 +231,7 @@ def action_summary(rows, model_key):
 # ---------------------------------------------------------------------------
 
 def main():
+    """Re-evaluate both shipped Leduc models, writing eval_new_models.{json,md}."""
     rng = np.random.default_rng(SEED)
     np.random.seed(SEED)
     game = pyspiel.load_game(LEDUC_GAME)

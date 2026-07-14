@@ -12,7 +12,7 @@ import numpy as np
 import pandas as pd
 from stable_baselines3 import PPO
 from matrix import Matrix
-from simplex_solver import change_to_zero_sum_phase2_only, _pivot_col_heuristics, _pivot_row, _apply_pivot
+from simplex_solver import _pivot_col_heuristics, _pivot_row, _apply_pivot
 from envs import RandomMatrixEnv
 
 # Import constants
@@ -26,6 +26,7 @@ from base_matrix import BASE_MATRIX
 class TestRandomMatrixEnv(RandomMatrixEnv):
     """Test environment that uses PIVOT_MAP_TEST instead of PIVOT_MAP"""
     def step(self, action):
+        """Like the parent step, but actions index PIVOT_MAP_TEST (all 5 rules)."""
         self._last_action = int(action)
         # Use PIVOT_MAP_TEST for testing all heuristics
         strategy = PIVOT_MAP_TEST[self._last_action]
@@ -99,6 +100,7 @@ class TestRandomMatrixEnv(RandomMatrixEnv):
         return self._get_obs(), reward, done, truncated, info
 
 def run_fixed_strategy(matrix: Matrix, action: int):
+    """Solve one matrix with one fixed rule and print its pivot count + game value."""
     env = TestRandomMatrixEnv(matrix)
     _, _ = env.reset()
     done = False
@@ -117,12 +119,13 @@ def run_fixed_strategy(matrix: Matrix, action: int):
     print(f"[{method.title()} Pivot] Steps: {env.nit}, Game Value: {game_value:.6f}")
 
 def test_fixed_strategies(matrix: Matrix):
+    """Run every fixed pivot rule on the same matrix (manual eyeball comparison)."""
     for action in range(NUM_PIVOT_STRATEGIES_TEST):  # Use constant from config
         run_fixed_strategy(matrix, action)
 
 def extract_optimal_strategy(T, basis, m):
-
-    num_constraints = T.shape[0] - 1 
+    """Read the row player's mixed strategy off the solved tableau (normalized basic x values)."""
+    num_constraints = T.shape[0] - 1
     num_vars = T.shape[1] - 1  
     
 
@@ -144,8 +147,8 @@ def extract_optimal_strategy(T, basis, m):
     return strategy
 
 def extract_second_player_strategy(T, basis, m, n):
-
-    num_constraints = T.shape[0] - 1 
+    """Recover the column player's mixed strategy from the slack duals in the objective row."""
+    num_constraints = T.shape[0] - 1
     num_vars = T.shape[1] - 1 
     objective_row = T[-1, :-1] 
     dual_vars = objective_row[-n:]
@@ -185,6 +188,7 @@ def compute_game_value_from_strategies(matrix: Matrix, first_player_strategy, se
 
 
 def test_rl(matrix: Matrix):
+    """Solve the matrix with a shipped PPO agent, printing each chosen rule and the result."""
     print("\n--- PPO Policy Evaluation ---")
     # print("Matrix P:")
     # print(pd.DataFrame(matrix.base_P).to_string(index=False, header=False))

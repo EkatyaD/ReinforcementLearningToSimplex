@@ -12,10 +12,12 @@ from simplex_solver import (
 
 
 def _infoset_id(state, player):
+    """Canonical information-set key for `player` at `state`."""
     return state.information_state_string(player)
 
 
 def _sorted_sequences(seqs):
+    """Deterministic sequence ordering (by length, then lexicographic)."""
     return sorted(seqs, key=lambda s: (len(s), s))
 
 
@@ -75,6 +77,7 @@ def build_sequence_form_matrices(game, rank_weights=None):
     payoff_accum = {}
 
     def record_infoset(player, I, parent_seq, legal_actions):
+        """Register infoset I with its parent sequence and legal actions (perfect-recall check)."""
         if player == 0:
             if I in p0_infoset_parent and p0_infoset_parent[I] != parent_seq:
                 raise RuntimeError("Perfect recall violated for player 0")
@@ -87,6 +90,7 @@ def build_sequence_form_matrices(game, rank_weights=None):
             p1_infoset_actions.setdefault(I, set()).update(int(a) for a in legal_actions)
 
     def dfs(state, seq0, seq1, chance_prob):
+        """Walk the game tree, accumulating chance-weighted terminal payoffs per sequence pair."""
         if state.is_terminal():
             v0 = float(state.returns()[0])
             payoff_accum[(seq0, seq1)] = payoff_accum.get((seq0, seq1), 0.0) + chance_prob * v0
@@ -141,6 +145,7 @@ def build_sequence_form_matrices(game, rank_weights=None):
         A[p0_index[s0], p1_index[s1]] += val
 
     def build_constraints(seq_index, infoset_parent, infoset_actions):
+        """Build one player's realization-plan constraint matrix (E or F) and RHS."""
         infosets = sorted(infoset_parent.keys())
         M = np.zeros((1 + len(infosets), len(seq_index)))
         rhs = np.zeros(1 + len(infosets))
@@ -288,6 +293,7 @@ def sample_rank_weights(alpha=2.0, num_ranks=3, rng=None):
 
 
 def realization_to_behavioral(realization, seq_index, infoset_parent, infoset_actions, fallback="uniform", eps=1e-15):
+    """Convert a realization plan into per-infoset behavioral action probabilities."""
     policy = {}
 
     for I in sorted(infoset_parent.keys()):
@@ -378,6 +384,7 @@ def run_experiment(game_name, rank_names, num_ranks, n_samples=5, alpha=2.0, see
 
 
 def main():
+    """Standalone demo: solve Kuhn/Leduc sequence-form LPs with sampled deck weights."""
     # Kuhn poker: 3 ranks (J, Q, K), 1 suit each → 13x13 LP (fast)
     run_experiment("kuhn_poker", ['J', 'Q', 'K'], num_ranks=3, n_samples=5)
 

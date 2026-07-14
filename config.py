@@ -9,8 +9,6 @@ configuration means editing this file. A few values are derived at import time
 ``STEP_PENALTY_WEIGHTS`` / ``MODEL_RUN_TAG`` are computed from the flags above).
 """
 
-import numpy as np
-
 # Game mode: "matrix" or "leduc"
 GAME_MODE = "leduc"
 TIMESTEPS = 30_000_000

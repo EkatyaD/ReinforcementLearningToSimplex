@@ -20,15 +20,18 @@ class SaveOnBestEpLenCallback(BaseCallback):
     """
 
     def __init__(self, save_path: str, min_episodes: int = 100, verbose: int = 1):
+        """Remember the save path and the warm-up episode count."""
         super().__init__(verbose)
         self.save_path = save_path
         self.min_episodes = int(min_episodes)
         self.best_mean_len = float("inf")
 
     def _on_step(self) -> bool:
+        """No per-step work; saving happens at rollout end."""
         return True
 
     def _on_rollout_end(self) -> None:
+        """Save the model if the rolling mean episode length reached a new minimum."""
         buf = getattr(self.model, "ep_info_buffer", None)
         if buf is None or len(buf) < self.min_episodes:
             return
@@ -48,6 +51,7 @@ class CheckpointAfterCallback(BaseCallback):
     """Save model every `freq` steps once `start` timesteps have been reached."""
 
     def __init__(self, save_path_template: str, start: int, freq: int, verbose=1):
+        """Store the path template ('{steps}' placeholder) and the start/freq schedule."""
         super().__init__(verbose)
         self.save_path_template = save_path_template
         self.start = int(start)
@@ -55,6 +59,7 @@ class CheckpointAfterCallback(BaseCallback):
         self._last_saved_at = 0
 
     def _on_step(self) -> bool:
+        """Save a checkpoint when a new freq-boundary past `start` is crossed."""
         t = self.num_timesteps
         if t < self.start:
             return True
@@ -70,16 +75,20 @@ class CheckpointAfterCallback(BaseCallback):
         return True
 
 
-# print number of episodes finished in each rollout
 class EpisodeCounterCallback(BaseCallback):
+    """Log how many episodes finish within each rollout (tensorboard debug metric)."""
+
     def __init__(self):
+        """Initialize the per-rollout episode counter."""
         super().__init__()
         self.completed_this_iter = 0
 
     def _on_rollout_start(self) -> None:
+        """Zero the counter at the start of each rollout."""
         self.completed_this_iter = 0
 
     def _on_step(self) -> bool:
+        """Count episode-end infos emitted by the vec env this step."""
         infos = self.locals.get("infos", [])
         for info in infos:
             if "episode" in info:
@@ -87,4 +96,5 @@ class EpisodeCounterCallback(BaseCallback):
         return True
 
     def _on_rollout_end(self) -> None:
+        """Record the episode count to the SB3 logger."""
         self.logger.record("debug/episodes_finished_in_rollout", self.completed_this_iter)

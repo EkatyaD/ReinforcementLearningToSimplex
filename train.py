@@ -9,8 +9,6 @@ hyperparameter grid instead.
 """
 
 import os
-import numpy as np
-import gymnasium as gym
 from gymnasium.wrappers import TimeLimit
 import itertools
 import json
@@ -45,6 +43,7 @@ def create_matrix():
 
 
 def create_ppo_model(vec_env, verbose=1, n_envs=1, learning_rate=1e-4, n_steps=512, clip_range=0.1):
+    """Construct the PPO model (policy class chosen by the observation flags)."""
     policy_kwargs = dict(
         net_arch=dict(pi=[256, 256], vf=[256, 256])
     )
@@ -115,6 +114,7 @@ def train_single_config(matrix, learning_rate, n_steps, clip_range, run_id, tota
     print(f"{'='*80}\n")
 
     def make_env():
+        """Build one wrapped matrix env for the vec-env factory."""
         base_env = _apply_obs_wrappers(RandomMatrixEnv(matrix))
         return TimeLimit(base_env, max_episode_steps=2000)
 
@@ -265,6 +265,7 @@ def _make_leduc_env():
 
 
 def main():
+    """Train one PPO configuration per the current config.py (checkpoints + save-on-best)."""
     if GAME_MODE == "leduc":
         print(f"Game mode: LEDUC ({LEDUC_GAME}, alpha={LEDUC_ALPHA})")
         make_env = _make_leduc_env

@@ -31,7 +31,7 @@ from wrappers import CompactObsWrapper
 from config import (
     M, N, MIN_VAL, MAX_VAL, EPSILON, TEST_EPSILON, TIMESTEPS,
     MODEL_NAME_TEMPLATE, PIVOT_MAP, PIVOT_MAP_TEST,
-    PIVOT_STRATEGY_NAMES, USE_TWO_PHASE, USE_COMPACT_OBS,
+    USE_TWO_PHASE, USE_COMPACT_OBS,
     STEP_PENALTY_WEIGHTS,
 )
 from base_matrix import BASE_MATRIX
@@ -209,6 +209,12 @@ def generate_test_matrices(n_matrices, mode="in_distribution", base_matrix=None)
 # ---------------------------------------------------------------------------
 
 def run_experiment(n_matrices, seed, model_path=None, base_matrix=None):
+    """Solve n in-distribution + n OOD matrices with every heuristic and the RL agent.
+
+    Returns ``(results, all_methods)`` where results maps each test set to a
+    list of per-matrix dicts (one entry per method). Deterministic for a
+    fixed seed.
+    """
     np.random.seed(seed)
 
     if model_path is None:
@@ -420,6 +426,7 @@ def analyze_metric(rows, n_total, all_methods, strategies, metric_key, metric_la
 
 
 def analyze_results(results, all_methods):
+    """Print the full analysis (pivot count + weighted cost) for every test set."""
     strategies = [m for m in all_methods if m != "rl_agent"]
 
     for mode, rows in results.items():
@@ -473,6 +480,7 @@ def analyze_results(results, all_methods):
 # ---------------------------------------------------------------------------
 
 def main():
+    """CLI entry: evaluate one model against the fixed heuristics and print/save results."""
     parser = argparse.ArgumentParser(
         description="Standalone matrix-mode evaluation of one model vs the fixed heuristics."
     )
@@ -518,6 +526,7 @@ def main():
 
     if save:
         def convert(obj):
+            """JSON serializer for numpy scalar/array types."""
             if isinstance(obj, np.integer):
                 return int(obj)
             if isinstance(obj, np.floating):

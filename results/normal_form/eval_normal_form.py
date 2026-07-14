@@ -43,6 +43,7 @@ MODELS = [
 
 
 def convert(obj):
+    """JSON serializer for numpy scalar/array types."""
     if isinstance(obj, np.integer):
         return int(obj)
     if isinstance(obj, np.floating):
@@ -53,6 +54,7 @@ def convert(obj):
 
 
 def main():
+    """Re-evaluate all four shipped models, writing per-model .log and .json outputs."""
     os.makedirs(OUT_DIR, exist_ok=True)
 
     for stem in MODELS:

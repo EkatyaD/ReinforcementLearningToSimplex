@@ -34,6 +34,7 @@ STRATEGIES = [
 
 
 def prepare_phase2(P):
+    """Build a phase-2 tableau for matrix P via the two-phase pipeline (None on failure)."""
     T, basis, av = change_to_zero_sum(P)
     _, status = phase1solver(T, basis)
     if status != 0:
@@ -50,6 +51,7 @@ def prepare_phase2(P):
 
 
 def collect_snapshots(T, basis, every=4, max_snapshots=8, maxiter=2000):
+    """Walk the tableau with steepest_edge, copying it every `every` pivots."""
     snaps = []
     nit = 0
     while nit < maxiter and len(snaps) < max_snapshots:
@@ -67,6 +69,7 @@ def collect_snapshots(T, basis, every=4, max_snapshots=8, maxiter=2000):
 
 
 def time_strategy(T, strategy, repeats, warmup=10):
+    """Mean column-selection wallclock (µs/call) for one strategy on one snapshot."""
     for _ in range(warmup):
         _pivot_col_heuristics(T, strategy=strategy, tol=TOL)
     t0 = time.perf_counter()
@@ -76,11 +79,13 @@ def time_strategy(T, strategy, repeats, warmup=10):
 
 
 def make_base(m, n, seed):
+    """Deterministic random integer base matrix in {-1, 0, 1}."""
     rng = np.random.default_rng(seed)
     return rng.integers(low=-1, high=2, size=(m, n)).astype(np.float64)
 
 
 def run_size(m, n, num_matrices, snaps_per_matrix, repeats, seed):
+    """Collect snapshots for one LP size and time every strategy on each."""
     base = make_base(m, n, seed)
     matrix = Matrix(m=m, n=n, low=MIN_VAL, high=MAX_VAL, epsilon=EPSILON, base_P=base)
 
@@ -101,6 +106,7 @@ def run_size(m, n, num_matrices, snaps_per_matrix, repeats, seed):
 
 
 def report(size, per_strategy, num_snapshots):
+    """Print the per-strategy timing table and return the mean µs/call per strategy."""
     means = {s: float(np.mean(per_strategy[s])) for s in STRATEGIES}
     ref = min(means.values())
     print(f"\nSize {size[0]}x{size[1]}  ({num_snapshots} snapshots, "
@@ -113,6 +119,7 @@ def report(size, per_strategy, num_snapshots):
 
 
 def main():
+    """CLI entry: benchmark all pivot strategies across the requested LP sizes."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--sizes", type=str, default="20,40,60,80",
                         help="Comma-separated list of square sizes")

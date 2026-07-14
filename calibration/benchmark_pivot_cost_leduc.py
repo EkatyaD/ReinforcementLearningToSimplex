@@ -14,6 +14,7 @@ from config import LEDUC_GAME, LEDUC_ALPHA, LEDUC_NUM_RANKS
 
 
 def main():
+    """CLI entry: benchmark all pivot strategies on sampled Leduc phase-2 tableaus."""
     parser = argparse.ArgumentParser()
     parser.add_argument("--num-instances", type=int, default=2)
     parser.add_argument("--snaps-per-instance", type=int, default=5)

@@ -197,6 +197,7 @@ def sample_leduc_tableaus(game, n_matrices, alpha, rng, uniform=False):
 # ---------------------------------------------------------------------------
 
 def run_experiment(model_path, n_matrices, alpha_in, alpha_out, seed):
+    """Evaluate one model vs the fixed heuristics on in/out-distribution Leduc LPs."""
     np.random.seed(seed)
     rng = np.random.default_rng(seed)
 
@@ -356,6 +357,7 @@ def analyze_metric(rows, n_total, all_methods, strategies, metric_key, metric_la
 
 
 def analyze_results(results, all_methods):
+    """Print the full analysis (pivot count + weighted cost) for every test set."""
     strategies = [m for m in all_methods if m != "rl_agent"]
 
     for mode, rows in results.items():
@@ -403,6 +405,7 @@ def analyze_results(results, all_methods):
 # ---------------------------------------------------------------------------
 
 def main():
+    """Standalone entry: evaluate one Leduc model (edit the constants below)."""
     # Edit these to drive the experiment.
     n_matrices = 50                            # LPs per test set (in/out distribution)
     seed = 42
@@ -435,6 +438,7 @@ def main():
 
     if save:
         def convert(o):
+            """JSON serializer for numpy scalar/array types."""
             if isinstance(o, np.integer): return int(o)
             if isinstance(o, np.floating): return float(o)
             if isinstance(o, np.ndarray): return o.tolist()

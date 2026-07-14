@@ -34,6 +34,7 @@ WEIGHTS = STEP_PENALTY_WEIGHTS_LEDUC
 
 
 def run_rl_traced(T, basis, model):
+    """Run the empty-obs agent on one tableau, counting pivots per rule."""
     base_env = SecondPhasePivotingEnv(T.copy(), basis.copy())
     env = EmptyObsWrapper(base_env)
     obs, _ = env.reset()
@@ -57,6 +58,7 @@ def run_rl_traced(T, basis, model):
 
 
 def main():
+    """Run every empty-obs model on shared sampled LPs and report rule usage."""
     rng = np.random.default_rng(SEED)
     np.random.seed(SEED)
     game = pyspiel.load_game(LEDUC_GAME)

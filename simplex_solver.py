@@ -45,6 +45,7 @@ def pivot_col_random_edge(T, ma, tol=1e-9):
 
 
 def pivot_col_largest_increase(T, ma, tol=1e-9):
+    """Greatest-improvement rule: pick the column whose pivot most decreases the objective."""
     cost_row = T[-1, :-1]  # objective coefficients excluding the RHS
 
     # Among negative entries, find the column with largest improvement
@@ -181,7 +182,11 @@ def _pivot_row(T, basis, pivcol, phase, tol=1e-9, bland=False):
 
 
 def _apply_pivot(T, basis, pivrow, pivcol, tol=1e-9):
+    """Gauss–Jordan pivot on (pivrow, pivcol), updating T and basis in place.
 
+    Adapted from SciPy's ``_linprog_simplex``; warns when the pivot element is
+    dangerously close to the tolerance.
+    """
     basis[pivrow] = pivcol
     pivval = T[pivrow, pivcol]
     T[pivrow] /= pivval
@@ -205,6 +210,11 @@ def _apply_pivot(T, basis, pivrow, pivcol, tol=1e-9):
 
 def phase1solver(T, basis,
                    maxiter=1000, tol=1e-9, nit0=0):
+    """Solve phase 1 (drive artificial variables to zero) with a fixed steepest-edge column rule.
+
+    Returns ``(nit, status)`` — status 0 on success, 1 on iteration limit,
+    3 if no pivot row exists. Adapted from SciPy's ``_solve_simplex`` loop.
+    """
     nit = nit0
     status = 0
     phase=1
@@ -246,6 +256,13 @@ def phase1solver(T, basis,
 
 
 def change_to_zero_sum(GameMatrix):
+    """Build the phase-1 tableau for the minimax LP of a zero-sum game matrix.
+
+    Converts max v s.t. xᵀP ≥ v·1, Σx = 1 to standard form via the vendored
+    SciPy plumbing, adds one artificial variable per row (initial basis), and
+    returns ``(T, basis, av)`` with the objective + pseudo-objective rows
+    appended.
+    """
     m, n = GameMatrix.shape
     c = np.append(np.zeros(m), -1)
     A_ub = np.hstack([-GameMatrix.T, np.ones((n, 1))])
@@ -284,6 +301,12 @@ def change_to_zero_sum(GameMatrix):
 
 # change from first phase to second
 def first_to_second(T, basis, av):
+    """Transition a solved phase-1 tableau to phase 2.
+
+    Checks the pseudo-objective is ~0 (feasibility found), drops the pseudo
+    row and the artificial-variable columns, and returns ``(T, basis)`` —
+    or ``None`` if phase 1 did not reach feasibility.
+    """
     status = 0
     # Adaptive tolerance based on matrix size
     m = len(basis) - len(av)  # number of original variables

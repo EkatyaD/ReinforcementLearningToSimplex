@@ -30,7 +30,15 @@ from matrix import Matrix
 
 
 class SecondPhasePivotingEnv(gym.Env):
+    """Base phase-2 pivoting environment over a fixed simplex tableau.
+
+    Actions pick a pivot rule from ``config.PIVOT_MAP``; ``step`` applies one
+    pivot and rewards −step_cost per pivot plus a terminal success bonus.
+    Subclasses (``RandomMatrixEnv``, ``LeducEnv``) resample a fresh LP on reset.
+    """
+
     def remove_artificial(self):
+        """Pivot any artificial variables remaining in the basis out of it."""
         for pivrow in [row for row in range(self.basis.size)
                        if self.basis[row] > self.T.shape[1] - 2]:
             non_zero_row = [col for col in range(self.T.shape[1] - 1)
@@ -41,6 +49,7 @@ class SecondPhasePivotingEnv(gym.Env):
                 self.nit += 1
 
     def __init__(self, T, basis):
+        """Wrap an existing phase-2 tableau + basis and define the gym spaces."""
         # Core state
         self.basis = basis
         self.T = T
@@ -95,6 +104,7 @@ class SecondPhasePivotingEnv(gym.Env):
         self.complete = False
 
     def _zero_obs(self):
+        """All-zero observation, returned after a numerical failure."""
         return {
             "tableau": np.zeros(self.T.shape, dtype=np.float64),
             "basis_onehot": np.zeros(self._n_vars, dtype=np.float32),
@@ -105,9 +115,11 @@ class SecondPhasePivotingEnv(gym.Env):
         }
 
     def _basis_key(self):
+        """Hashable basis fingerprint used for cycle detection."""
         return tuple(int(i) for i in self.basis)
 
     def _basis_onehot(self):
+        """One-hot vector marking which variables are currently basic."""
         vec = np.zeros(self._n_vars, dtype=np.float32)
         for col in self.basis:
             c = int(col)
@@ -116,9 +128,11 @@ class SecondPhasePivotingEnv(gym.Env):
         return vec
 
     def _nit_norm(self):
+        """Iteration count normalized to [0, 1] by maxiter."""
         return np.array([min(1.0, float(self.nit) / float(self.maxiter))], dtype=np.float32)
 
     def _get_obs(self):
+        """Build the Dict observation (tableau, reduced costs, progress scalars), NaN-safe and clipped."""
         tableau = self.T.copy()
         rc = tableau[-1, :-1].copy()
         obj = float(tableau[-1, -1])
@@ -148,6 +162,7 @@ class SecondPhasePivotingEnv(gym.Env):
         return obs
 
     def reset(self, seed=None, **kwargs):
+        """Reset counters and cycle tracking on the CURRENT tableau (no resampling)."""
         self.nit = 0
         self._seen_bases.clear()
         self._last_obj = float(self.T[-1, -1])
@@ -157,10 +172,12 @@ class SecondPhasePivotingEnv(gym.Env):
         return self._get_obs(), {}
 
     def _step_cost(self, strategy):
+        """Per-pivot cost: 1.0, or the rule's calibrated weight when weighted penalties are on."""
         w = STEP_PENALTY_WEIGHTS.get(strategy, 1.0) if USE_WEIGHTED_STEP_PENALTY else 1.0
         return self._step_penalty * w
 
     def step(self, action):
+        """Apply one pivot with the chosen rule; terminate on optimality, failure, or maxiter."""
         self._last_action = int(action)
         strategy = PIVOT_MAP[self._last_action]
 
@@ -246,17 +263,26 @@ class SecondPhasePivotingEnv(gym.Env):
         return self._get_obs(), reward, done, truncated, info
 
     def render(self, mode='human'):
+        """Print the tableau, basis and iteration count."""
         print("Current Tableau:")
         print(self.T)
         print("Current Basis:", self.basis)
         print("Iterations:", self.nit)
 
     def close(self):
+        """No resources to release."""
         pass
 
 
 class RandomMatrixEnv(SecondPhasePivotingEnv):
+    """Phase-2 env over perturbed zero-sum payoff matrices (matrix game mode).
+
+    Each reset perturbs the base matrix by epsilon and rebuilds the phase-2
+    tableau (directly, or via phase 1 when ``USE_TWO_PHASE``).
+    """
+
     def __init__(self, matrix: Matrix):
+        """Build the first tableau from ``matrix`` and initialize the base env."""
         self.matrix = matrix
         self.epsilon = matrix.epsilon
         self.K = None
@@ -268,6 +294,7 @@ class RandomMatrixEnv(SecondPhasePivotingEnv):
         super().__init__(self.T, self.basis)
 
     def _init_env(self, seed=None):
+        """Sample a perturbed matrix and build its phase-2 tableau (retrying unstable draws)."""
         self.nit = 0
         self._phase1_nit = 0
         max_attempts = 20
@@ -302,11 +329,13 @@ class RandomMatrixEnv(SecondPhasePivotingEnv):
         raise RuntimeError("Failed to initialize a stable Phase 2 tableau.")
 
     def reset(self, seed=None, **kwargs):
+        """Resample a fresh LP instance and reset the base env on its tableau."""
         self._init_env(seed)
         self.nit = 0
         return super().reset(seed=seed)
 
     def step(self, action):
+        """Step the base env, adding phase-1 / total pivot counts to the info dict."""
         obs, reward, done, truncated, info = super().step(action)
         info["phase1_nit"] = self._phase1_nit
         info["total_nit"] = self._phase1_nit + self.nit
@@ -321,6 +350,7 @@ class LeducEnv(SecondPhasePivotingEnv):
     """
 
     def __init__(self, game_name, alpha=2.0, num_ranks=3, seed=None):
+        """Load the OpenSpiel game and build the first sequence-form tableau."""
         import pyspiel
         from leduc_experiment import build_sequence_form_matrices, sample_rank_weights
 
@@ -339,6 +369,7 @@ class LeducEnv(SecondPhasePivotingEnv):
         super().__init__(self.T, self.basis)
 
     def _init_env(self, seed=None):
+        """Sample Dirichlet deck weights, build the sequence-form LP, and solve phase 1."""
         self.nit = 0
         self._phase1_nit = 0
         max_attempts = 20
@@ -400,11 +431,13 @@ class LeducEnv(SecondPhasePivotingEnv):
         raise RuntimeError("LeducEnv: failed to build a stable Phase 2 tableau")
 
     def reset(self, seed=None, **kwargs):
+        """Resample a fresh LP instance and reset the base env on its tableau."""
         self._init_env(seed)
         self.nit = 0
         return super().reset(seed=seed)
 
     def step(self, action):
+        """Step the base env, adding phase-1 / total pivot counts to the info dict."""
         obs, reward, done, truncated, info = super().step(action)
         info["phase1_nit"] = self._phase1_nit
         info["total_nit"] = self._phase1_nit + self.nit

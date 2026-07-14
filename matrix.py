@@ -10,14 +10,17 @@ randomization the RL agent trains against).
 import numpy as np
 
 class Matrix:
-    # matrix initialization
+    """An m x n payoff matrix with per-episode epsilon perturbation."""
+
     def __init__(self, m=3, n=3, low=-1, high=1, epsilon=0.1, base_P=None):
+        """Store dimensions, entry range [low, high], noise magnitude and base matrix."""
         self.m, self.n = m, n
         self.low, self.high = low, high
         self.base_P = base_P
         self.epsilon = float(epsilon)
 
     def resize(self, new_m, new_n):
+        """Change the target dimensions (does not touch base_P)."""
         self.m = int(new_m)
         self.n = int(new_n)
 
@@ -30,9 +33,11 @@ class Matrix:
         return self.base_P
 
     def return_size(self):
+        """Return the (m, n) dimensions."""
         return (self.m, self.n)
 
     def return_epsilon(self):
+        """Return the perturbation magnitude epsilon."""
         return self.epsilon
 
     # add epsilon noise to matrix
@@ -50,5 +55,6 @@ class Matrix:
         return Matrix(self.m, self.n, self.low, self.high, epsilon=0.0, base_P=perturbed_P)
 
     def copy(self):
+        """Return an independent copy (base_P deep-copied)."""
         return Matrix(self.m, self.n, self.low, self.high, self.epsilon,
                       np.copy(self.base_P) if self.base_P is not None else None)

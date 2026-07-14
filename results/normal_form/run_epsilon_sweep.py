@@ -36,6 +36,7 @@ OUT_DIR = os.path.join(HERE, "evaluation", "epsilon_sweep")
 
 
 def convert(obj):
+    """JSON serializer for numpy scalar/array types."""
     if isinstance(obj, np.integer):
         return int(obj)
     if isinstance(obj, np.floating):
@@ -69,6 +70,7 @@ def run_in_distribution(n_matrices, seed, model):
 
 
 def main():
+    """Sweep TEST_EPSILON for the dict_unweighted model, writing per-epsilon outputs."""
     os.makedirs(OUT_DIR, exist_ok=True)
     experiment.USE_COMPACT_OBS = IS_COMPACT
 

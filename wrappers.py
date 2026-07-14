@@ -29,6 +29,7 @@ class CompactObsWrapper(gym.ObservationWrapper):
     """
 
     def __init__(self, env, history_len: int = 5, num_strategies: int = None):
+        """Set up the feature layout and history buffers (defaults match the trained models)."""
         super().__init__(env)
         self.history_len = int(history_len)
         if num_strategies is None:
@@ -61,6 +62,7 @@ class CompactObsWrapper(gym.ObservationWrapper):
         self._last_info = {}
 
     def reset(self, **kwargs):
+        """Reset the env and clear the action/delta histories."""
         obs, info = self.env.reset(**kwargs)
         self._action_history.clear()
         self._delta_history.clear()
@@ -70,6 +72,7 @@ class CompactObsWrapper(gym.ObservationWrapper):
         return self.observation(obs), info
 
     def step(self, action):
+        """Step the env and record the action / normalized delta into the histories."""
         obs, reward, done, truncated, info = self.env.step(action)
         self._action_history.append(int(action))
         delta = float(np.asarray(obs["delta_objective"]).item())
@@ -78,6 +81,7 @@ class CompactObsWrapper(gym.ObservationWrapper):
         return self.observation(obs), reward, done, truncated, info
 
     def observation(self, obs):
+        """Build the 31-feature compact vector from the Dict obs + histories."""
         feats = np.zeros(self._n_features, dtype=np.float32)
         K = self.history_len
         S = self.num_strategies
@@ -177,19 +181,23 @@ class EmptyObsWrapper(gym.ObservationWrapper):
     """
 
     def __init__(self, env):
+        """Replace the observation space with a constant length-1 Box."""
         super().__init__(env)
         self.observation_space = spaces.Box(
             low=0.0, high=0.0, shape=(1,), dtype=np.float32
         )
 
     def reset(self, **kwargs):
+        """Reset the env, discarding its observation."""
         _, info = self.env.reset(**kwargs)
         return self.observation(None), info
 
     def step(self, action):
+        """Step the env, discarding its observation."""
         _, reward, done, truncated, info = self.env.step(action)
         return self.observation(None), reward, done, truncated, info
 
     def observation(self, obs):
+        """Return the constant (zero) observation."""
         return np.zeros(1, dtype=np.float32)
 
