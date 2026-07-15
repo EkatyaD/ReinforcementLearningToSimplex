@@ -85,4 +85,4 @@ SciPy plumbing and the same phase-1 machinery.
 |---|---|
 | `_linprog_utils.py` (all of it) | SciPy, vendored verbatim (BSD-3) |
 | `_apply_pivot`, `_pivot_row` skeleton, `phase1solver` loop | SciPy `_linprog_simplex`, adapted |
-| Pivot-rule heuristics, Harris band, zero-sum/tableau constructions, sequence-form LP builder, gym envs, wrappers, training, evaluation | Thesis code (MIT) |
+| Pivot-rule heuristics, Harris band, zero-sum/tableau constructions, sequence-form LP builder, gym envs, wrappers, training, evaluation | Thesis code |
