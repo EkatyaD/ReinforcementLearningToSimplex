@@ -17,7 +17,7 @@ Two problem families are supported via `GAME_MODE` in `config.py`:
 
 ## Use of generative AI
 
-Generative AI (Anthropic's Claude) was used in the preparation of this repository:
+Generative AI was used in the preparation of this repository:
 for code review, refactoring (dead-code removal, deduplication, naming), writing
 documentation (docstrings, READMEs, `SCIPY_CODE.md`), dependency and licensing
 clean-up, and for verifying reproducibility (AI-assisted changes were checked by
