@@ -15,15 +15,18 @@ Two problem families are supported via `GAME_MODE` in `config.py`:
 - **`leduc`** — sequence-form LPs from Leduc poker with Dirichlet-sampled deck weights
   (requires `open_spiel` / `pyspiel`).
 
+Parts of the LP plumbing are derived from SciPy: [`SCIPY_CODE.md`](SCIPY_CODE.md)
+documents exactly which code is SciPy's (vendored/adapted, BSD-3), which is original
+to this thesis, and how the pieces fit together end-to-end.
+
 ## Use of generative AI
 
 Generative AI was used in the preparation of this repository:
-for code review, refactoring (dead-code removal, deduplication, naming), writing
-documentation (docstrings, READMEs, `SCIPY_CODE.md`), dependency and licensing
+for writing and reviewing the code, refactoring (dead-code removal, deduplication, naming), writing
+documentation, code
 clean-up, and for verifying reproducibility (AI-assisted changes were checked by
 re-running the evaluation pipeline and confirming the committed results are
-reproduced byte-for-byte). Commits with AI assistance are marked with a
-`Co-Authored-By` trailer in the git history. All changes were reviewed by the
+reproduced byte-for-byte). All changes were reviewed by the
 author, who takes full responsibility for the contents of this repository.
 
 ## Install
